@@ -1567,6 +1567,7 @@ body.teacher-mode .ti{display:block}
 
 <script>
 var curScene=1;
+var maxScene=1; // highest scene ever reached
 var attempts={}; // attempt tracker: key = inputId, value = count
 function getAttempt(id){ return attempts[id]||0; }
 function addAttempt(id){ attempts[id]=(attempts[id]||0)+1; return attempts[id]; }
@@ -1591,11 +1592,16 @@ var scLabels=['Das Briefing','Der Geschäftsbericht','Kennzahlenanalyse','Gesamt
 var selectedVote=null;
 
 function nextScene(n){
-  document.getElementById('sc'+n).classList.remove('hidden');
-  document.getElementById('sc'+n).scrollIntoView({behavior:'smooth',block:'start'});
+  var sc=document.getElementById('sc'+n);
+  if(sc) sc.classList.remove('hidden');
+  if(n>maxScene) maxScene=n;
+  if(n>=2) showDataFab();
   curScene=n;
   updateProgress(n);
   initGlossar();
+  setTimeout(function(){
+    if(sc) sc.scrollIntoView({behavior:'smooth',block:'start'});
+  },50);
 }
 
 function toggleRf(id){
@@ -2155,25 +2161,39 @@ function unlockBankResult(ki){
   if(inp) setTimeout(function(){ inp.focus(); },150);
 }
 function updateProgress(n){
+  if(n>maxScene) maxScene=n;
   for(var i=1;i<=7;i++){
     var el=document.getElementById('pss'+i);
-    if(!el)continue;
-    el.classList.remove('cur','done');
-    if(i<n)el.classList.add('done');
-    else if(i===n)el.classList.add('cur');
+    if(!el) continue;
+    el.classList.remove('cur','done','locked-btn');
+    if(i<n){
+      el.classList.add('done');
+      el.disabled=false;
+      el.style.opacity='1';
+      el.style.pointerEvents='auto';
+      el.style.cursor='pointer';
+    } else if(i===n){
+      el.classList.add('cur');
+      el.disabled=false;
+      el.style.opacity='1';
+      el.style.pointerEvents='auto';
+    } else {
+      // Future scenes: locked
+      el.disabled=true;
+      el.style.opacity='0.3';
+      el.style.pointerEvents='none';
+      el.style.cursor='default';
+    }
   }
   document.getElementById('psLbl').innerHTML='<b>'+n+' / 7</b> – '+scLabels[n-1];
 }
 function jumpTo(n){
-  // Reveal all scenes up to n
-  for(var i=1;i<=n;i++){
-    var sc=document.getElementById('sc'+i);
-    if(sc) sc.classList.remove('hidden');
-  }
+  if(n>maxScene && !teacherMode) return; // can't jump ahead
   curScene=n;
   updateProgress(n);
   setTimeout(function(){
-    document.getElementById('sc'+n).scrollIntoView({behavior:'smooth',block:'start'});
+    var sc=document.getElementById('sc'+n);
+    if(sc) sc.scrollIntoView({behavior:'smooth',block:'start'});
   },50);
 }
 function nv(id){return parseFloat(String(document.getElementById(id).value).replace(',','.'));}
@@ -2595,7 +2615,10 @@ function initGlossar(){
 }
 
 function initDataFab(){
-  // FAB immer sichtbar (ab Szene 1)
+  // FAB wird erst sichtbar wenn Szene 2 erreicht
+  // (called from nextScene)
+}
+function showDataFab(){
   var fab=document.getElementById('dataFab');
   if(fab) fab.classList.add('vis');
 }
@@ -2624,9 +2647,12 @@ function toggleTeacherMode(){
     document.getElementById('teacherBtn').classList.add('active');
     document.getElementById('teacherBtn').textContent = '🔓 Lehrkraft';
     // Unlock all scenes immediately
+    maxScene=7;
     for(var i=1;i<=7;i++){
       var sc=document.getElementById('sc'+i);
       if(sc) sc.classList.remove('hidden');
+      var btn=document.getElementById('pss'+i);
+      if(btn){ btn.disabled=false; btn.style.opacity='1'; btn.style.pointerEvents='auto'; }
     }
     // Mark all KZ as done so navigation buttons appear
     for(var k in kzDone) kzDone[k]=true;

@@ -308,8 +308,105 @@ body.teacher-mode #compareWrap{display:block!important}
 #teacherBtn:hover{background:var(--gold);color:var(--ink)}
 #teacherBtn.active{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
+body.teacher-mode .teacher-sol{display:block!important}
+body.teacher-mode #zwischenurteilWrap{display:block!important}
+body.teacher-mode #obsBtn{opacity:1!important}
+body.teacher-mode #obsBtn[disabled]{pointer-events:auto!important;opacity:1!important}
+body.teacher-mode #zwischenBtn{opacity:1!important}
+body.teacher-mode #bankKZwrap{display:block!important}
+body.teacher-mode #bankEntry{display:none!important}
+body.teacher-mode #sortWrap .sort-card{pointer-events:auto}
+body.teacher-mode #sc4nxt{display:inline-flex!important}
+body.teacher-mode #prognoseBox{display:none!important}
+body.teacher-mode #hypo1wrap{display:none!important}
+body.teacher-mode #zwischenurteilWrap.hidden{display:block!important}
+body.teacher-mode #rangWrap .rank-chip{pointer-events:auto}
+body.teacher-mode #counterWrap{display:block!important}
+body.teacher-mode #waswennWrap{display:block!important}
+body.teacher-mode #goSc6{display:inline-flex!important}
+body.teacher-mode #analogyCard4{display:none!important}
+body.teacher-mode #fcfExplanation{display:block!important}
+body.teacher-mode #calcsteps4{opacity:1!important;pointer-events:auto!important;filter:none!important}
+body.teacher-mode .calc-steps.locked{opacity:1!important;pointer-events:auto!important;filter:none!important}
+body.teacher-mode .def-opt{pointer-events:none}
+
 .teacher-banner{position:fixed;top:0;left:0;right:0;background:var(--gold);color:var(--ink);text-align:center;padding:5px;font-size:.75rem;font-family:var(--mono);font-weight:700;letter-spacing:.1em;z-index:9999;display:none}
 body.teacher-mode .teacher-banner{display:block}
+
+.ai-fb-box{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.ai-fb-box h4{font-family:var(--display);font-size:.9rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ai-fb-ok{color:var(--ok)}
+.ai-fb-warn{color:var(--amber,#B8860B)}
+.ai-fb-tip{color:var(--plum)}
+.ai-fb-text{font-size:.88rem;line-height:1.75;color:var(--ink)}
+
+.fb-check-item{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:12px 16px}
+.fb-check-q{font-size:.88rem;line-height:1.6;margin-bottom:8px}
+.fb-check-btns{display:flex;gap:8px}
+.fb-chk-btn{padding:5px 16px;border:1px solid var(--paper3);background:var(--paper);border-radius:3px;font-size:.8rem;cursor:pointer;font-family:var(--serif);transition:all .15s}
+.fb-chk-btn:hover{background:var(--ink);color:var(--paper)}
+.fb-chk-btn.sel-ja{background:var(--ok);color:var(--paper);border-color:var(--ok)}
+.fb-chk-btn.sel-nein{background:var(--red);color:var(--paper);border-color:var(--red)}
+.fb-check-hint{font-size:.8rem;margin-top:8px;padding:6px 10px;border-radius:3px;display:none;line-height:1.5}
+.fb-check-hint.hint-ja{background:var(--greenl);color:var(--okd)}
+.fb-check-hint.hint-nein{background:var(--redl);color:var(--red)}
+
+.def-quiz{margin-bottom:18px;padding:16px;background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r)}
+.def-quiz-q{font-size:.88rem;font-weight:700;margin-bottom:12px;color:var(--ink)}
+.def-opt{padding:10px 14px;margin-bottom:7px;border:1px solid var(--paper3);border-radius:var(--r);font-size:.85rem;line-height:1.55;cursor:pointer;transition:all .15s;background:var(--paper)}
+.def-opt:hover{border-color:var(--gold);background:var(--goldl)}
+.def-opt.dck{background:var(--greenl);border-color:var(--ok);color:var(--okd);pointer-events:none}
+.def-opt.dno{background:var(--redl);border-color:var(--red);color:var(--red);pointer-events:none}
+.def-opt.doff{opacity:.45;pointer-events:none}
+.def-fb{font-size:.82rem;margin-top:8px;padding:7px 12px;border-radius:3px;display:none}
+.def-fb.show{display:block}
+.def-fb.dfok{background:var(--greenl);color:var(--okd)}
+.def-fb.dfer{background:var(--redl);color:var(--red)}
+.calc-steps.locked{opacity:.4;pointer-events:none;filter:blur(1px)}
+
+.obs-input{width:100%;padding:10px 12px;border:1px solid var(--paper3);border-radius:var(--r);font-size:.88rem;font-family:var(--serif);background:var(--paper);resize:vertical;min-height:64px;color:var(--ink);transition:border .15s}
+.obs-input:focus{outline:none;border-color:var(--gold)}
+.sort-pool{display:flex;flex-wrap:wrap;gap:8px;padding:14px;background:var(--paper2);border:1px dashed var(--paper3);border-radius:var(--r);min-height:60px;margin-bottom:12px}
+.sort-card{padding:8px 14px;background:var(--paper);border:1px solid var(--paper3);border-radius:var(--r);font-size:.82rem;cursor:pointer;transition:all .15s;line-height:1.5;max-width:280px}
+.sort-card:hover{border-color:var(--gold);background:var(--goldl)}
+.sort-card.in-sta{background:var(--greenl);border-color:var(--ok)}
+.sort-card.in-sch{background:var(--redl);border-color:var(--red)}
+.sort-col{min-height:80px;background:var(--paper2);border-radius:var(--r);padding:10px;border:2px dashed var(--paper3)}
+.sort-col.sta-col{border-color:var(--ok);background:rgba(34,197,94,.06)}
+.sort-col.sch-col{border-color:var(--red);background:rgba(239,68,68,.06)}
+.sort-col-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.sort-col.sta-col .sort-col-title{color:var(--ok)}
+.sort-col.sch-col .sort-col-title{color:var(--red)}
+.bank-entry{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:18px;margin-bottom:20px}
+.bank-kz-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--paper3);border-radius:20px;font-size:.82rem;cursor:pointer;margin:4px;background:var(--paper);transition:all .15s}
+.bank-kz-chip:hover{border-color:var(--gold);background:var(--goldl)}
+.bank-kz-chip.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rf-textarea{width:100%;padding:10px 12px;border:1px solid var(--paper3);border-radius:var(--r);font-size:.88rem;font-family:var(--serif);background:var(--paper);resize:vertical;min-height:90px;margin-top:8px;color:var(--ink)}
+.rf-textarea:focus{outline:none;border-color:var(--gold)}
+.zwischenurteil-display{background:var(--ink);color:var(--paper);border-radius:var(--r);padding:12px 18px;margin-bottom:16px;font-size:.88rem;font-style:italic;display:none}
+.zwischenurteil-display::before{content:'💬 Euer Zwischenurteil: ';font-style:normal;color:var(--gold2);font-size:.75rem;display:block;margin-bottom:4px}
+
+.prognose-box{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:18px;margin-bottom:0}
+.rank-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.rank-chip{padding:7px 14px;border:1px solid var(--paper3);border-radius:20px;font-size:.82rem;cursor:pointer;background:var(--paper);transition:all .15s;position:relative}
+.rank-chip:hover{border-color:var(--gold)}
+.rank-chip.ranked{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rank-chip .rank-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:var(--ink);border-radius:50%;width:18px;height:18px;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.counter-box{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:16px;margin:16px 0}
+.waswenn-box{background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:16px;margin-top:20px;display:none}
+.exit-ticket{background:var(--ink);color:var(--paper);border-radius:var(--r);padding:20px;margin-top:28px}
+.exit-ticket h4{font-family:var(--display);color:var(--gold2);margin-bottom:10px}
+.exit-textarea{width:100%;padding:10px 12px;border:1px solid rgba(255,255,255,.2);border-radius:var(--r);background:rgba(255,255,255,.08);color:var(--paper);font-size:.88rem;font-family:var(--serif);resize:vertical;min-height:72px}
+.exit-textarea:focus{outline:none;border-color:var(--gold)}
+.analogy-card{background:var(--goldl);border:2px solid var(--gold);border-radius:var(--r);padding:16px;margin-bottom:16px}
+
+.ti{display:none;background:#FFF8E1;border:2px solid #F59E0B;border-radius:6px;padding:12px 16px;margin:8px 0;font-size:.8rem;line-height:1.65}
+.ti-head{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#92400E;font-family:var(--mono);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.ti-head::before{content:"👩‍🏫 LEHRKRAFT";background:#F59E0B;color:#fff;padding:1px 6px;border-radius:2px;font-size:.65rem}
+.ti b{color:#78350F}
+.ti ul{margin:4px 0 4px 14px;padding:0}
+.ti ul li{margin-bottom:2px}
+body.teacher-mode .ti{display:block}
 </style>
 </head>
 <body>
@@ -339,7 +436,7 @@ body.teacher-mode .teacher-banner{display:block}
 
   <!-- SCENE 1: BRIEFING -->
   <div class="scene" id="sc1">
-    <div class="sc-num">Szene 01 / 05</div>
+    <div class="sc-num">Szene 01 / 07</div>
     <div class="sc-title">Das Briefing</div>
     <div class="briefing">
       <div class="br-from">Von: Dr. Sarah Köhler, Senior Analyst · An: Junior Analyst Team</div>
@@ -357,12 +454,26 @@ body.teacher-mode .teacher-banner{display:block}
       <strong>Hinweis zur Arbeitsweise</strong>
       Diese Fallstudie ist kein Rechentest. Der Fokus liegt auf eurer <em>Interpretation</em> und <em>Urteilsfähigkeit</em>. Warum ist eine Kennzahl aussagekräftig? Was bedeutet sie für den Investor? Was schlussfolgert ihr daraus?
     </div>
-    <div class="btn-row" style="margin-top:0"><button class="check-btn gold-btn" onclick="nextScene(2)">Zum Geschäftsbericht →</button></div>
+    <div class="prognose-box" id="prognoseBox">
+    <div class="ti"><div class="ti-head">Vorhersage – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Eine begründete Vermutung formulieren, bevor sie Daten sehen. Aktiviert Vorwissen und erzeugt kognitiven Konflikt, wenn die Realität überrascht.
+    <ul>
+      <li>Typische richtige Antwort: "Mehr Umsatz = mehr Gewinn – also gutes Jahr"</li>
+      <li>Typische überraschende Realität: Gewinn sank trotz Umsatzrekord (EK-Rent. 20% → 14,9%)</li>
+      <li>Am Ende von Szene 3 sehen SuS, ob ihre Prognose gestimmt hat – das ist der Lernmoment</li>
+    </ul></div>
+
+      <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">🔮 Eure Vorhersage – bevor ihr die Daten seht</div>
+      <div style="font-size:.85rem;color:var(--ink3);margin-bottom:12px">Hugo Boss hat 2024 ein neues Umsatzrekordhoch erzielt. War das Jahr für Anteilseigner trotzdem gut – oder nicht? Begründet kurz eure Vermutung, bevor ihr die Zahlen seht.</div>
+      <textarea class="obs-input" id="prognoseText" placeholder="z.B. »Ich vermute, es war ein gutes Jahr, weil mehr Umsatz auch mehr Gewinn bedeutet...«" oninput="checkPrognose()" style="min-height:64px"></textarea>
+      <div class="btn-row" style="margin-top:10px">
+        <button class="check-btn gold-btn" id="prognoseBtn" onclick="submitPrognose()" disabled style="opacity:.4">Zum Geschäftsbericht →</button>
+      </div>
+    </div>
   </div>
 
   <!-- SCENE 2: DATENMATERIAL -->
   <div class="scene hidden" id="sc2">
-    <div class="sc-num">Szene 02 / 05</div>
+    <div class="sc-num">Szene 02 / 07</div>
     <div class="sc-title">Der Geschäftsbericht</div>
     <p class="sc-lead">Lest das Datenmaterial sorgfältig durch. Die Zahlen sind die Grundlage eurer gesamten Analyse.</p>
 
@@ -419,24 +530,44 @@ body.teacher-mode .teacher-banner{display:block}
     </div>
 
 
-    <div class="notice">
-      <strong>Beobachtungsauftrag</strong>
-      Bevor ihr zur Analyse kommt: Was fällt euch beim ersten Lesen der Daten auf? Was überrascht euch? Notiert eure ersten Eindrücke – ihr braucht sie gleich für die Interpretation.
+    <div class="notice" style="margin-bottom:16px">
+      <strong>Beobachtungsauftrag
+    <div class="ti"><div class="ti-head">Beobachtungsauftrag – Aufgabe & Lösungshinweise</div><b>Was sollen SuS leisten?</b> Eine auffällige Zahl aus Bilanz + eine aus GuV benennen und kurz einordnen. Mindestanforderung: 15 Zeichen pro Antwort.
+    <ul>
+      <li><b>Bilanz (gute Antworten):</b> EK stieg von 1.293 auf 1.427 obwohl Gewinn sank · AV wuchs auf 2.400 Mio. · Vorräte sanken (720 → 630)</li>
+      <li><b>GuV (gute Antworten):</b> EBIT sank von 410 auf 361 trotz Umsatzwachstum · JÜ sank um 17 % · Vertriebskosten stark gestiegen (1.720 → 1.869)</li>
+      <li><b>Achten auf:</b> Erkennen SuS den Widerspruch Umsatz↑ / Gewinn↓? Das ist der Kern der ganzen Analyse.</li>
+    </ul></div>
+ – bevor ihr weitergeht</strong><br>
+      Lest Bilanz und GuV aufmerksam durch. Dann beantwortet die zwei Fragen unten. Erst danach geht es weiter.
     </div>
-    <div class="btn-row" style="margin-top:0"><button class="check-btn gold-btn" onclick="nextScene(3)">Zur Kennzahlenanalyse →</button></div>
+    <div style="display:grid;gap:12px;margin-bottom:16px">
+      <div>
+        <label style="font-size:.85rem;font-weight:700;display:block;margin-bottom:6px">1. Welcher Wert in der <em>Bilanz</em> überrascht euch – und warum?</label>
+        <textarea class="obs-input" id="obs1" placeholder="z.B. »Das Eigenkapital ist von 1.293 auf 1.427 Mio. € gestiegen – obwohl der Gewinn gesunken ist. Wie kann das sein?«" oninput="checkObs()"></textarea>
+      </div>
+      <div>
+        <label style="font-size:.85rem;font-weight:700;display:block;margin-bottom:6px">2. Welcher Wert in der <em>GuV</em> überrascht euch – und warum?</label>
+        <textarea class="obs-input" id="obs2" placeholder="z.B. »Der EBIT ist von 410 auf 361 Mio. € gesunken, obwohl der Umsatz gestiegen ist. Die Kosten müssen stärker gestiegen sein.«" oninput="checkObs()"></textarea>
+      </div>
+    </div>
+    <div class="ifb" id="obsfb"></div>
+    <div class="btn-row" style="margin-top:0">
+      <button class="check-btn gold-btn" id="obsBtn" onclick="submitObs()" disabled style="opacity:.4">Zur Kennzahlenanalyse →</button>
+    </div>
   </div>
 
   <!-- SCENE 3: KENNZAHLENANALYSE -->
   <div class="scene hidden" id="sc3">
-    <div class="sc-num">Szene 03 / 06</div>
+    <div class="sc-num">Szene 03 / 07</div>
     <div class="sc-title">Kennzahlenanalyse</div>
     <p class="sc-lead">Fünf Kennzahlen – für jede: erst berechnen, dann interpretieren. Das Wichtigste ist nicht das Ergebnis, sondern <em>was es bedeutet</em>.</p>
     <div style="display:flex;gap:10px;margin-bottom:24px;font-size:.75rem;font-family:var(--mono);color:var(--ink3)">
       <span id="kzp1" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">01 EK-Rentabilität</span>
       <span id="kzp2" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">02 Nettomarge</span>
       <span id="kzp3" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">03 EK-Quote</span>
-      <span id="kzp4" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">04 <span class="gl" data-term="dg2">Deckungsgrad II</span></span>
-      <span id="kzp5" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">05 KGV</span>
+      <span id="kzp4" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">04 Free Cashflow</span>
+      <span id="kzp5" style="padding:4px 10px;border-radius:2px;background:var(--paper3)">05 EBIT-Marge</span>
     </div>
 
     <!-- KZ 1: Sicherheit -->
@@ -447,9 +578,18 @@ body.teacher-mode .teacher-banner{display:block}
           <div class="kz-name">EK-Rentabilität (Return on Equity)</div>
         </div>
         <span style="font-size:.8rem;color:var(--ink3);font-family:var(--mono)">01 / 05</span>
+          <div class="teacher-sol" style="display:none;margin-top:6px;padding:6px 10px;background:var(--gold);color:var(--ink);border-radius:3px;font-size:.75rem;font-family:var(--mono);font-weight:700">EK-Rentabilität = 213 ÷ 1.427 × 100 = 14,9 % | Richtige Antwort: B</div>
       </div>
-      <div class="kz-why">Warum relevant für Anteilseigner? → Die EK-Rentabilität zeigt, wie viel Rendite Hugo Boss auf das <em>eingesetzte Eigenkapital</em> erwirtschaftet – die Kernfrage jedes Aktionärs: <em>„Lohnt sich mein investiertes Kapital hier besser als in einer anderen Anlage?"</em> 2024: Gewinn sank trotz Umsatzrekord. Warum – und wie stark?</div>
-      <div class="calc-steps">
+      <div class="def-quiz" id="defquiz1">
+    <div class="ti"><div class="ti-head">EK-Rentabilität – Definition</div><b>Richtige Antwort: B</b> – JÜ ÷ EK × 100. Zeigt Rendite auf eingesetztes Eigenkapital.<br><b>Häufiger Fehler:</b> A (verwechselt mit absolutem Gewinn) oder C (das ist Nettomarge).</div>
+
+        <div class="def-quiz-q">🔍 Was misst die EK-Rentabilität? Wählt die richtige Erklärung:</div>
+        <div class="def-opt" onclick="checkDef(1,0)">A) Die EK-Rentabilität zeigt, wie viel Gewinn Hugo Boss insgesamt erzielt hat. Je höher der Wert, desto mehr Euro wurden in diesem Jahr verdient.</div>
+<div class="def-opt" onclick="checkDef(1,1)">B) Die EK-Rentabilität zeigt, wie viel Gewinn auf jeden Euro eingesetztes Eigenkapital entfällt. Sie beantwortet die Frage: Lohnt sich mein Investment im Vergleich zu anderen Anlagen?</div>
+<div class="def-opt" onclick="checkDef(1,2)">C) Die EK-Rentabilität zeigt, wie viel Prozent des Umsatzes als Gewinn übrig bleibt – also wie effizient Hugo Boss im Verkauf ist.</div>
+        <div class="def-fb" id="deffb1"></div>
+      </div>
+      <div class="calc-steps locked" id="calcsteps1">
         <div class="cs-label">Schritt 1 — Werte aus GuV und Bilanz ablesen</div>
         <div class="calc-formula-row">
           <div class="cf-group"><div class="cf-lbl"><b><span class="gl" data-term="jue">JÜ auf Anteilseigner</span></div><input class="ci2" id="k1z" type="number" placeholder="?"></div>
@@ -459,6 +599,8 @@ body.teacher-mode .teacher-banner{display:block}
         </div>
         <button class="check-btn" id="k1btn1" onclick="checkKZstep1(1,213,1427)">Werte prüfen</button>
         <div class="ifb" id="k1sfb"></div>
+    <div class="ti"><div class="ti-head">EK-Rentabilität – Berechnung</div><b>Formel:</b> 213 ÷ 1.427 × 100 = <b>14,9 %</b><br>Werte: JÜ aus GuV (letzte Zeile: 213), EK aus Passivseite Bilanz (1.427).<br><b>Häufiger Fehler:</b> Konzernergebnis (224) statt JÜ auf Anteilseigner (213) einsetzen.</div>
+
         <div class="step-divider"></div>
         <div class="step2-hint" id="k1s2hint" style="display:none">✓ Werte korrekt – jetzt berechnen:</div>
         <div class="calc-formula-row" id="k1s2row" style="opacity:.4;pointer-events:none">
@@ -469,19 +611,36 @@ body.teacher-mode .teacher-banner{display:block}
         <button class="check-btn" id="k1btn2" onclick="checkKZresult(1,14.9,'k1i','k1fb','k1iz','k1faz')" style="display:none">Ergebnis prüfen</button>
       </div>
       <div class="ifb" id="k1fb"></div>
+      <div id="hypo1wrap"
+    <div class="ti"><div class="ti-head">Hypothesenbildung KZ1 – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Eigene Erklärung formulieren, warum EK-Rentabilität sank (20% → 14,9%) obwohl Umsatz stieg. Aktiviert analytisches Denken vor der Auflösung.
+    <ul>
+      <li><b>Richtige Hypothesen:</b> "Kosten stiegen stärker als Umsatz" · "Abschreibungen/Wertminderungen drückten Gewinn" · "Investitionen fraßen Marge"</li>
+      <li><b>Akzeptable Hypothesen:</b> Jede plausible Verbindung zwischen Kostensteigerung und sinkendem Gewinn</li>
+      <li><b>Auflösung:</b> Hauptursache sind 47 Mio. € nicht-zahlungswirksame Wertminderungen auf Store-Vermögen – wird in KZ4 vertieft</li>
+    </ul></div>
+ style="display:none;margin:14px 0;padding:14px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--plum)">
+        <div style="font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--plum)">💡 Hypothese – bevor ihr die Auswertung lest</div>
+        <div style="font-size:.84rem;color:var(--ink3);margin-bottom:8px">Die EK-Rentabilität ist von 20,0 % (2023) auf 14,9 % (2024) gesunken – obwohl der Umsatz gestiegen ist. Formuliert eine Hypothese: Was könnte die Ursache sein?</div>
+        <textarea class="obs-input" id="hypo1text" placeholder="z.B. »Die Kosten müssen stärker gestiegen sein als der Umsatz...«" oninput="checkHypo1()" style="min-height:60px"></textarea>
+        <button class="check-btn" id="hypo1btn" onclick="submitHypo1()" disabled style="margin-top:8px;opacity:.4">Hypothese einreichen &amp; Interpretation ansehen</button>
+      </div>
       <div class="interp" id="k1iz">
         <div class="interp-q">EK-Rentabilität = 14,9 %. Wie bewertet ihr das für den Anteilseigner – und was sagt der Trend?</div>
         <div class="iopt" data-ki="1" data-oi="0">A) 14,9 % ist ausgezeichnet – Hugo Boss hat seine Renditestärke von 2015 (33,4 %) vollständig wiederhergestellt.</div>
         <div class="iopt" data-ki="1" data-oi="1">B) 14,9 % liegt noch knapp über dem Marktdurchschnitt (~12 %), ist aber ein deutlicher Rückgang gegenüber 2023 (20,0 %) – trotz Umsatzrekord. Das ist ein Warnsignal.</div>
         <div class="iopt" data-ki="1" data-oi="2">C) Die EK-Rentabilität ist für Aktionäre irrelevant – entscheidend ist allein der Kursgewinn der Aktie.</div>
         <div class="ifb" id="k1ifb"></div>
+    <div class="ti"><div class="ti-head">EK-Rentabilität – Interpretation</div><b>Richtige Antwort: B</b> – 14,9 % noch über Marktdurchschnitt (~12 %), aber Rückgang von 20,0 % ist Warnsignal.<br><b>Achten auf:</b> SuS sollen den Trend erkennen, nicht nur den absoluten Wert. A übersieht den Rückgang, C ist grundsätzlich falsch.</div>
+
         <div class="fazit-box" id="k1faz">
           <div class="fzt">Analyst-Fazit</div>
-          Mit 14,9 % EK-Rentabilität liegt Hugo Boss noch <em>knapp über dem DAX-Durchschnitt (~12 %)</em>. Aber der Trend ist alarmierend: 2023 waren es noch 20,0 %, 2015 sogar 33,4 %. Der Jahresüberschuss sank um 17 % auf 213 Mio. € trotz Umsatzrekord – Ursache: höhere Abschreibungen (414 Mio. €) und gestiegene Vertriebskosten. <strong>Für den Anteilseigner: Warnsignal.</strong> Ist das strukturell oder temporär? Hugo Boss prognostiziert für 2025 deutliche Ergebnisverbesserung.
+          Mit 14,9 % EK-Rentabilität liegt Hugo Boss noch <em>knapp über dem DAX-Durchschnitt (~12 %)</em>. Aber der Trend zeigt nach unten: 2023 waren es noch 20,0 %, 2015 sogar 33,4 %. Der Jahresüberschuss sank um 17 % auf 213 Mio. € – trotz Umsatzrekord. Ursache: höhere Abschreibungen (414 Mio. €) und gestiegene Vertriebskosten. <strong>Für die Verdoppelungsfrage:</strong> Wenn die Renditestärke weiter sinkt, lohnt sich die Verdoppelung nicht. Ist dieser Rückgang strukturell (dauerhaft) oder temporär (Investitionsphase)?
           <div class="kz-trend">
             <div class="kz-trend-title">📈 Entwicklung im Zeitverlauf</div>
             <table>
-              <thead><tr><th>EK-Rentabilität (%)</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+              <thead><tr><th>EK-Rentabilität (%)</th>
+    <div class="ti"><div class="ti-head">Trendaufgabe EK-Rentabilität</div><ul><li><b>Höchstwert:</b> 2015 (33,4 %) – vor globalem Wachstumsprogramm</li><li><b>2020:</b> COVID-Lockdowns → Umsatzeinbruch → negativer JÜ → −29,1 %</li><li><b>Kernaussage:</b> Rückgang 2024 trotz Umsatzrekord = Warnsignal, strukturell vs. temporär ist die offene Frage</li></ul></div>
+<th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
               <tbody><tr><td></td><td class="">26,6</td><td class="">33,4</td><td class="t-neg">−29,1</td><td class="">14,8</td><td class="">18,8</td><td class="">20,0</td><td class="t-hi t-neg">14,9</td></tr></tbody>
             </table>
             <div class="kz-trend-q">
@@ -501,9 +660,18 @@ body.teacher-mode .teacher-banner{display:block}
           <div class="kz-name">Umsatzrendite (Nettomarge)</div>
         </div>
         <span style="font-size:.8rem;color:var(--ink3);font-family:var(--mono)">02 / 05</span>
+          <div class="teacher-sol" style="display:none;margin-top:6px;padding:6px 10px;background:var(--gold);color:var(--ink);border-radius:3px;font-size:.75rem;font-family:var(--mono);font-weight:700">Nettomarge = 213 ÷ 4.307 × 100 = 4,9 % | Richtige Antwort: B</div>
       </div>
-      <div class="kz-why">Warum relevant? → Die Umsatzrendite zeigt, wie viel von jedem verdienten Euro als Gewinn übrig bleibt. Sie ist ein Maßstab für die Effizienz und Profitabilität des Unternehmens – und ein wichtiges Vergleichsinstrument zwischen Jahren und Wettbewerbern.</div>
-      <div class="calc-steps">
+      <div class="def-quiz" id="defquiz2">
+    <div class="ti"><div class="ti-head">Nettomarge – Definition</div><b>Richtige Antwort: B</b> – JÜ ÷ Umsatz × 100. Von 100 € Umsatz bleiben x € Gewinn.<br><b>Häufiger Fehler:</b> A (das ist EK-Rentabilität) oder C (das ist EK-Quote).</div>
+
+        <div class="def-quiz-q">🔍 Was misst die Nettomarge (Umsatzrendite)? Wählt die richtige Erklärung:</div>
+        <div class="def-opt" onclick="checkDef(2,0)">A) Die Nettomarge zeigt, wie hoch der Gewinn im Verhältnis zum eingesetzten Eigenkapital ist – sie beantwortet, ob sich das Kapital der Aktionäre lohnt.</div>
+<div class="def-opt" onclick="checkDef(2,1)">B) Die Nettomarge zeigt, wie viel von jedem Euro Umsatz am Ende als Gewinn übrig bleibt. Sie misst, wie profitabel Hugo Boss wirtschaftet.</div>
+<div class="def-opt" onclick="checkDef(2,2)">C) Die Nettomarge zeigt, ob Hugo Boss mehr Eigenkapital als Fremdkapital hat – also wie sicher das Unternehmen finanziert ist.</div>
+        <div class="def-fb" id="deffb2"></div>
+      </div>
+      <div class="calc-steps locked" id="calcsteps2">
         <div class="cs-label">Schritt 1 — Werte aus der GuV ablesen</div>
         <div class="calc-formula-row">
           <div class="cf-group"><div class="cf-lbl"><b>Jahresüberschuss</b> (Mio. €)</div><input class="ci2" id="k2z" type="number" placeholder="?"></div>
@@ -513,6 +681,8 @@ body.teacher-mode .teacher-banner{display:block}
         </div>
         <button class="check-btn" id="k2btn1" onclick="checkKZstep1(2,213,4307)">Werte prüfen</button>
         <div class="ifb" id="k2sfb"></div>
+    <div class="ti"><div class="ti-head">Nettomarge – Berechnung</div><b>Formel:</b> 213 ÷ 4.307 × 100 = <b>4,9 %</b><br>Beide Werte aus der GuV: JÜ (unten) und Umsatz (oben).<br><b>Häufiger Fehler:</b> EBIT (361) statt JÜ (213) verwenden.</div>
+
         <div class="step-divider"></div>
         <div class="step2-hint" id="k2s2hint" style="display:none">✓ Werte korrekt – jetzt berechnen:</div>
         <div class="calc-formula-row" id="k2s2row" style="opacity:.4;pointer-events:none">
@@ -526,16 +696,20 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="interp" id="k2iz">
         <div class="interp-q">Wie bewertet ihr die Umsatzrendite von Hugo Boss im Zeitvergleich?</div>
         <div class="iopt" data-ki="2" data-oi="0">A) 4,9 % ist für die Modebranche in Ordnung – kein Handlungsbedarf.</div>
-        <div class="iopt" data-ki="2" data-oi="1">B) Umsatz steigt (+2,6 %), aber Nettomarge fällt: 4,9 % (2024) vs. 6,1 % (2023) vs. 11,4 % (2015). Wachstum kostet mehr als es einbringt – allerdings erklärt der starke <span class="gl" data-term="fcf">Free Cashflow</span> (497 Mio. €), dass buchhalterische Abschreibungen den Hauptgrund bilden.</div>
+        <div class="iopt" data-ki="2" data-oi="1">B) Umsatz steigt (+2,6 %), aber Nettomarge fällt: 4,9 % (2024) vs. 6,1 % (2023) vs. 11,4 % (2015). Trotz Umsatzrekord bleibt weniger Gewinn übrig. Das ist ein Warnsignal – aber ist das der ganze Grund?</div>
         <div class="iopt" data-ki="2" data-oi="2">C) Die Nettomarge ist irrelevant – entscheidend ist nur der absolute Gewinnbetrag in Euro.</div>
         <div class="ifb" id="k2ifb"></div>
+    <div class="ti"><div class="ti-head">Nettomarge – Interpretation</div><b>Richtige Antwort: B</b> – Umsatz steigt, Marge fällt. Warnsignal, aber Cashflow zeigt operative Stärke.<br><b>Achten auf:</b> Den Spannungsbogen zu KZ4 nutzen – warum fällt Marge, obwohl Cashflow steigt?</div>
+
         <div class="fazit-box" id="k2faz">
           <div class="fzt">Analyst-Fazit</div>
-          Von 100 € Umsatz bleiben 4,90 € Nettogewinn – am unteren Rand der Branche (5–8 %). Der wichtigste analytische Hinweis: Der <strong><span class="gl" data-term="fcf">Free Cashflow</span> explodierte auf 497 Mio. €</strong> (2023: 96 Mio. €). Gewinn und Cashflow laufen auseinander – Grund: 47 Mio. € buchhalterische Wertminderungen (nicht-zahlungswirksam = kein Geld fließt tatsächlich ab) drücken den bilanziellen Gewinn. Das unterscheidet Bilanzkosmetik von echten Verlusten. <strong>Für Dr. Köhlers Bericht: Wachstum erkauft, Marge gesunken – aber Cashflow-Stärke beruhigt.</strong>
+          Von 100 € Umsatz bleiben 4,90 € Nettogewinn – am unteren Rand der Branche (5–8 %). Umsatz wächst, aber die Marge sinkt. Das klingt nach einem echten Problem. <strong>Aber Vorsicht:</strong> Nicht jeder Gewinnrückgang bedeutet, dass ein Unternehmen schwächelt. Manchmal liegen die Ursachen in der Buchhaltung – nicht im Kerngeschäft. <em>Wie das genau funktioniert, seht ihr bei der nächsten Kennzahl.</em>
           <div class="kz-trend">
             <div class="kz-trend-title">📈 Entwicklung im Zeitverlauf</div>
             <table>
-              <thead><tr><th>Nettomarge (%)</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+              <thead><tr><th>Nettomarge (%)
+    <div class="ti"><div class="ti-head">Trendaufgabe Nettomarge</div><ul><li><b>Kernerkenntnis:</b> Umsatz verdoppelt (2,8 → 4,3 Mrd.), Marge halbiert (11,4 → 4,9 %) → Wachstum auf Kosten der Rentabilität</li><li><b>Aber:</b> 2024er Rückgang buchhalterisch bedingt (Abschreibungen) – Cashflow widerspricht</li></ul></div>
+</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
               <tbody><tr><td></td><td class="">5,8</td><td class="">11,4</td><td class="t-neg">−11,3</td><td class="">4,9</td><td class="">5,7</td><td class="">6,1</td><td class="t-hi t-neg">4,9</td></tr></tbody>
             </table>
             <div class="kz-trend-q">
@@ -555,9 +729,18 @@ body.teacher-mode .teacher-banner{display:block}
           <div class="kz-name">Eigenkapitalquote (EK-Quote)</div>
         </div>
         <span style="font-size:.8rem;color:var(--ink3);font-family:var(--mono)">03 / 05</span>
+          <div class="teacher-sol" style="display:none;margin-top:6px;padding:6px 10px;background:var(--gold);color:var(--ink);border-radius:3px;font-size:.75rem;font-family:var(--mono);font-weight:700">EK-Quote = 1.427 ÷ 3.782 × 100 = 37,7 % | Richtige Antwort: B</div>
       </div>
-      <div class="kz-why">Warum relevant für Anteilseigner? → Als Aktionär seid ihr <em>Eigenkapitalgeber</em> – im Insolvenzfall werdet ihr zuletzt bedient. Eine hohe EK-Quote bedeutet: mehr Puffer, geringeres Verlustrisiko. Sie zeigt auch, ob Hugo Boss nach der COVID-Krise (2020: 29,3 %) wirklich stabiler geworden ist.</div>
-      <div class="calc-steps">
+      <div class="def-quiz" id="defquiz3">
+    <div class="ti"><div class="ti-head">EK-Quote – Definition</div><b>Richtige Antwort: B</b> – EK ÷ Bilanzsumme × 100. Anteil Eigenkapital am Gesamtkapital.<br><b>Häufiger Fehler:</b> A (das ist EPS/Gewinn je Aktie) oder C (das beschreibt Wachstum).</div>
+
+        <div class="def-quiz-q">🔍 Was zeigt die EK-Quote? Wählt die richtige Erklärung:</div>
+        <div class="def-opt" onclick="checkDef(3,0)">A) Die EK-Quote zeigt, wie viel Gewinn Hugo Boss pro Aktie verdient – sie ist deshalb besonders für Anlageentscheidungen relevant.</div>
+<div class="def-opt" onclick="checkDef(3,1)">B) Die EK-Quote zeigt, welcher Anteil des gesamten Kapitals aus eigenen Mitteln stammt. Je höher, desto unabhängiger ist Hugo Boss von Banken und Gläubigern.</div>
+<div class="def-opt" onclick="checkDef(3,2)">C) Die EK-Quote zeigt, wie stark Hugo Boss im Vergleich zu Wettbewerbern wächst – also die relative Wachstumsgeschwindigkeit.</div>
+        <div class="def-fb" id="deffb3"></div>
+      </div>
+      <div class="calc-steps locked" id="calcsteps3">
         <div class="cs-label">Schritt 1 — Werte aus der Bilanz ablesen</div>
         <div class="calc-formula-row">
           <div class="cf-group"><div class="cf-lbl"><b>Eigenkapital</b> (Mio. €)</div><input class="ci2" id="k3z" type="number" placeholder="?"></div>
@@ -567,6 +750,8 @@ body.teacher-mode .teacher-banner{display:block}
         </div>
         <button class="check-btn" id="k3btn1" onclick="checkKZstep1(3,1427,3782)">Werte prüfen</button>
         <div class="ifb" id="k3sfb"></div>
+    <div class="ti"><div class="ti-head">EK-Quote – Berechnung</div><b>Formel:</b> 1.427 ÷ 3.782 × 100 = <b>37,7 %</b><br>Beide Werte aus Bilanz Passivseite: EK (1.427) und Bilanzsumme (3.782).<br><b>Häufiger Fehler:</b> EK durch FK teilen (das wäre Verschuldungsgrad).</div>
+
         <div class="step-divider"></div>
         <div class="step2-hint" id="k3s2hint" style="display:none">✓ Werte korrekt – jetzt berechnen:</div>
         <div class="calc-formula-row" id="k3s2row" style="opacity:.4;pointer-events:none">
@@ -583,9 +768,11 @@ body.teacher-mode .teacher-banner{display:block}
         <div class="iopt" data-ki="3" data-oi="1">B) 37,7 % ist moderat: unter dem Idealwert (50 %), aber über dem dt. Industriedurchschnitt (~20 %) und mit klarem Aufwärtstrend seit 2020 (29,3 %). Das Verlustrisiko für Anteilseigner sinkt.</div>
         <div class="iopt" data-ki="3" data-oi="2">C) Die EK-Quote ist für Aktionäre irrelevant – sie betrifft nur Banken als Kreditgeber.</div>
         <div class="ifb" id="k3ifb"></div>
+    <div class="ti"><div class="ti-head">EK-Quote – Interpretation</div><b>Richtige Antwort: B</b> – 37,7 % unter Ideal (50 %), aber Trend seit 2020 positiv (29,3 % → 37,7 %).<br><b>Achten auf:</b> SuS sollen Trend UND Absolutwert kombinieren. A übertreibt das Risiko.</div>
+
         <div class="fazit-box" id="k3faz">
           <div class="fzt">Analyst-Fazit</div>
-          Mit 37,7 % EK-Quote liegt Hugo Boss <em>unter dem Idealwert von 50 %</em>, aber deutlich <em>über dem deutschen Industriedurchschnitt von ca. 20 %</em>. Entscheidend ist der Trend: 2020 (COVID-Tief) lag die Quote bei nur 29,3 % – seither steigt sie kontinuierlich. Das zeigt, dass Hugo Boss aus laufenden Gewinnen systematisch Eigenkapital aufbaut. Für den Anteilseigner: <strong>Das Risiko eines Totalverlustes sinkt von Jahr zu Jahr.</strong>
+          Mit 37,7 % EK-Quote liegt Hugo Boss <em>unter dem Idealwert von 50 %</em>, aber deutlich über dem deutschen Industriedurchschnitt (~20 %). Trend: 2020 nur 29,3 % → 2024 bereits 37,7 %. Hugo Boss baut systematisch Eigenkapital auf. <strong>Für die Verdoppelungsfrage:</strong> Eine steigende EK-Quote bedeutet wachsende finanzielle Stabilität. Das Risiko für Anteilseigner, im Ernstfall alles zu verlieren, sinkt – ein beruhigendes Signal für eine langfristige Positionsaufstockung.
           <div class="kz-trend">
             <div class="kz-trend-title">📈 Entwicklung im Zeitverlauf</div>
             <table>
@@ -601,59 +788,115 @@ body.teacher-mode .teacher-banner{display:block}
       </div>
     </div>
 
-    <!-- KZ 4: Anlagendeckung -->
+    <!-- KZ 4: Free Cashflow -->
     <div class="kz-card" id="kz4">
       <div class="kz-head">
         <div>
-          <span class="tag tag-y">Anlagendeckung</span>
-          <div class="kz-name">Deckungsgrad II (Goldene Bilanzregel)</div>
+          <span class="tag tag-b">Liquidität</span>
+          <div class="kz-name"><span class="gl" data-term="fcf">Free Cashflow</span> – Wie viel Geld bleibt wirklich übrig?</div>
         </div>
         <span style="font-size:.8rem;color:var(--ink3);font-family:var(--mono)">04 / 05</span>
+          <div class="teacher-sol" style="display:none;margin-top:6px;padding:6px 10px;background:var(--gold);color:var(--ink);border-radius:3px;font-size:.75rem;font-family:var(--mono);font-weight:700">FCF-Veränderung = (497−96) ÷ 96 × 100 = 418 % | Richtige Antwort: B</div>
       </div>
-      <div class="kz-why">Warum relevant? → Das Anlagevermögen ist langfristig im Unternehmen gebunden (Gebäude, Maschinen, Rechte). Es sollte deshalb auch langfristig finanziert sein – sonst muss Hugo Boss kurzfristig Kredite aufnehmen, wenn Gläubiger plötzlich Geld zurückfordern.</div>
-      <div class="calc-steps">
-        <div class="cs-label">Schritt 1 — Zähler berechnen: EK + langfristiges Fremdkapital</div>
-        <div class="sum-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Eigenkapital</b> (Mio. €)</div><input class="ci2" id="k4ek" type="number" placeholder="?"></div>
-          <div class="cf-op">+</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Langfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="k4fk" type="number" placeholder="?" style="width:110px"></div>
+      <div class="analogy-card" id="analogyCard4">
+    <div class="ti"><div class="ti-head">Analogie Bäcker – Aufgabe & Lösung</div><b>Was sollen SuS leisten?</b> Erkennen, dass Geld bei der Anschaffung fließt – nicht bei jährlicher Abschreibung.
+    <ul>
+      <li><b>Richtige Antwort:</b> Das Geld floss beim Kauf des Ofens (Jahr 0 / Anschaffung)</li>
+      <li><b>Kernlernziel:</b> Abschreibung = buchhalterische Aufteilung, kein weiterer Geldabfluss</li>
+      <li><b>Transfer auf Hugo Boss:</b> 47 Mio. € Wertminderungen auf Stores senken GuV-Gewinn, aber kein Geld fließt ab → FCF deutlich höher als JÜ</li>
+    </ul></div>
+
+        <div style="font-size:.88rem;font-weight:700;margin-bottom:8px">🥐 Denkt zuerst selbst nach – bevor ihr die Erklärung lest</div>
+        <div style="font-size:.85rem;line-height:1.6;margin-bottom:10px">
+          Ein Bäcker kauft für 8.000 € einen neuen Ofen. Der Ofen hält 8 Jahre. Laut Buchhaltung schreibt er jedes Jahr 1.000 € ab – das erscheint als Aufwand in der GuV und senkt den Gewinn um 1.000 €.<br><br>
+          Aber: <em>Wann ist das Geld wirklich geflossen?</em>
+        </div>
+        <textarea class="obs-input" id="analogyText4" placeholder="Eure Antwort: Das Geld ist geflossen, als..." oninput="checkAnalogy4()" style="min-height:56px;background:var(--paper)"></textarea>
+        <button class="check-btn" id="analogyBtn4" onclick="submitAnalogy4()" disabled style="margin-top:8px;opacity:.4">Weiter zur Erklärung →</button>
+        <div class="ifb" id="analogyfb4"></div>
+      </div>
+      <div id="fcfExplanation" style="display:none">
+      <div class="kz-why">
+        <strong>Was ist der Cashflow – und warum ist er nicht dasselbe wie Gewinn?</strong><br><br>
+        Der <span class="gl" data-term="fcf">Cashflow</span> misst die <em>tatsächlichen Geldströme</em> eines Unternehmens: alle Geldzuflüsse (z.B. Einnahmen aus dem Verkauf) minus alle Geldabflüsse (z.B. Zahlungen für Personal, Lieferanten, Investitionen). Er zeigt also, wie viel Geld wirklich geflossen ist – nicht was buchhalterisch ausgewiesen wird.<br><br>
+        <strong>Das klingt nach GuV – wo ist der Unterschied?</strong><br>
+        In der GuV tauchen auch Aufwendungen auf, bei denen <em>gar kein Geld fließt</em>. Das wichtigste Beispiel: <strong>Abschreibungen.</strong><br><br>
+        Hugo Boss hat 2024 Ladenlokale, die schlechter laufen, in der Buchhaltung um <strong>47 Mio. €</strong> abgewertet (Wertminderung). Das erscheint als Aufwand in der GuV und senkt den Jahresüberschuss – aber es fließt kein einziger Euro ab. Das Geld ist nicht weg. Es wurde nie ausgegeben.<br><br>
+        <strong>Einfache Formel (indirekte Methode nach Kennzahlenpapier):</strong><br>
+        <div style="background:var(--paper2);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 var(--r) var(--r) 0;font-family:var(--mono);font-size:.88rem;margin:10px 0">
+          Cashflow ≈ Jahresüberschuss <strong>+ Abschreibungen</strong> ± Veränderungen im Umlaufvermögen
+        </div>
+        Bei Hugo Boss 2024: JÜ = 213 Mio. € + Abschreibungen 414 Mio. € − Investitionen und sonstige Effekte = <strong>497 Mio. € Free Cashflow</strong>.<br><br>
+        <strong>Merksatz:</strong> <em>Gewinn ist, was die Buchhaltung ausweist. Cashflow ist, was tatsächlich auf dem Konto landet.</em>
+      </div>
+      <div class="def-quiz" id="defquiz4">
+    <div class="ti"><div class="ti-head">Free Cashflow – Definition</div><b>Richtige Antwort: B</b> – tatsächliche Geldflüsse, unabhängig von Abschreibungen.<br><b>Häufiger Fehler:</b> A (das ist Umsatz) oder C (das ist Verschuldungsgrad).</div>
+
+        <div class="def-quiz-q">🔍 Was zeigt der Free Cashflow? Wählt die richtige Erklärung:</div>
+        <div class="def-opt" onclick="checkDef(4,0)">A) Der Free Cashflow zeigt, wie viel Umsatz Hugo Boss im Geschäftsjahr erzielt hat – also die gesamten Einnahmen aus dem Verkauf von Kleidung.</div>
+<div class="def-opt" onclick="checkDef(4,1)">B) Der Free Cashflow zeigt, wie viel Geld nach allen Ausgaben und Investitionen tatsächlich übrig bleibt. Er kann stark vom Gewinn abweichen, weil manche Buchungsposten keinen echten Geldfluss auslösen.</div>
+<div class="def-opt" onclick="checkDef(4,2)">C) Der Free Cashflow zeigt, wie viel Fremdkapital Hugo Boss im Geschäftsjahr aufgenommen hat – also wie stark sich das Unternehmen neu verschuldet hat.</div>
+        <div class="def-fb" id="deffb4"></div>
+      </div>
+      </div><!-- /fcfExplanation -->
+      <div class="calc-steps locked" id="calcsteps4">
+        <div class="notice" style="margin-bottom:16px;font-size:.88rem">
+          <strong>Woher kommen die Werte?</strong> Der Free Cashflow steht in der <em>Kapitalflussrechnung</em> – einem dritten Teil des Geschäftsberichts neben Bilanz und GuV. Ihr habt die Kapitalflussrechnung noch nicht behandelt, daher werden euch die Werte direkt vorgegeben. Eure Aufgabe ist es, die Veränderung zu berechnen – und vor allem zu verstehen, <em>warum</em> Cashflow und Gewinn so stark voneinander abweichen.
+        </div>
+        <div class="cs-label">Die Werte aus dem Geschäftsbericht 2024</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+          <div style="background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:14px 16px;text-align:center">
+            <div style="font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-family:var(--mono);margin-bottom:8px">Free Cashflow 2023</div>
+            <div style="font-size:1.6rem;font-weight:700;font-family:var(--mono);color:var(--slate)">96 Mio. €</div>
+          </div>
+          <div style="background:var(--paper2);border:2px solid var(--ok);border-radius:var(--r);padding:14px 16px;text-align:center">
+            <div style="font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-family:var(--mono);margin-bottom:8px">Free Cashflow 2024</div>
+            <div style="font-size:1.6rem;font-weight:700;font-family:var(--mono);color:var(--ok)">497 Mio. €</div>
+          </div>
+        </div>
+        <div class="notice" style="background:var(--redl);border-color:var(--red);margin-bottom:16px;font-size:.88rem">
+          <strong>Auffällig:</strong> Der Jahresüberschuss 2024 sank auf 213 Mio. € (−17 %). Der Free Cashflow stieg gleichzeitig auf 497 Mio. € (+418 %). Wie passt das zusammen?
+        </div>
+        <div class="cs-label">Berechne die Veränderung des Free Cashflow</div>
+        <div class="calc-formula-row" style="flex-wrap:wrap;gap:10px;align-items:center">
+          <div style="font-size:.9rem;font-family:var(--mono);background:var(--paper2);padding:9px 14px;border-radius:var(--r);border:1px solid var(--paper3)">
+            <span style="font-size:.7rem;display:block;color:var(--ink3);margin-bottom:2px">(FCF 2024 − FCF 2023) ÷ FCF 2023 × 100</span>
+            (497 − 96) ÷ 96 × 100
+          </div>
           <div class="cf-op">=</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Summe Zähler</b> (Mio. €)</div><input class="ci2" id="k4sum" type="number" placeholder="?"></div>
+          <div class="cf-group">
+            <div class="cf-lbl"><b>Veränderung</b> (Ergebnis eintragen)</div>
+            <input class="ci2" id="k4i" type="number" placeholder="?" step="1">
+          </div>
+          <div style="font-size:.9rem;color:var(--ink3)">%</div>
         </div>
-        <div class="cs-label" style="margin-top:10px">+ Nenner ablesen</div>
-        <div class="calc-formula-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Anlagevermögen</b> (Mio. €)</div><input class="ci2" id="k4n" type="number" placeholder="?"></div>
-        </div>
-        <button class="check-btn" id="k4btn1" onclick="checkKZstep1sum(4,1427,1282,2709,2400)">Werte prüfen</button>
-        <div class="ifb" id="k4sfb"></div>
-        <div class="step-divider"></div>
-        <div class="step2-hint" id="k4s2hint" style="display:none">✓ Werte korrekt – jetzt Deckungsgrad II berechnen:</div>
-        <div class="calc-formula-row" id="k4s2row" style="opacity:.4;pointer-events:none">
-          <div class="cf-group"><div class="cf-lbl"><b>Ergebnis</b></div>
-            <input class="ci2" id="k4i" type="number" placeholder="?" disabled></div>
-          <div class="cf-op">%</div>
-        </div>
-        <button class="check-btn" id="k4btn2" onclick="checkKZresult(4,112.9,'k4i','k4fb','k4iz','k4faz')" style="display:none">Ergebnis prüfen</button>
+        <button class="check-btn" id="k4btn2" onclick="checkFCFresult()" style="margin-top:10px">Ergebnis prüfen</button>
       </div>
       <div class="ifb" id="k4fb"></div>
+    <div class="ti"><div class="ti-head">Free Cashflow – Berechnung</div><b>Formel:</b> (497 − 96) ÷ 96 × 100 = <b>+418 %</b> (Vervierfachung!)<br>Werte werden vorgegeben (aus Kapitalflussrechnung, noch nicht behandelt).<br><b>Kernbotschaft:</b> Gewinn sank um 17 %, Cashflow stieg um 418 % – genau dieser Widerspruch ist der Lerngegenstand.</div>
+
       <div class="interp" id="k4iz">
-        <div class="interp-q">Was bedeutet ein Deckungsgrad II über 100 % für die Unternehmensstruktur?</div>
-        <div class="iopt" data-ki="4" data-oi="0">A) Er bedeutet, dass Hugo Boss zu viel langfristiges Kapital hat und ineffizient wirtschaftet.</div>
-        <div class="iopt" data-ki="4" data-oi="1">B) Das gesamte Anlagevermögen (inkl. IFRS-16-Nutzungsrechte) ist langfristig finanziert – Goldene Bilanzregel erfüllt. Kein Insolvenzrisiko für Anteilseigner.</div>
-        <div class="iopt" data-ki="4" data-oi="2">C) Er bedeutet, dass Hugo Boss zahlungsunfähig ist, weil zu viel Kapital langfristig gebunden ist.</div>
+        <div class="interp-q">Der Jahresüberschuss sinkt (−17 %), der Free Cashflow steigt (+418 %). Was ist die richtige Erklärung?</div>
+        <div class="iopt" data-ki="4" data-oi="0">A) Das ist ein Fehler im Geschäftsbericht – Gewinn und Cashflow müssen immer in dieselbe Richtung laufen.</div>
+        <div class="iopt" data-ki="4" data-oi="1">B) Der Gewinn sank durch 47 Mio. € Wertminderungen auf Stores – buchhalterischer Aufwand, aber kein Geldabfluss. Dazu hat Hugo Boss Vorräte abgebaut und Forderungen schneller eingezogen. Das Kerngeschäft generiert mehr Geld als der Gewinn zeigt.</div>
+        <div class="iopt" data-ki="4" data-oi="2">C) Ein hoher Free Cashflow ist immer ein Zeichen für Wachstum – Hugo Boss investiert also stark in die Zukunft.</div>
         <div class="ifb" id="k4ifb"></div>
+    <div class="ti"><div class="ti-head">Free Cashflow – Interpretation</div><b>Richtige Antwort: B</b> – Wertminderungen = buchhalterischer Aufwand ohne Geldabfluss.<br><b>Kernlernziel:</b> Unterschied Gewinn vs. Cashflow verstehen. A ist falsch (sie können sich unterscheiden). C ist falsch.</div>
+
         <div class="fazit-box" id="k4faz">
           <div class="fzt">Analyst-Fazit</div>
-          Mit 112,9 % ist die <em>Goldene Bilanzregel gut erfüllt</em> – das gesamte Anlagevermögen (inkl. IFRS-16-Nutzungsrechte für ~750 Stores) ist langfristig finanziert. <strong>Solides Stabilitätsmerkmal.</strong> Sogar ein Teil des Umlaufvermögens wird durch langfristiges Kapital gedeckt.
+          <strong>Das ist der wichtigste analytische Moment dieser ganzen Analyse:</strong> Gewinn und Geld sind nicht dasselbe. Hugo Boss wies 2024 nur 213 Mio. € Jahresüberschuss aus – aber 497 Mio. € <span class="gl" data-term="fcf">Free Cashflow</span>. Der Unterschied kommt fast vollständig aus 47 Mio. € nicht-zahlungswirksamen Wertminderungen auf Ladengeschäfte sowie einem konsequenten Abbau von Lagerbeständen. Das Kerngeschäft ist operativ deutlich stärker, als die GuV zeigt. <strong>Für die Verdoppelungsfrage:</strong> Ein Anteilseigner, der nur auf den Gewinn schaut, sieht ein schwächeres Unternehmen als es ist. Wer den Cashflow einbezieht, sieht: Hugo Boss hat 2024 mehr echtes Geld erwirtschaftet als je zuvor.
           <div class="kz-trend">
-            <div class="kz-trend-title">📈 Entwicklung im Zeitverlauf</div>
+            <div class="kz-trend-title">📈 Free Cashflow im Zeitverlauf (Mio. €)</div>
             <table>
-              <thead><tr><th>EBIT (Mio. €)</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
-              <tbody><tr><td></td><td class="">268</td><td class="">477</td><td class="t-neg">−236</td><td class="">228</td><td class="">335</td><td class="">410</td><td class="t-hi t-neg">361</td></tr></tbody>
+              <thead><tr><th>Free Cashflow (Mio
+    <div class="ti"><div class="ti-head">Trendaufgabe Free Cashflow</div><ul><li><b>2021 hoch:</b> Post-COVID-Erholung, Lagerabbau nach Lockdowns</li><li><b>2022/23 niedrig:</b> Hohe Investitionen (neue Stores, Konzernzentrale)</li><li><b>2024 hoch:</b> Abschreibungseffekt + Vorratsabbau. <b>Botschaft:</b> FCF schwankt stark, einzelne Jahreswerte mit Vorsicht interpretieren</li></ul></div>
+. €)</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+              <tbody><tr><td></td><td>246</td><td>208</td><td>162</td><td>557</td><td>166</td><td class="t-neg">96</td><td class="t-hi t-pos">497</td></tr></tbody>
             </table>
             <div class="kz-trend-q">
-              <strong>Aufgabe – Trend analysieren</strong>
-              Der Deckungsgrad II von 112,9 % zeigt: Hugo Boss finanziert sein Anlagevermögen langfristig – das schützt vor kurzfristigen Zahlungskrisen. Schaut auf das EBIT: Auch hier zeigt sich der Rückgang 2024. Was bedeutet ein sinkender operativer Gewinn für die Fähigkeit, langfristige Schulden zu bedienen?
+              <strong>Aufgabe – Weiterdenken</strong>
+              Schaut auf 2021: Auch dort war der Free Cashflow sehr hoch (557 Mio. €). Und 2022 brach er auf 166 Mio. € ein, 2023 sogar auf 96 Mio. €. Was könnte die Ursache für diese starken Schwankungen sein? Was sagt das über die Verlässlichkeit des Free Cashflow als Kennzahl?
             </div>
           </div>
         </div>
@@ -661,111 +904,203 @@ body.teacher-mode .teacher-banner{display:block}
     </div>
 
 
-    <!-- KZ 5: KGV – Bewertungskennzahl -->
+    <!-- KZ 5: EBIT-Marge – eigene Steuerungsgröße Hugo Boss -->
     <div class="kz-card" id="kz5">
       <div class="kz-head">
         <div>
-          <span class="tag tag-y">Bewertung</span>
-          <div class="kz-name">Kurs-Gewinn-Verhältnis (KGV)</div>
+          <span class="tag tag-y">Profitabilität</span>
+          <div class="kz-name"><span class="gl" data-term="ebitm">EBIT-Marge</span> (operative Gewinnmarge)</div>
         </div>
         <span style="font-size:.8rem;color:var(--ink3);font-family:var(--mono)">05 / 05</span>
+          <div class="teacher-sol" style="display:none;margin-top:6px;padding:6px 10px;background:var(--gold);color:var(--ink);border-radius:3px;font-size:.75rem;font-family:var(--mono);font-weight:700">EBIT-Marge = 361 ÷ 4.307 × 100 = 8,4 % | Richtige Antwort: B</div>
       </div>
-      <div class="kz-why">Warum entscheidend für Anteilseigner? → Die bisherigen Kennzahlen zeigen, <em>wie</em> das Unternehmen wirtschaftet. Das KGV beantwortet eine andere Frage: <em>Wie teuer ist die Aktie gerade?</em><br><br>
-          <b>Zwei Begriffe, die ihr kennen müsst:</b><br>
-          <b>Börsenkurs</b> = der aktuelle Preis einer Aktie an der Börse – was jemand heute zahlen müsste, um eine Aktie zu kaufen.<br>
-          <b>Gewinn je Aktie (EPS)</b> = wie viel Gewinn das Unternehmen pro Aktie im letzten Jahr erwirtschaftet hat.<br><br>
-          Das KGV setzt beides ins Verhältnis: <em>„Wie viele Euro zahle ich heute für 1 Euro Jahresgewinn?"</em></div>
-      <div class="calc-steps">
+      <div class="def-quiz" id="defquiz5">
+    <div class="ti"><div class="ti-head">EBIT-Marge – Definition</div><b>Richtige Antwort: B</b> – EBIT ÷ Umsatz × 100. Operative Gewinnmarge, Hugo Boss' eigene KPI.<br><b>Häufiger Fehler:</b> A (das ist EK-Quote) oder C (das ist KGV – wurde bewusst ersetzt).</div>
+
+        <div class="def-quiz-q">🔍 Was misst die EBIT-Marge? Wählt die richtige Erklärung:</div>
+        <div class="def-opt" onclick="checkDef(5,0)">A) Die EBIT-Marge zeigt, welcher Anteil des Gesamtkapitals aus Eigenkapital besteht – also die finanzielle Unabhängigkeit des Unternehmens.</div>
+<div class="def-opt" onclick="checkDef(5,1)">B) Die EBIT-Marge zeigt, wie viel Prozent des Umsatzes als operativer Gewinn übrig bleiben – vor Zinsen und Steuern. Sie ist Hugo Boss' wichtigste eigene Steuerungsgröße.</div>
+<div class="def-opt" onclick="checkDef(5,2)">C) Die EBIT-Marge zeigt, wie der Aktienkurs im Verhältnis zum Gewinn bewertet wird – also ob die Aktie gerade günstig oder teuer ist.</div>
+        <div class="def-fb" id="deffb5"></div>
+      </div>
+      <div class="calc-steps locked" id="calcsteps5">
         <div class="notice" style="margin-bottom:16px;font-size:.88rem">
-          <strong>Was bedeutet das KGV?</strong><br>
-          Das KGV sagt: <em>„Wie viele Euro zahle ich gerade für 1 Euro Jahresgewinn?"</em><br>
-          KGV = 10 bedeutet: Ich zahle 10 € für 1 € Gewinn pro Jahr. KGV = 20 bedeutet: Ich zahle 20 €.<br>
-          Ein niedriges KGV kann auf eine günstige Bewertung hindeuten – muss es aber nicht.
+          <strong>Formel:</strong> EBIT ÷ Umsatz × 100<br>
+          Beide Werte stehen direkt in der GuV – ihr habt sie schon gesehen.
         </div>
-        <div class="cs-label">Berechne das KGV mit den Werten oben</div>
-        <div style="font-size:.8rem;color:var(--ink3);margin-bottom:10px;padding:8px 12px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--gold)">
-          <b>Warum 32 €?</b> Das ist der Börsenkurs der Hugo-Boss-Aktie im Frühjahr 2025, als dieser Geschäftsbericht analysiert wird. Die Hoffmann Family Office GmbH hat ihre Aktien ebenfalls zu diesem Preis erworben – für sie ist das also gleichzeitig ihr Einstiegskurs. Für das KGV zählt immer der <em>aktuelle</em> Börsenkurs.
+        <div class="cs-label">Schritt 1 — Werte aus der GuV ablesen</div>
+        <div class="calc-formula-row">
+          <div class="cf-group"><div class="cf-lbl"><b>EBIT</b> (Mio. €)</div><input class="ci2" id="k5z" type="number" placeholder="?"></div>
+          <div class="cf-op">÷</div>
+          <div class="cf-group"><div class="cf-lbl"><b>Umsatzerlöse</b> (Mio. €)</div><input class="ci2" id="k5n" type="number" placeholder="?"></div>
+          <div class="cf-op">× 100</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
-          <div style="background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:12px 16px">
-            <div style="font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-family:var(--mono);margin-bottom:6px">Gewinn je Aktie (EPS)</div>
-            <div style="font-size:1.3rem;font-weight:700;font-family:var(--mono);color:var(--ink)">3,09 €</div>
-            <div style="font-size:.75rem;color:var(--ink3);margin-top:4px">JÜ 213 Mio. € ÷ 69,0 Mio. Aktien</div>
-          </div>
-          <div style="background:var(--paper2);border:1px solid var(--paper3);border-radius:var(--r);padding:12px 16px">
-            <div style="font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-family:var(--mono);margin-bottom:6px">Börsenkurs (Frühjahr 2025)</div>
-            <div style="font-size:1.3rem;font-weight:700;font-family:var(--mono);color:var(--ink)">32,00 €</div>
-            <div style="font-size:.75rem;color:var(--ink3);margin-top:4px">Preis einer Hugo-Boss-Aktie an der Börse</div>
-          </div>
+        <button class="check-btn" id="k5btn1" onclick="checkKZstep1(5,361,4307)">Werte prüfen</button>
+        <div class="ifb" id="k5sfb"></div>
+    <div class="ti"><div class="ti-head">EBIT-Marge – Berechnung</div><b>Formel:</b> 361 ÷ 4.307 × 100 = <b>8,4 %</b><br>EBIT aus GuV-Mitte (361), Umsatz aus GuV oben (4.307).<br><b>Häufiger Fehler:</b> EBT (302) oder JÜ (213) statt EBIT verwenden.</div>
+
+        <div class="step-divider"></div>
+        <div class="step2-hint" id="k5s2hint" style="display:none">✓ Werte korrekt – jetzt berechnen:</div>
+        <div class="calc-formula-row" id="k5s2row" style="opacity:.4;pointer-events:none">
+          <div class="cf-group"><div class="cf-lbl"><b>EBIT-Marge</b></div>
+            <input class="ci2" id="k5i" type="number" placeholder="?" step="0.1" disabled></div>
+          <div class="cf-op">%</div>
         </div>
-        <div class="calc-formula-row" style="align-items:center;gap:12px;flex-wrap:wrap">
-          <div style="font-size:.95rem;font-family:var(--mono);background:var(--paper2);padding:10px 16px;border-radius:var(--r);border:1px solid var(--paper3)"><span style="font-size:.7rem;display:block;color:var(--ink3);margin-bottom:2px">Börsenkurs ÷ Gewinn je Aktie</span>32,00 € ÷ 3,09 €</div>
-          <div class="cf-op">=</div>
-          <div class="cf-group">
-            <div class="cf-lbl"><b>KGV</b> (Ergebnis eintragen)</div>
-            <input class="ci2" id="k5kgvi" type="number" placeholder="?" step="0.1">
-          </div>
-          <div style="font-size:.9rem;color:var(--ink3)">fache</div>
-        </div>
-        <button class="check-btn" id="k5kgvbtn2" onclick="checkKGVresult()" style="margin-top:10px">Ergebnis prüfen</button>
+        <button class="check-btn" id="k5btn2" onclick="checkKZresult(5,8.4,'k5i','k5fb','k5iz','k5faz')" style="display:none">Ergebnis prüfen</button>
       </div>
-      <div class="ifb" id="k5kgvfb"></div>
-      <div class="interp" id="k5kgviz">
-        <div class="interp-q">KGV = 10,4x. Der Branchendurchschnitt (Premium-Mode) liegt bei ~15x. Was bedeutet das für eure Empfehlung?</div>
-        <div class="iopt" data-kgv="1" data-oi="0">A) KGV 10,4x ist hoch – die Aktie ist überbewertet und damit ein klares Verkaufssignal.</div>
-        <div class="iopt" data-kgv="1" data-oi="1">B) KGV 10,4x liegt unter dem Branchendurchschnitt (~15x) – die Aktie erscheint trotz schwächerer Gewinne relativ günstig bewertet. Ein mögliches Kaufargument für antizyklisch denkende Investoren (die kaufen, wenn andere verkaufen).</div>
-        <div class="iopt" data-kgv="1" data-oi="2">C) Das KGV ist für Aktionäre irrelevant – entscheidend sind nur die absoluten Gewinne.</div>
-        <div class="ifb" id="k5kgvifb"></div>
-        <div class="fazit-box" id="k5kgvfaz">
+      <div class="ifb" id="k5fb"></div>
+      <div class="interp" id="k5iz">
+        <div class="interp-q">EBIT-Marge 2024 = 8,4 %. Hugo Boss selbst peilt 9,0–10,0 % für 2025 an. Was bedeutet der aktuelle Wert für die Verdopplungsentscheidung?</div>
+        <div class="iopt" data-ki="5" data-oi="0">A) 8,4 % ist ausreichend – Hugo Boss liegt im branchenüblichen Bereich, kein Handlungsbedarf.</div>
+        <div class="iopt" data-ki="5" data-oi="1">B) 8,4 % liegt unter dem eigenen Ziel (9–10 %) und deutlich unter dem Bestwert 2015 (17,0 %). Der Rückgang von 9,8 % (2023) auf 8,4 % (2024) zeigt: Hugo Boss verbrennt mehr Kosten als es an Umsatz gewinnt. Für eine Verdoppelung muss man darauf vertrauen, dass das Management die Marge wieder steigert.</div>
+        <div class="iopt" data-ki="5" data-oi="2">C) Die EBIT-Marge interessiert nur die Geschäftsführung, nicht Anteilseigner.</div>
+        <div class="ifb" id="k5ifb"></div>
+    <div class="ti"><div class="ti-head">EBIT-Marge – Interpretation</div><b>Richtige Antwort: B</b> – 8,4 % unter eigenem Ziel (9–10 %) und unter 2023 (9,8 %).<br><b>Verdopplungsbezug:</b> Wer verdoppelt, wettet auf Margenerholung 2025. Hugo Boss hat geliefert: EBIT-Marge 2025 = 9,2 %.</div>
+
+        <div class="fazit-box" id="k5faz">
           <div class="fzt">Analyst-Fazit</div>
-          Mit einem <span class="gl" data-term="kgv">KGV</span> von 10,4x ist die Hugo-Boss-Aktie (Kurs ~32 €) deutlich <em>günstiger bewertet als der Branchendurchschnitt (~15x)</em>. Das ist der entscheidende Punkt, den die reine Fundamentalanalyse nicht zeigt: <strong>Die Aktie könnte trotz sinkender Gewinne ein Kaufargument haben.</strong> Der Markt hat die schlechten Nachrichten möglicherweise bereits eingepreist. Für euren Kunden: Die Verdopplung der Position wäre dann vertretbar, wenn man glaubt, dass die Profitabilität sich 2025 erholt – Hugo Boss prognostiziert +5 bis +22 % EBIT-Wachstum. Zum Vergleich: H&M hat ein KGV von ~16x, Inditex/Zara von ~20x. Hugo Boss mit ~10x erscheint damit deutlich günstiger.
+          <span class="gl" data-term="ebitm">EBIT-Marge</span> 2024: 8,4 % – <em>unter dem Vorjahr (9,8 %) und weit unter 2015 (17,0 %)</em>. Hugo Boss hat sich selbst 9,0–10,0 % für 2025 zum Ziel gesetzt. Das ist das eigentliche operative Problem: Umsatz wächst (+2,6 %), aber die Kosten wachsen schneller (Vertrieb +9 %, Abschreibungen +21 %). <strong>Für die Verdopplungsentscheidung:</strong> Wer die Position verdoppelt, wettet darauf, dass das Management dieses Ziel erreicht. Hugo Boss hat konkrete Maßnahmen angekündigt – Kostendisziplin, Beschaffungseffizienz, reduzierte Investitionen. Ob das reicht, zeigt 2025.
           <div class="kz-trend">
-            <div class="kz-trend-title">📈 Entwicklung im Zeitverlauf</div>
+
+    <div class="ti"><div class="ti-head">Trendaufgabe EBIT-Marge</div><ul><li><b>Höchstwert 2015 (17,0 %):</b> Vor globalem Expansionsprogramm</li><li><b>2020 negativ:</b> COVID-Fixkostendegression</li><li><b>Hugo Boss Ziel 2025: 9–10 % → erreicht: 9,2 %</b> – das ist die Auflösung für SuS in Szene 7</li></ul></div>
+            <div class="kz-trend-title">📈 EBIT-Marge im Zeitverlauf – Hugo Boss misst sich selbst daran</div>
             <table>
-              <thead><tr><th>Gewinn je Aktie (€)</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
-              <tbody><tr><td></td><td class="">~3,30</td><td class="">~4,10</td><td class="">3,74</td><td class="t-hi t-neg">3,09</td></tr></tbody>
+              <thead><tr><th>EBIT-Marge (%)</th><th>2010</th><th>2015</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th></tr></thead>
+              <tbody><tr><td></td><td>15,5</td><td class="t-pos">17,0</td><td class="t-neg">−12,1</td><td>8,2</td><td>9,2</td><td>9,8</td><td class="t-hi t-neg">8,4</td></tr></tbody>
             </table>
             <div class="kz-trend-q">
               <strong>Aufgabe – Trend analysieren</strong>
-              Das KGV von 10,4x klingt niedrig – aber was bedeutet es konkret? Mit einem Kurs von 32 € und einem EPS von 3,09 € zahlt ihr für 1 € Jahresgewinn etwa 10 €. Bei H&M (KGV ~16x) zahlt ihr 16 €. Ist "günstig" immer ein Kaufargument – oder könnte der Markt einen Grund haben, Hugo Boss tiefer zu bewerten?
+              Hugo Boss peilt 2025 eine EBIT-Marge von 9,0–10,0 % an. Schaut auf die Zeitreihe: In welchem Jahr war die Marge am höchsten? Was war der Einbruch 2020? Und was müsste passieren, damit Hugo Boss wieder auf das Niveau von 2015 kommt? Ist das realistisch?
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="btn-row" style="margin-top:8px"><button class="check-btn gold-btn hidden" id="sc3nxt" onclick="nextScene(4)">Zur Gesamtbewertung →</button></div>
+    <button id="sc3nxt" class="hidden" onclick="nextScene(4)" style="display:none"></button>
+    <div id="zwischenurteilWrap" class="hidden" style="margin-top:16px">
+      <div class="notice" style="margin-bottom:14px">
+        <strong>Zwischenstopp – zwei Aufgaben, bevor es weitergeht</strong>
+      </div>
+
+      <!-- SCHRITT 1: RANGORDNUNG -->
+      <div id="rangWrap">
+    <div class="ti"><div class="ti-head">Rangordnung – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Die 5 KZ nach Relevanz für die Verdopplungsentscheidung ordnen und die Platz-1-Wahl begründen.
+    <ul>
+      <li><b>Kein fixes Richtig/Falsch</b> – jede begründete Rangordnung ist akzeptabel</li>
+      <li><b>Professionelle Sicht:</b> EK-Rentabilität und EBIT-Marge meist Platz 1–2 (zeigen Renditestärke und operative Entwicklung)</li>
+      <li><b>Diskussionswürdig:</b> FCF oft unterschätzt (zeigt operative Stärke trotz schwachem Gewinn)</li>
+      <li><b>EK-Quote:</b> Für Anteilseigner eher nachrangig – wichtiger für Kreditgeber</li>
+    </ul></div>
+
+        <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">Schritt 1: Rangordnung</div>
+        <div style="font-size:.84rem;color:var(--ink3);margin-bottom:10px">Klickt die Kennzahlen in der Reihenfolge ihrer Wichtigkeit für die Verdopplungsentscheidung an – Platz 1 = wichtigste Kennzahl.</div>
+        <div class="rank-chips" id="rankChips">
+          <span class="rank-chip" data-kz="ek" onclick="rankKZ(this)">EK-Rentabilität</span>
+          <span class="rank-chip" data-kz="nm" onclick="rankKZ(this)">Nettomarge</span>
+          <span class="rank-chip" data-kz="eq" onclick="rankKZ(this)">EK-Quote</span>
+          <span class="rank-chip" data-kz="fcf" onclick="rankKZ(this)">Free Cashflow</span>
+          <span class="rank-chip" data-kz="em" onclick="rankKZ(this)">EBIT-Marge</span>
+        </div>
+        <div style="font-size:.8rem;color:var(--ink3);margin-bottom:10px" id="rankStatus">0 / 5 eingeordnet</div>
+        <textarea class="obs-input" id="rangBegruendung" placeholder="Begründet kurz: Warum ist eure Platz-1-Kennzahl die wichtigste?" oninput="checkRang()" style="min-height:56px"></textarea>
+        <button class="check-btn" id="rangBtn" onclick="submitRang()" disabled style="margin-top:8px;opacity:.4">Rangordnung bestätigen</button>
+        <div class="ifb" id="rangfb"></div>
+      </div>
+
+      <!-- SCHRITT 2: ZWISCHENURTEIL (erscheint nach Rang) -->
+      <div id="zwischSatz" style="display:none;margin-top:16px">
+    <div class="ti"><div class="ti-head">Zwischenurteil – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Erstes begründetes Urteil auf Basis der 5 KZ in einem Satz formulieren.
+    <ul>
+      <li><b>Gute Antworten:</b> Kombinieren mindestens einen positiven und negativen Aspekt · Verweisen auf die Verdopplungsfrage</li>
+      <li><b>Erwartetes Muster:</b> "Hugo Boss wächst beim Umsatz und hat starken Cashflow, aber die Rentabilität sinkt – deshalb sind wir unsicher bei der Verdoppelung."</li>
+      <li><b>Didaktisch:</b> Das Urteil erscheint als Zitat in Szene 4 – SuS sehen, ob ihre erste Einschätzung mit der Gesamtbewertung übereinstimmt</li>
+    </ul></div>
+
+        <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">Schritt 2: Vorläufiges Urteil</div>
+        <div style="font-size:.84rem;color:var(--ink3);margin-bottom:8px">Formuliert in einem Satz eure vorläufige Einschätzung zu Hugo Boss.</div>
+        <textarea class="obs-input" id="zwischenurteilText" placeholder="z.B. »Hugo Boss wächst beim Umsatz, aber die Rentabilität sinkt – wir sind unsicher, ob die Verdoppelung sich lohnt.«" oninput="checkZwischen()" style="min-height:60px"></textarea>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="check-btn gold-btn" id="zwischenBtn" onclick="submitZwischen()" disabled style="opacity:.4">Zur Gesamtbewertung →</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- SCENE 4: STÄRKEN & SCHWÄCHEN -->
   <div class="scene hidden" id="sc4">
-    <div class="sc-num">Szene 04 / 06</div>
+    <div class="sc-num">Szene 04 / 07</div>
     <div class="sc-title">Gesamtbewertung: Stärken &amp; Schwächen</div>
-    <p class="sc-lead">Ein guter Analyst sieht beides. Lest die folgende Einschätzung – und entscheidet danach: Welche Aspekte überwiegen für euren Kunden?</p>
+    <div class="zwischenurteil-display" id="zwischenurteilDisplay"></div>
+    <p class="sc-lead">Ihr habt fünf Kennzahlen berechnet. Jetzt sortiert ihr die Ergebnisse selbst in Stärken und Schwächen – bevor ihr die Musterlösung seht.</p>
 
+    <!-- SORTIERAUFGABE -->
+    <div id="sortWrap">
+    <div class="ti"><div class="ti-head">Sortieraufgabe Stärken/Schwächen – Lösung</div><b>Was sollen SuS leisten?</b> 8 Aussagen selbst in Stärken und Schwächen einordnen, bevor die Musterlösung erscheint.
+    <ul>
+      <li><b>Stärken (4):</b> FCF +418 % · Umsatz Rekordhoch · EK-Quote steigt · Bruttomarge 61,8 %</li>
+      <li><b>Schwächen (4):</b> EK-Rentabilität gesunken · Nettomarge gesunken · EBIT −12 % · EBIT-Marge unter eigenem Ziel</li>
+      <li><b>Häufige Fehler:</b> EBIT-Marge als Stärke (weil positiv) – aber: sie liegt unter dem eigenen Ziel → Schwäche</li>
+      <li><b>Diskutieren:</b> Ist EK-Rentabilität 14,9 % Stärke (noch über 12 % Marktdurchschnitt) oder Schwäche (Rückgang)? → Beide Lesarten vertretbar!</li>
+    </ul></div>
+
+      <div class="notice" style="margin-bottom:14px;font-size:.88rem">
+        <strong>Aufgabe:</strong> Klickt auf eine Aussage und ordnet sie dann per Klick zu „Stärke" oder „Schwäche" zu. Wenn ihr alle eingeordnet habt, seht ihr die Auflösung.
+      </div>
+      <div class="sort-pool" id="sortPool">
+        <div class="sort-card" id="sc_1" onclick="selectSortCard('sc_1')">Free Cashflow +418 % auf 497 Mio. €</div>
+        <div class="sort-card" id="sc_2" onclick="selectSortCard('sc_2')">Umsatz: Rekordhoch 4.307 Mio. € (+2,6 %)</div>
+        <div class="sort-card" id="sc_3" onclick="selectSortCard('sc_3')">EK-Quote steigt: 29,3 % → 37,7 %</div>
+        <div class="sort-card" id="sc_4" onclick="selectSortCard('sc_4')">EK-Rentabilität gesunken: 20,0 % → 14,9 %</div>
+        <div class="sort-card" id="sc_5" onclick="selectSortCard('sc_5')">Nettomarge gesunken: 6,1 % → 4,9 %</div>
+        <div class="sort-card" id="sc_6" onclick="selectSortCard('sc_6')">EBIT gesunken: 410 → 361 Mio. € (−12 %)</div>
+        <div class="sort-card" id="sc_7" onclick="selectSortCard('sc_7')">Bruttomarge verbessert: 61,8 %</div>
+        <div class="sort-card" id="sc_8" onclick="selectSortCard('sc_8')">EBIT-Marge 8,4 % – unter eigenem Ziel (9–10 %)</div>
+      </div>
+      <div style="display:none;margin-bottom:8px;font-size:.82rem;color:var(--ink3)" id="sortHint">Ausgewählt: <span id="sortSelName" style="font-weight:700"></span> → Zuordnen zu:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div class="sort-col sta-col" id="col_sta">
+          <div class="sort-col-title">✓ Stärke</div>
+          <div id="col_sta_items"></div>
+          <div id="col_sta_btn" style="display:none;margin-top:6px">
+            <button class="fb-chk-btn" style="width:100%" onclick="placeSortCard('sta')">→ Hier einordnen</button>
+          </div>
+        </div>
+        <div class="sort-col sch-col" id="col_sch">
+          <div class="sort-col-title">✗ Schwäche</div>
+          <div id="col_sch_items"></div>
+          <div id="col_sch_btn" style="display:none;margin-top:6px">
+            <button class="fb-chk-btn" style="width:100%" onclick="placeSortCard('sch')">→ Hier einordnen</button>
+          </div>
+        </div>
+      </div>
+      <div class="ifb" id="sortfb"></div>
+      <div id="sortResult" style="display:none"></div>
+    </div>
+
+    <!-- MUSTERLÖSUNG (erscheint nach Sortierung) -->
+    <div id="swotMuster" style="display:none;margin-top:20px">
     <div class="swot-grid">
       <div class="sw-box sta">
         <h4><span>✓</span> Stärken – aus Anteilseigner-Sicht</h4>
         <ul class="sw-items">
-          <li>Free Cashflow: 497 Mio. € – dramatisch gestiegen (+418 %). Zeigt starke operative Effizienz</li>
+          <li><span class="gl" data-term="fcf">Free Cashflow</span> 497 Mio. € (+418 %) – operativ mehr Geld als je zuvor</li>
           <li>Umsatz Rekordhoch (4.307 Mio. €) – 4. Rekordjahr in Folge</li>
-          <li>EK-Quote steigt weiter: 29,3 % (2020) → 37,7 % (2024) – sinkendes Verlustrisiko für Aktionäre</li>
-          <li>Deckungsgrad II 112,9 % – Goldene Bilanzregel gut erfüllt</li>
+          <li>EK-Quote steigt weiter: 29,3 % (2020) → 37,7 % (2024)</li>
           <li>Bruttomarge verbessert auf 61,8 % – Preissetzungsmacht intakt</li>
           <li>EK-Rentabilität (14,9 %) noch knapp über Marktdurchschnitt (~12 %)</li>
-          <li><span class="gl" data-term="kgv">KGV</span> ~10x – deutlich unter Branchendurchschnitt (~15x): mögliche Unterbewertung der Aktie</li>
         </ul>
       </div>
       <div class="sw-box sch">
         <h4><span>✗</span> Schwächen / Risiken – aus Anteilseigner-Sicht</h4>
         <ul class="sw-items">
-          <li>Nettomarge gesunken: 4,9 % (2024) vs. 6,1 % (2023) vs. 11,4 % (2015) – Wachstum kostet mehr als es einbringt</li>
-          <li>EK-Rentabilität stark gesunken: 20,0 % (2023) → 14,9 % (2024) – trotz Umsatzwachstum: frühere Renditestärke fehlt noch</li>
-          <li>EBIT: 361 Mio. € (−12 % ggü. 2023) – Profitabilität sinkt</li>
-          <li>China-Schwäche und herausforderndes Konsumklima belasten</li>
-          <li>Nettomarge 4,9 % unter Branchendurchschnitt (5–8 %) – aber Free Cashflow 497 Mio. € zeigt buchhalterische, nicht operative Ursachen</li>
+          <li>Nettomarge gesunken: 4,9 % (2024) vs. 6,1 % (2023) – Profitabilität sinkt trotz Wachstum</li>
+          <li>EK-Rentabilität: 20,0 % → 14,9 % – Renditestärke schwindet</li>
+          <li>EBIT: −12 % – operative Kosten steigen schneller als Umsatz</li>
+          <li>EBIT-Marge 8,4 % – unter eigenem Ziel von 9–10 %</li>
         </ul>
       </div>
+    </div>
     </div>
 
     <button class="sw-toggle" id="ctxToggle" onclick="toggleCtx()">
@@ -775,15 +1110,15 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="rep-box" style="margin-top:12px">
         <h4>Einordnung: Modebranche im Vergleich</h4>
         <table class="trend-t">
-          <thead><tr><th>Kennzahl</th><th>Hugo Boss 2024</th><th>Branche Ø</th><th>Bewertung</th></tr></thead>
+          <thead><tr><th>Kennzahl</th><th>Hugo Boss 2024</th><th>Branche Ø</th></tr></thead>
           <tbody>
-            <tr><td>Nettomarge</td><td class="neg">4,9 %</td><td>5–8 %</td><td><span class="tag tag-r">unterdurchschnittlich</span></td></tr>
-            <tr><td>Bruttomarge</td><td>61,8 %</td><td>55–65 %</td><td><span class="tag tag-g">gut</span></td></tr>
-            <tr><td>EK-Quote</td><td>37,7 %</td><td>20–35 %</td><td><span class="tag tag-g">überdurchschnittlich</span></td></tr>
-            <tr><td>EK-Rentabilität</td><td>14,9 %</td><td>10–20 %</td><td><span class="tag-g tag">solide</span></td></tr>
+            <tr><td>Nettomarge</td><td class="neg">4,9 %</td><td>5–8 %</td></tr>
+            <tr><td>Bruttomarge</td><td>61,8 %</td><td>55–65 %</td></tr>
+            <tr><td>EK-Quote</td><td>37,7 %</td><td>20–35 %</td></tr>
+            <tr><td>EK-Rentabilität</td><td>14,9 %</td><td>10–20 %</td></tr>
           </tbody>
         </table>
-        <p style="font-size:.8rem;color:var(--ink3);margin-top:8px;font-style:italic">Im Branchenvergleich 2024 zeigt sich ein gemischtes Bild: EK-Quote und Bruttomarge überdurchschnittlich, Nettomarge jedoch unter Branchendurchschnitt gesunken.</p>
+        <p style="font-size:.8rem;color:var(--ink3);margin-top:8px;font-style:italic">Wo liegt Hugo Boss über, wo unter dem Branchendurchschnitt? Was bedeutet das für eure Empfehlung?</p>
       </div>
     </div>
 
@@ -792,14 +1127,19 @@ body.teacher-mode .teacher-banner{display:block}
       <strong>Eure Aufgabe</strong>
       Besprecht kurz in der Gruppe: Überwiegen die Stärken oder die Risiken – und warum? Dann geht es zur Empfehlung.
     </div>
-    <div class="btn-row" style="margin-top:0"><button class="check-btn gold-btn" onclick="nextScene(5)">Zur Empfehlung →</button></div>
+    <div class="btn-row" style="margin-top:0"><button class="check-btn gold-btn" id="sc4nxt" onclick="nextScene(5)" style="display:none">Zur Empfehlung →</button></div>
   </div>
 
   <!-- SCENE 5: EMPFEHLUNG -->
   <div class="scene hidden" id="sc5">
-    <div class="sc-num">Szene 05 / 06</div>
+    <div class="sc-num">Szene 05 / 07</div>
     <div class="sc-title">Die Empfehlung</div>
-    <p class="sc-lead">Dr. Köhler wartet. Gebt jetzt eure fundierte Empfehlung ab – mit konkreten Argumenten aus eurer Analyse.</p>
+    <p class="sc-lead">Dr. Köhler wartet. Eure Analyse ist abgeschlossen – jetzt kommt die eigentliche Frage.</p>
+
+    <div class="notice" style="margin-bottom:20px">
+      <strong>Zur Erinnerung: Die Ausgangsfrage</strong>
+      Die Hoffmann Family Office GmbH hält <b>80.000 Hugo-Boss-Aktien</b> und überlegt, die Position auf <b>160.000 Aktien zu verdoppeln</b>. Bei einem Kurs von 32 € wäre das ein zusätzliches Investment von <b>2,56 Mio. €</b>. Ist das auf Basis eurer Analyse vertretbar – oder nicht?
+    </div>
 
     <div class="verdict-wrap">
       <div class="vd-title">Empfehlung an die Hoffmann Family Office GmbH</div>
@@ -813,7 +1153,7 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="args-title" style="margin-top:20px">Begründung (mindestens 2 Argumente aus eurer Analyse):</div>
       <div class="arg-rows">
         <div class="arg-row"><div class="arg-num">1</div><textarea class="arg-in" id="arg1" placeholder="Argument 1: z.B. Die EK-Quote ist... was bedeutet..."></textarea></div>
-        <div class="arg-row"><div class="arg-num">2</div><textarea class="arg-in" id="arg2" placeholder="Argument 2: z.B. Der Deckungsgrad II..."></textarea></div>
+        <div class="arg-row"><div class="arg-num">2</div><textarea class="arg-in" id="arg2" placeholder="Argument 2: z.B. Der Free Cashflow zeigt..."></textarea></div>
         <div class="arg-row"><div class="arg-num">3</div><textarea class="arg-in" id="arg3" placeholder="Argument 3 (optional): z.B. Im Vergleich zu 2015..."></textarea></div>
       </div>
       <div class="v-err" id="aErr">↑ Bitte mindestens 2 Argumente ausfüllen.</div>
@@ -827,13 +1167,83 @@ body.teacher-mode .teacher-banner{display:block}
         <div class="vfbt">Musterlösung: Professionelle Analysten-Argumente</div>
         <div class="vfb-arg"><span class="icon">📉</span><span><b>EK-Rentabilität 14,9 %:</b> Gesunken von 20,0 % (2023) trotz Umsatzrekord. Liegt noch knapp über dem Marktdurchschnitt (~12 %), zeigt aber klaren Abwärtstrend. Die Frage: strukturell oder temporär?</span></div>
         <div class="vfb-arg"><span class="icon">⚠️</span><span><b>Nettomarge-Lücke:</b> 4,9 % (2024) vs. 6,1 % (2023) vs. 11,4 % (2015) – trotz Umsatzrekord sinkt die Profitabilität. Aber: Free Cashflow 497 Mio. € zeigt, dass buchhalterische Abschreibungen die Ursache sind, nicht das Kerngeschäft.</span></div>
-        <div class="vfb-arg"><span class="icon">🔒</span><span><b>Steigende EK-Quote (29,3 % → 37,7 %):</b> Das Verlustrisiko für Anteilseigner sinkt. Kein Insolvenzrisiko (DG II = 113 %). Solide Basis für eine langfristige Position.</span></div>
-        <div class="vfb-arg"><span class="icon">💡</span><span><b>KGV ~10x als Kaufargument:</b> Die Aktie ist günstiger bewertet als die Branche (~15x). Das kompensiert teilweise den negativen Profitabilitätstrend. Für contrarian Investoren ist das das stärkste Argument für eine Positionsaufstockung.</span></div>
+        <div class="vfb-arg"><span class="icon">💰</span><span><b>Free Cashflow 497 Mio. € (+418 %):</b> Hugo Boss generiert deutlich mehr echtes Geld als der Gewinn zeigt. Der JÜ sank durch buchhalterische Wertminderungen – das Kerngeschäft ist operativ stark. Steigende EK-Quote (37,7 %) zeigt zusätzlich wachsende finanzielle Stabilität.</span></div>
+        <div class="vfb-arg"><span class="icon">📊</span><span><b>EBIT-Marge 8,4 % – das eigene Managementziel:</b> Hugo Boss hat sich selbst 9–10 % für 2025 zum Ziel gesetzt. Das ist das Kernversprechen. Wer verdoppelt, wettet auf die Einlösung dieses Versprechens. EBIT +8 % in 2025 zeigt: Es war realistisch.</span></div>
         <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;color:rgba(255,255,255,.6);font-style:italic">
           Typisches Urteil professioneller Analysten: <b style="color:var(--gold2)">"Halten – Profitabilität 2025 beobachten"</b> – Umsatz und Cashflow stark (497 Mio.!), aber EK-Rentabilität und Nettomarge fallen trotz Umsatzrekord. Hugo Boss prognostiziert EBIT-Anstieg 2025 (+5–22 %). Erst wenn sich das bestätigt, ist eine Positionsaufstockung vertretbar.
         </div>
       </div>
     </div>
+    <!-- GEGENARGUMENT -->
+    <div id="counterWrap" style="display:none;margin-top:20px">
+      <div class="counter-box">
+        <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">🔄 Das stärkste Gegenargument</div>
+        <div style="font-size:.84rem;color:var(--ink3);margin-bottom:10px">Formuliert das stärkste Argument, das <em>gegen</em> eure Empfehlung spricht – in einem Satz.</div>
+        <textarea class="obs-input" id="counterText" placeholder="z.B. »Das stärkste Argument gegen unsere Kauf-Empfehlung: Die EK-Rentabilität ist auf 14,9 % gesunken – der Trend könnte strukturell sein.«" oninput="checkCounter()" style="min-height:64px"></textarea>
+        <button class="check-btn" id="counterBtn" onclick="submitCounter()" disabled style="margin-top:8px;opacity:.4">Gegenargument einreichen</button>
+        <div class="ifb" id="counterfb"></div>
+      </div>
+    </div>
+
+    <!-- WAS WÄRE WENN -->
+    <div class="waswenn-box" id="waswennWrap" style="display:none">
+      <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">🎯 Was würde euch umstimmen?</div>
+      <div style="font-size:.84rem;color:var(--ink3);margin-bottom:10px">Nennt eine konkrete Zahl für 2025, die eure Empfehlung ändern würde.</div>
+      <textarea class="obs-input" id="waswennText" placeholder="Eure Bedingung: »Wenn Hugo Boss 2025...«" style="min-height:64px"></textarea>
+      <div style="font-size:.75rem;color:var(--ink3);margin-top:6px;font-style:italic">Kein Richtig oder Falsch – zeigt, ob ihr die entscheidenden Hebel versteht.</div>
+    </div>
+
+    <!-- FEEDBACK: SELF-ASSESSMENT + optionales KI-FEEDBACK -->
+    <div id="aiFeedbackWrap" style="display:none;margin-top:28px">
+
+      <!-- IMMER SICHTBAR: Selbsteinschätzungs-Raster -->
+      <div class="sc-title" style="font-size:1.1rem;margin-bottom:4px">📝 Überprüft eure Empfehlung</div>
+      <p style="font-size:.88rem;color:var(--ink3);margin-bottom:16px">Geht die Checkliste durch – ehrlich und selbstkritisch.</p>
+
+      <div style="display:grid;gap:10px;margin-bottom:20px" id="checklistWrap">
+        <div class="fb-check-item" id="chk1">
+          <div class="fb-check-q">Habe ich mindestens zwei verschiedene Kennzahlen aus der Analyse verwendet?</div>
+          <div class="fb-check-btns">
+            <button class="fb-chk-btn" onclick="setCheck(1,'ja')">✓ Ja</button>
+            <button class="fb-chk-btn" onclick="setCheck(1,'nein')">✗ Nein</button>
+          </div>
+          <div class="fb-check-hint" id="chk1h"></div>
+        </div>
+        <div class="fb-check-item" id="chk2">
+          <div class="fb-check-q">Habe ich erklärt, <em>was</em> die Kennzahl bedeutet – nicht nur den Zahlenwert genannt?</div>
+          <div class="fb-check-btns">
+            <button class="fb-chk-btn" onclick="setCheck(2,'ja')">✓ Ja</button>
+            <button class="fb-chk-btn" onclick="setCheck(2,'nein')">✗ Nein</button>
+          </div>
+          <div class="fb-check-hint" id="chk2h"></div>
+        </div>
+        <div class="fb-check-item" id="chk3">
+          <div class="fb-check-q">Habe ich eine Verbindung zur eigentlichen Frage hergestellt: <em>Lohnt sich die Verdoppelung auf 160.000 Aktien?</em></div>
+          <div class="fb-check-btns">
+            <button class="fb-chk-btn" onclick="setCheck(3,'ja')">✓ Ja</button>
+            <button class="fb-chk-btn" onclick="setCheck(3,'nein')">✗ Nein</button>
+          </div>
+          <div class="fb-check-hint" id="chk3h"></div>
+        </div>
+        <div class="fb-check-item" id="chk4">
+          <div class="fb-check-q">Stimmt meine Empfehlung (Kaufen/Halten/Verkaufen) mit meinen Argumenten überein?</div>
+          <div class="fb-check-btns">
+            <button class="fb-chk-btn" onclick="setCheck(4,'ja')">✓ Ja</button>
+            <button class="fb-chk-btn" onclick="setCheck(4,'nein')">✗ Nein</button>
+          </div>
+          <div class="fb-check-hint" id="chk4h"></div>
+        </div>
+      </div>
+
+      <div id="checklistSummary" style="display:none;padding:14px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--gold);margin-bottom:16px;font-size:.88rem"></div>
+
+      <!-- OPTIONALES KI-FEEDBACK (nur wenn API erreichbar) -->
+      <div id="aiFeedbackLoading" style="display:none;text-align:center;padding:16px;color:var(--ink3);font-size:.85rem">
+        <span style="font-size:1.2rem">⏳</span> KI-Feedback wird geladen...
+      </div>
+      <div id="aiFeedbackResult" style="display:none"></div>
+    </div>
+
     <div class="btn-row" style="margin-top:16px">
       <button class="btn btn-s" id="goSc6" style="display:none" onclick="jumpTo(6)">🏦 Perspektivwechsel: Zur Bank-Analyse →</button>
     </div>
@@ -859,6 +1269,36 @@ body.teacher-mode .teacher-banner{display:block}
       </div>
     </div>
 
+    <!-- BANK EINSTIEGSFRAGE -->
+    <div class="bank-entry" id="bankEntry">
+    <div class="ti"><div class="ti-head">Bank-Einstiegsfrage – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Perspektivwechsel aktiv vollziehen: Welche KZ würde eine Bank anders gewichten als ein Anteilseigner?
+    <ul>
+      <li><b>Bank priorisiert:</b> Liquidität II, Verschuldungsgrad (= was die Bank dann tatsächlich berechnet)</li>
+      <li><b>Bank ignoriert eher:</b> EK-Rentabilität (zeigt Rendite, nicht Rückzahlungsfähigkeit)</li>
+      <li><b>Interessante Diskussion:</b> FCF ist für BEIDE relevant – Anteilseigner (operative Stärke) UND Bank (Zinszahlungsfähigkeit)</li>
+      <li><b>Lernziel:</b> Gleiche Daten, andere Perspektive → andere Kennzahlen im Vordergrund</li>
+    </ul></div>
+
+      <div style="font-size:.9rem;font-weight:700;margin-bottom:8px">Bevor ihr rechnet: Denkt als Bank.</div>
+      <div style="font-size:.85rem;color:var(--ink3);margin-bottom:12px">Welche <strong>zwei</strong> der fünf Kennzahlen aus eurer Analyse würde eine Bank am stärksten gewichten? Wählt zwei aus – und begründet kurz.</div>
+      <div id="bankKZchips">
+        <span class="bank-kz-chip" data-kz="ek" onclick="toggleBankChip(this)">EK-Rentabilität</span>
+        <span class="bank-kz-chip" data-kz="nm" onclick="toggleBankChip(this)">Nettomarge</span>
+        <span class="bank-kz-chip" data-kz="eq" onclick="toggleBankChip(this)">EK-Quote</span>
+        <span class="bank-kz-chip" data-kz="fcf" onclick="toggleBankChip(this)">Free Cashflow</span>
+        <span class="bank-kz-chip" data-kz="em" onclick="toggleBankChip(this)">EBIT-Marge</span>
+      </div>
+      <textarea class="obs-input" id="bankEntryText" placeholder="Begründung: Warum diese zwei Kennzahlen – aus Bankperspektive?" style="margin-top:12px;min-height:64px" oninput="checkBankEntry()"></textarea>
+      <div class="ifb" id="bankEntryfb"></div>
+      <div class="btn-row" style="margin-top:10px">
+        <button class="check-btn gold-btn" id="bankEntryBtn" onclick="submitBankEntry()" disabled style="opacity:.4">Zur Bank-Analyse →</button>
+      </div>
+      <div id="bankEntryFeedback" style="display:none;margin-top:14px;padding:14px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--gold);font-size:.85rem;line-height:1.7"></div>
+    </div>
+
+    <!-- BANK KZ KARTEN (erst nach Einstiegsfrage sichtbar) -->
+    <div id="bankKZwrap" style="display:none">
+
     <!-- KZ 5: Verschuldungsgrad -->
     <div class="kz-card" id="bkz5">
       <div class="kz-head">
@@ -872,35 +1312,35 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="calc-steps">
         <div class="cs-label">Schritt 1 — Gesamtes Fremdkapital berechnen (aus der Bilanz)</div>
         <div class="sum-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Langfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="k5a" type="number" placeholder="?" style="width:100px"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Langfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="bk5a" type="number" placeholder="?" style="width:100px"></div>
           <div class="cf-op">+</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Kurzfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="k5b" type="number" placeholder="?" style="width:100px"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Kurzfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="bk5b" type="number" placeholder="?" style="width:100px"></div>
           <div class="cf-op">=</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Fremdkapital gesamt</b> (Mio. €)</div><input class="ci2" id="k5sum" type="number" placeholder="?"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Fremdkapital gesamt</b> (Mio. €)</div><input class="ci2" id="bk5sum" type="number" placeholder="?"></div>
         </div>
         <div class="cs-label" style="margin-top:10px">Nenner aus der Bilanz ablesen</div>
         <div class="calc-formula-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Eigenkapital</b> (Mio. €)</div><input class="ci2" id="k5n" type="number" placeholder="?"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Eigenkapital</b> (Mio. €)</div><input class="ci2" id="bk5n" type="number" placeholder="?"></div>
         </div>
-        <button class="check-btn" id="k5btn1" onclick="checkBankStep1sum(5,1282,1073,2355,1427)">Werte prüfen</button>
-        <div class="ifb" id="k5sfb"></div>
+        <button class="check-btn" id="bk5btn1" onclick="checkBankStep1sum(5,1282,1073,2355,1427)">Werte prüfen</button>
+        <div class="ifb" id="bk5sfb"></div>
         <div class="step-divider"></div>
-        <div class="step2-hint" id="k5s2hint" style="display:none">✓ Werte korrekt – jetzt Verschuldungsgrad berechnen:</div>
-        <div class="calc-formula-row" id="k5s2row" style="opacity:.4;pointer-events:none">
+        <div class="step2-hint" id="bk5s2hint" style="display:none">✓ Werte korrekt – jetzt Verschuldungsgrad berechnen:</div>
+        <div class="calc-formula-row" id="bk5s2row" style="opacity:.4;pointer-events:none">
           <div class="cf-group"><div class="cf-lbl"><b>Verschuldungsgrad</b></div>
-            <input class="ci2" id="k5i" type="number" placeholder="?" disabled></div>
+            <input class="ci2" id="bk5i" type="number" placeholder="?" disabled></div>
           <div class="cf-op">%</div>
         </div>
-        <button class="check-btn" id="k5btn2" onclick="checkBankResult(5,165.0,'k5i','k5fb','k5iz','k5faz')" style="display:none">Ergebnis prüfen</button>
+        <button class="check-btn" id="bk5btn2" onclick="checkBankResult(5,165.0,'bk5i','bk5fb','bk5iz','bk5faz')" style="display:none">Ergebnis prüfen</button>
       </div>
-      <div class="ifb" id="k5fb"></div>
-      <div class="interp" id="k5iz">
+      <div class="ifb" id="bk5fb"></div>
+      <div class="interp" id="bk5iz">
         <div class="interp-q">Wie bewertet die Bank den <span class="gl" data-term="vg">Verschuldungsgrad</span> von 165 % – und was ändert sich, wenn Hugo Boss 300 Mio. € neues Fremdkapital aufnimmt?</div>
         <div class="iopt" data-bki="5" data-oi="0">A) 165 % ist unkritisch – weit unter der 200 %-Grenze. Die Bank genehmigt ohne Bedenken.</div>
         <div class="iopt" data-bki="5" data-oi="1">B) 165 % ist moderat, aber: Nach dem Kredit steigt das Fremdkapital auf 2.655 Mio. € (= 2.355 + 300) – der Verschuldungsgrad steigt auf ca. 186 %. Noch unter 200 %, aber nah dran. Die Bank schaut genau hin.</div>
         <div class="iopt" data-bki="5" data-oi="2">C) 168 % ist sofort kritisch – die Bank lehnt den Kredit ab.</div>
-        <div class="ifb" id="k5ifb"></div>
-        <div class="fazit-box" id="k5faz">
+        <div class="ifb" id="bk5ifb"></div>
+        <div class="fazit-box" id="bk5faz">
           <div class="fzt">Kreditausschuss-Fazit</div>
           Aktuell: 165 % – <em>noch unter dem kritischen Wert von 200 %</em>. Aber nach Kreditaufnahme (+300 Mio. FK): 2.655 ÷ 1.427 × 100 = <strong>186 %</strong> – gefährlich nah an der 200 %-Grenze. Für den Anteilseigner war hohe Verschuldung noch relativ egal (Hebeleffekt erhöht EK-Rentabilität). Für die Bank ist es ein Warnsignal: Jeder weitere Kredit verringert den Puffer. Das Urteil der Bank: <em>Kreditwürdig, aber nicht uneingeschränkt.</em>
         </div>
@@ -920,35 +1360,35 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="calc-steps">
         <div class="cs-label">Schritt 1 — Zähler berechnen: Liquide Mittel + Forderungen</div>
         <div class="sum-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Liquide Mittel</b> (Mio. €)</div><input class="ci2" id="k6a" type="number" placeholder="?"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Liquide Mittel</b> (Mio. €)</div><input class="ci2" id="bk6a" type="number" placeholder="?"></div>
           <div class="cf-op">+</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Forderungen &amp; Sonstiges</b> (Mio. €)</div><input class="ci2" id="k6b" type="number" placeholder="?"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Forderungen &amp; Sonstiges</b> (Mio. €)</div><input class="ci2" id="bk6b" type="number" placeholder="?"></div>
           <div class="cf-op">=</div>
-          <div class="cf-group"><div class="cf-lbl"><b>Summe Zähler</b> (Mio. €)</div><input class="ci2" id="k6sum" type="number" placeholder="?"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Summe Zähler</b> (Mio. €)</div><input class="ci2" id="bk6sum" type="number" placeholder="?"></div>
         </div>
         <div class="cs-label" style="margin-top:10px">Nenner aus der Bilanz ablesen</div>
         <div class="calc-formula-row">
-          <div class="cf-group"><div class="cf-lbl"><b>Kurzfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="k6n" type="number" placeholder="?" style="width:110px"></div>
+          <div class="cf-group"><div class="cf-lbl"><b>Kurzfristige Verbindlichkeiten</b> (Mio. €)</div><input class="ci2" id="bk6n" type="number" placeholder="?" style="width:110px"></div>
         </div>
-        <button class="check-btn" id="k6btn1" onclick="checkBankStep1sum(6,162,590,752,1073)">Werte prüfen</button>
-        <div class="ifb" id="k6sfb"></div>
+        <button class="check-btn" id="bk6btn1" onclick="checkBankStep1sum(6,162,590,752,1073)">Werte prüfen</button>
+        <div class="ifb" id="bk6sfb"></div>
         <div class="step-divider"></div>
-        <div class="step2-hint" id="k6s2hint" style="display:none">✓ Werte korrekt – jetzt Liquidität II berechnen:</div>
-        <div class="calc-formula-row" id="k6s2row" style="opacity:.4;pointer-events:none">
+        <div class="step2-hint" id="bk6s2hint" style="display:none">✓ Werte korrekt – jetzt Liquidität II berechnen:</div>
+        <div class="calc-formula-row" id="bk6s2row" style="opacity:.4;pointer-events:none">
           <div class="cf-group"><div class="cf-lbl"><b>Liquidität II</b></div>
-            <input class="ci2" id="k6i" type="number" placeholder="?" disabled></div>
+            <input class="ci2" id="bk6i" type="number" placeholder="?" disabled></div>
           <div class="cf-op">%</div>
         </div>
-        <button class="check-btn" id="k6btn2" onclick="checkBankResult(6,70.1,'k6i','k6fb','k6iz','k6faz')" style="display:none">Ergebnis prüfen</button>
+        <button class="check-btn" id="bk6btn2" onclick="checkBankResult(6,70.1,'bk6i','bk6fb','bk6iz','bk6faz')" style="display:none">Ergebnis prüfen</button>
       </div>
-      <div class="ifb" id="k6fb"></div>
-      <div class="interp" id="k6iz">
+      <div class="ifb" id="bk6fb"></div>
+      <div class="interp" id="bk6iz">
         <div class="interp-q">Liquidität II = 70,1 % – noch unter dem Sollwert von 100 %. Wie reagiert die Bank?</div>
         <div class="iopt" data-bki="6" data-oi="0">A) Die Bank genehmigt problemlos – 70,1 % ist nah am Sollwert.</div>
         <div class="iopt" data-bki="6" data-oi="1">B) Die Bank lehnt ab – 70,1 % unter Sollwert 100 % ist inakzeptabel.</div>
         <div class="iopt" data-bki="6" data-oi="2">C) Die Bank genehmigt mit Auflagen: 70,1 % ist erklärbar (Branche, Vorräte als Puffer, starker <span class="gl" data-term="fcf">Free Cashflow</span> von 497 Mio. €), aber die Bank fordert Liquiditätsberichte und Limits.</div>
-        <div class="ifb" id="k6ifb"></div>
-        <div class="fazit-box" id="k6faz">
+        <div class="ifb" id="bk6ifb"></div>
+        <div class="fazit-box" id="bk6faz">
           <div class="fzt">Kreditausschuss-Fazit</div>
           70,1 % liegt unter dem Sollwert von 100 % – aber im Modehandel <em>strukturell erklärbar</em>: 630 Mio. € Vorräte und der <em>Free Cashflow von 497 Mio. €</em> zeigen, dass Hugo Boss Zinszahlungen problemlos bedienen kann. <strong>Das Urteil der Bank: Genehmigung mit Auflagen</strong> – z.B. vierteljährliche Liquiditätsberichte, Limits für weitere Kreditaufnahmen.
         </div>
@@ -967,6 +1407,8 @@ body.teacher-mode .teacher-banner{display:block}
       <div class="v-err" id="bankVErr">↑ Bitte zuerst eine Entscheidung treffen.</div>
       <div style="margin-top:16px"><button class="check-btn gold-btn" id="bankSubmitBtn" onclick="submitBankVerdict()">Entscheidung abgeben →</button></div>
     </div>
+
+    </div><!-- /bankKZwrap -->
 
     <!-- COMPARISON TABLE (shown after bank verdict) -->
     <div id="compareWrap" style="display:none">
@@ -1017,13 +1459,25 @@ body.teacher-mode .teacher-banner{display:block}
 
         <!-- DREI REFLEXIONSFRAGEN mit aufklappbaren Impulsen -->
         <div id="rf1" class="rf-card">
+    <div class="ti"><div class="ti-head">Reflexion 1: Grenzen der KZ-Analyse</div><b>Was sollen SuS leisten?</b> Kritisch reflektieren, was Kennzahlen NICHT zeigen.
+        <ul>
+          <li>Qualitative Faktoren: Markenstärke, Management-Qualität, Unternehmenskultur</li>
+          <li>Externe Faktoren: China-Wirtschaft, geopolitische Risiken, Fast-Fashion-Disruption</li>
+          <li>Zukunftsorientierung: KZ bilden Vergangenheit ab – Investoren kaufen Zukunft</li>
+          <li><b>Anspruchsniveau:</b> AFB III – metakognitive Reflexion über das Analyseinstrument selbst</li>
+        </ul></div>
+
           <div class="rf-head" onclick="toggleRf('rf1')">
             <span class="rf-n">01</span>
             <span class="rf-q">Grenzen der Kennzahlenanalyse: Was haben wir <em>nicht</em> gesehen?</span>
             <span class="rf-arr">›</span>
           </div>
           <div class="rf-body">
-            <div class="rf-prompt">Besprecht in der Gruppe – dann lest den Impuls:</div>
+            <div class="rf-prompt">Schreibt zuerst eure eigene Antwort – dann lest den Impuls:</div>
+            <textarea class="rf-textarea" id="rf1text" placeholder="Eure Antwort in 3–5 Sätzen..."></textarea>
+            <button class="check-btn" style="margin-top:8px;margin-bottom:12px" onclick="submitRfAnswer(1)">Antwort absenden &amp; KI-Feedback</button>
+            <div id="rf1aifb" style="display:none;margin-bottom:12px;padding:12px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--gold);font-size:.85rem;line-height:1.7"></div>
+            <div class="rf-prompt" style="margin-top:8px">Impuls der Lehrkraft:</div>
             <div class="rf-text rf-hidden" id="rf1t">
               Kennzahlen sind <em>Stichtagswerte</em> – sie zeigen einen Moment, nicht die Bewegung. Was fehlt in dieser Analyse?<br><br>
               <b>Nicht erfasst:</b> die Qualität des Managements · die Markenstärke von BOSS und HUGO · Nachhaltigkeitsrisiken · geopolitische Abhängigkeiten (China: −15 % in 2024) · Mitarbeiterzufriedenheit und Fluktuation · technologische Disruption im Modehandel (Fast Fashion, KI-generiertes Design).<br><br>
@@ -1034,6 +1488,14 @@ body.teacher-mode .teacher-banner{display:block}
         </div>
 
         <div id="rf2" class="rf-card">
+    <div class="ti"><div class="ti-head">Reflexion 2: Wessen Interessen fehlen?</div><b>Was sollen SuS leisten?</b> Perspektiven identifizieren, die in der Analyse nicht vorkamen.
+        <ul>
+          <li>Arbeitnehmer (19.000 Beschäftigte) · Lieferanten · Gesellschaft/Umwelt</li>
+          <li>Bezug zu ESG-Reporting: Nichtfinanzielle Erklärung im GB</li>
+          <li><b>Kerndiskussion:</b> Sollte ein JA verpflichtend soziale/ökologische KZ enthalten?</li>
+          <li><b>Gesellschaftswiss. Kompetenz:</b> Verbindung Wirtschaft ↔ Gemeinschaftskunde</li>
+        </ul></div>
+
           <div class="rf-head" onclick="toggleRf('rf2')">
             <span class="rf-n">02</span>
             <span class="rf-q">Wessen Interessen wurden nicht berücksichtigt?</span>
@@ -1052,6 +1514,13 @@ body.teacher-mode .teacher-banner{display:block}
         </div>
 
         <div id="rf3" class="rf-card">
+    <div class="ti"><div class="ti-head">Reflexion 3: Gewinn ≠ Cashflow</div><b>Was sollen SuS leisten?</b> Den Abschreibungseffekt im Zusammenhang erklären können.
+        <ul>
+          <li><b>Musterlösung:</b> Abschreibungen = Aufwand in GuV, aber kein Geldabfluss · Vorratsabbau erhöht Cashflow · Forderungseinzug verbessert Liquidität</li>
+          <li><b>Weiterführende Frage im Impuls:</b> Hoher FCF trotz sinkender Investitionen kann bedeuten: Unternehmen investiert nicht mehr in Wachstum</li>
+          <li><b>Transfer:</b> Hier haben SuS das Konzept aus KZ4 (Bäcker-Analogie) auf den GB angewendet</li>
+        </ul></div>
+
           <div class="rf-head" onclick="toggleRf('rf3')">
             <span class="rf-n">03</span>
             <span class="rf-q">Gewinn sank, Cashflow stieg – wie ist das möglich?</span>
@@ -1076,7 +1545,7 @@ body.teacher-mode .teacher-banner{display:block}
           <div class="br-body">
             Ihr habt heute das getan, was echte Analysten täglich tun: <b>Aus Zahlen Urteile bilden.</b> Und ihr habt erfahren, dass dasselbe Zahlenmaterial je nach Perspektive zu unterschiedlichen – aber gleichermaßen <em>begründbaren</em> – Schlüssen führt.<br><br>
             Das ist keine Schwäche der Analyse. Es ist ihr Kern. Wer behauptet, Zahlen sprächen „für sich selbst", täuscht sich – oder täuscht andere.<br><br>
-            <b>Hugo Boss 2025:</b> Das Unternehmen prognostiziert eine EBIT-Steigerung von +5 bis +22 %. Ob sich das bewahrheitet, werden wir sehen. Eure Analyse hat die Fragen gestellt, die zählen. Das ist der erste Schritt jeder guten Urteilsbildung.
+<b>Update Hugo Boss 2025 – die Prognose ist eingetroffen:</b> EBIT +8 % auf 391 Mio. €, Jahresüberschuss +17 % auf 249 Mio. €. Die Fundamentalanalyse hat die richtigen Fragen gestellt – und die Antwort hat sich bestätigt. Wer 2024 auf Basis eurer Analyse "Halten" empfohlen und die Position später aufgestockt hat, lag richtig. Eure Analyse hat die Fragen gestellt, die zählen. Das ist der erste Schritt jeder guten Urteilsbildung.
 
   </div>
 
@@ -1098,20 +1567,25 @@ body.teacher-mode .teacher-banner{display:block}
 
 <script>
 var curScene=1;
+var attempts={}; // attempt tracker: key = inputId, value = count
+function getAttempt(id){ return attempts[id]||0; }
+function addAttempt(id){ attempts[id]=(attempts[id]||0)+1; return attempts[id]; }
+
 var kzDone={1:false,2:false,3:false,4:false,5:false};
-var kzCorr={1:37.3,2:6.1,3:11.3,4:108.1};
-var kzCorOpt={1:1,2:1,3:1,4:1};
+var kzCorOpt={1:1,2:1,3:1,4:1,5:1};
 var kzExpl={
   1:{ok:'✓ Korrekt! 213 ÷ 1.427 × 100 = 14,9 %',no:'Noch nicht ganz. Rechne: 213 ÷ 1.427 × 100 ≈ 14,9 %'},
   2:{ok:'✓ Korrekt! 213 ÷ 4.307 × 100 = 4,9 %',no:'Noch nicht ganz. Rechne: 213 ÷ 4.307 × 100 ≈ 4,9 %'},
   3:{ok:'✓ Korrekt! 1.427 ÷ 3.782 × 100 = 37,7 %',no:'Noch nicht ganz. Rechne: 1.427 ÷ 3.782 × 100 ≈ 37,7 %'},
-  4:{ok:'✓ Korrekt! (1.427+1.282) ÷ 2.400 × 100 = 112,9 %',no:'Noch nicht ganz. Rechne: (1.427 + 1.282) ÷ 2.400 × 100 ≈ 112,9 %'}
+  4:{ok:'✓ Korrekt! (497−96) ÷ 96 × 100 = +418 %',no:'Noch nicht ganz. Rechne: (497 − 96) ÷ 96 × 100 ≈ 418 %'},
+  5:{ok:'✓ Korrekt! 361 ÷ 4.307 × 100 = 8,4 %',no:'Noch nicht ganz. Rechne: 361 ÷ 4.307 × 100 ≈ 8,4 %'}
 };
 var kzInterpExpl={
   1:{ok:'✓ Richtig! 14,9 % liegt noch über dem Marktdurchschnitt (~12 %), aber der Rückgang von 20,0 % (2023) trotz Umsatzwachstum ist ein klares Warnsignal – genau das muss ein Analyst benennen.',no:'Nicht korrekt. A übersieht den negativen Trend. C ist falsch: EK-Rentabilität ist die Kernkennzahl für Anteilseigner – sie zeigt, was das eingesetzte Kapital erwirtschaftet.'},
-  2:{ok:'✓ Richtig! Umsatz steigt, Marge sinkt – das ist das zentrale Spannungsfeld 2024. Der Free Cashflow (497 Mio.) zeigt, dass nicht-zahlungswirksame Abschreibungen den Gewinn drücken, nicht das Kerngeschäft.',no:'Nicht korrekt. A unterschätzt das Signal. C ist falsch: ohne Mengenbezug sagen absolute Gewinne wenig. Wichtig: Gewinn sank trotz Umsatzrekord – das ist das analytische Problem.'},
+  2:{ok:'✓ Richtig! Umsatz steigt, Marge sinkt trotzdem – das ist das zentrale Spannungsfeld 2024. Was genau dahintersteckt, werdet ihr bei KZ4 herausfinden.',no:'Nicht korrekt. A unterschätzt das Signal – die Marge liegt unter dem Branchendurchschnitt. C ist falsch: ohne Bezugsgröße sagen absolute Gewinne wenig.'},
   3:{ok:'✓ Richtig! 37,7 % unter Ideal (50 %), aber klarer Aufwärtstrend seit 2020 (29,3 %). Zeigt: Hugo Boss baut systematisch finanzielle Stabilität auf.',no:'Nicht korrekt. A übertreibt. C ist falsch: EK-Quote bestimmt, wie viel im Insolvenzfall für Anteilseigner übrig bleibt – hochrelevant.'},
-  4:{ok:'✓ Richtig! DG II 112,9 % = Goldene Bilanzregel gut erfüllt. Hugo Boss ist nicht auf kurzfristige Kreditgeber angewiesen – das reduziert das Insolvenzrisiko für Anteilseigner.',no:'Nicht korrekt. A verwechselt Finanzierungsstruktur mit Effizienz. C ist sachlich falsch.'}
+  4:{ok:'✓ Richtig! Der Gewinn sank durch buchhalterische Wertminderungen – kein Geld floss ab. Der FCF zeigt: Hugo Boss generiert operativ mehr Geld als je zuvor.',no:'Nicht korrekt. A ist falsch: Gewinn und Cashflow können sehr unterschiedlich sein. C ist falsch: ein hoher FCF entsteht hier durch Effizienz, nicht durch hohe Investitionen.'},
+  5:{ok:'✓ Richtig! 8,4 % liegt unter dem eigenen Ziel (9–10 %) und unter 2023 (9,8 %). Die Verdoppelung ist eine Wette auf die Margenerholung 2025.',no:'Nicht korrekt. A unterschätzt das Signal – der Rückgang ist messbar und von Hugo Boss selbst als Problem anerkannt. C ist falsch: die EBIT-Marge ist DIE Steuerungsgröße des Managements.'}
 };
 var scLabels=['Das Briefing','Der Geschäftsbericht','Kennzahlenanalyse','Gesamtbewertung','Empfehlung','Kreditgeber-Perspektive','Reflexion'];
 var selectedVote=null;
@@ -1136,46 +1610,549 @@ function toggleRfText(textId, btn){
   btn.textContent=hidden?'Impuls einblenden':'Impuls ausblenden';
 }
 
-// ── KGV FUNCTIONS ──
-// checkKGVstep1 entfernt – Werte werden direkt angezeigt
-function checkKGVresult(){
-  var el=document.getElementById('k5kgvi');
+// KGV-Funktionen entfernt
+
+function checkFCFresult(){
+  var key='fcf_result';
+  var el=document.getElementById('k4i');
   var v=parseFloat(String(el.value).replace(',','.'));
-  var ok=Math.abs(v-10.4)<=0.4;
+  var ok=Math.abs(v-418)<=3;
   el.classList.remove('ok','no'); el.classList.add(ok?'ok':'no');
-  var fb=document.getElementById('k5kgvfb');
-  fb.className='ifb show '+(ok?'ifok':'ifer');
-  fb.innerHTML=ok?'✓ Korrekt! 32 ÷ 3,09 = 10,4x':'Noch nicht ganz. Rechne: 32 ÷ 3,09 ≈ 10,4x';
+  var fb=document.getElementById('k4fb');
   if(ok){
-    document.getElementById('k5kgviz').classList.add('show');
-    buildKGVInterp();
+    fb.className='ifb show ifok';
+    fb.innerHTML='✓ Korrekt! (497−96) ÷ 96 × 100 = 401 ÷ 96 × 100 ≈ 418 % – eine Vervierfachung!';
+    document.getElementById('k4iz').classList.add('show');
+    buildInterp(4);
+  } else {
+    var n=addAttempt(key);
+    if(n>=2){
+      el.value='418';
+      el.classList.remove('no');el.classList.add('ok');
+      fb.className='ifb show ifok';
+      fb.innerHTML='→ Lösung: (497 − 96) ÷ 96 × 100 = 401 ÷ 96 × 100 ≈ 418 %';
+      document.getElementById('k4iz').classList.add('show');
+      buildInterp(4);
+    } else {
+      fb.className='ifb show ifer';
+      fb.innerHTML='✗ Noch nicht ganz – versuch es nochmal! Tipp: Schritt für Schritt: zuerst 497 − 96 = ?, dann ÷ 96, dann × 100.';
+    }
   }
 }
-function buildKGVInterp(){
-  var wrap=document.getElementById('k5kgviz');
-  var opts=wrap.querySelectorAll('[data-kgv]');
-  opts.forEach(function(opt,oi){
-    opt.addEventListener('click',function(){
-      if(this.classList.contains('ick')||this.classList.contains('ino'))return;
-      var correct=(oi===1);
-      opts.forEach(function(o){o.classList.add('ioff');});
-      this.classList.remove('ioff'); this.classList.add(correct?'ick':'ino');
-      if(!correct) opts[1].classList.add('ick');
-      var fb=document.getElementById('k5kgvifb');
-      fb.className='ifb show '+(correct?'ifok':'ifer');
-      fb.innerHTML=correct?
-        '✓ Richtig! KGV 10,4x unter Branchendurchschnitt (~15x) = mögliche Unterbewertung. Das verändert das Urteil grundlegend.' :
-        'Nicht korrekt. A ist falsch: niedriges KGV signalisiert günstige Bewertung, nicht Überbewertung. C ist falsch: KGV ist die wichtigste Bewertungskennzahl für Anteilseigner.';
-      setTimeout(function(){
-        document.getElementById('k5kgvfaz').classList.add('show');
-        document.getElementById('kz5').classList.add('kz-complete');
-        var pip=document.getElementById('kzp5');
-        if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
-        kzDone[5]=true;
-        checkAllKZ();
-      },600);
-    },{once:true});
+
+// Sicherheitsnetz: falls Schüler in Sackgasse geraten
+function enableFallback(){
+  setTimeout(function(){
+    var btn=document.getElementById('sc3nxt');
+    if(btn && btn.classList.contains('hidden')){
+      btn.classList.remove('hidden');
+      btn.style.background='var(--slate)';
+      btn.title='Fallback: Weiter auch ohne alle Kennzahlen abgeschlossen';
+    }
+  }, 120000); // 2 Minuten Timeout
+}
+
+
+var checkAnswers = {};
+var checkHints = {
+  1: {ja:'Gut! Mehrere Kennzahlen geben ein vollständigeres Bild als nur eine.',
+      nein:'Versucht noch mindestens eine weitere Kennzahl einzubinden – z.B. EK-Rentabilität, EBIT-Marge oder Free Cashflow.'},
+  2: {ja:'Sehr gut – Interpretation ist wichtiger als der bloße Zahlenwert.',
+      nein:'Beispiel: Nicht nur "14,9 %" schreiben, sondern: "14,9 % bedeutet, dass Hugo Boss auf 100 € Eigenkapital 14,90 € verdient – das ist ein Rückgang gegenüber 2023."'},
+  3: {ja:'Perfekt – die Verdopplungsfrage ist der Kern des Auftrags.',
+      nein:'Formuliert einen konkreten Satz: z.B. "Deshalb empfehlen wir [Kaufen/Halten], weil Hugo Boss im Jahr 2025..."'},
+  4: {ja:'Eure Argumentation ist in sich schlüssig.',
+      nein:'Überprüft: Passt die Empfehlung zu euren Argumenten? Wenn ihr Stärken betont aber "Verkaufen" empfehlt, braucht ihr eine klare Begründung.'}
+};
+function setCheck(n, val){
+  checkAnswers[n] = val;
+  // Button-Styling
+  var item = document.getElementById('chk'+n);
+  item.querySelectorAll('.fb-chk-btn').forEach(function(b){ b.className='fb-chk-btn'; });
+  item.querySelectorAll('.fb-chk-btn').forEach(function(b){
+    if(b.textContent.includes('Ja') && val==='ja') b.className='fb-chk-btn sel-ja';
+    if(b.textContent.includes('Nein') && val==='nein') b.className='fb-chk-btn sel-nein';
   });
+  // Hint
+  var hint = document.getElementById('chk'+n+'h');
+  hint.textContent = checkHints[n][val];
+  hint.className = 'fb-check-hint hint-'+val;
+  hint.style.display = 'block';
+  // Summary wenn alle beantwortet
+  if(Object.keys(checkAnswers).length===4){
+    var jaCount = Object.values(checkAnswers).filter(function(v){return v==='ja';}).length;
+    var summary = document.getElementById('checklistSummary');
+    var msgs = ['Ihr seid noch am Anfang – schaut euch die Hinweise an und überarbeitet eure Begründung.',
+                'Guter Ansatz, aber noch Luft nach oben. Achtet besonders auf die Punkte, die ihr mit "Nein" beantwortet habt.',
+                'Solide Arbeit! Kleine Verbesserungen sind noch möglich.',
+                'Sehr gut begründet! Eure Analyse ist vollständig und schlüssig.',
+                'Ausgezeichnet! Eure Empfehlung ist professionell begründet.'];
+    summary.innerHTML = '<strong>Ergebnis: '+jaCount+'/4 Kriterien erfüllt</strong><br>'+msgs[jaCount];
+    summary.style.display = 'block';
+    summary.style.borderLeftColor = jaCount>=3 ? 'var(--ok)' : jaCount===2 ? 'var(--gold)' : 'var(--red)';
+  }
+}
+
+async function getAIFeedback(verdict, arg1, arg2, arg3){
+  var wrap = document.getElementById('aiFeedbackWrap');
+  var loading = document.getElementById('aiFeedbackLoading');
+  var result = document.getElementById('aiFeedbackResult');
+  wrap.style.display = 'block';
+  loading.style.display = 'block';
+  result.style.display = 'none';
+
+  var verdictLabel = {buy:'Kaufen – Position verdoppeln', hold:'Halten – Position behalten', sell:'Verkaufen – Position abbauen'};
+  var args = [arg1, arg2, arg3].filter(Boolean).join('\n');
+
+  var systemPrompt = `Du bist eine hilfreiche Lehrkraft-KI, die Schülerinnen und Schüler der Jahrgangsstufe 1 (Klasse 11/12) eines Wirtschaft-Leistungskurses konstruktives Feedback zu ihrer Unternehmensanalyse gibt. Die Schüler haben die Kennzahlen der Hugo Boss AG (GJ 2024) analysiert: EK-Rentabilität 14,9%, Nettomarge 4,9%, EK-Quote 37,7%, Free Cashflow +418% auf 497 Mio. €, EBIT-Marge 8,4%.
+
+Gib Feedback in drei Bereichen als JSON:
+1. "kennzahlen": Wurden relevante Kennzahlen aus der Analyse (EK-Rentabilität, Nettomarge, EK-Quote, Cashflow, EBIT-Marge) erwähnt? Bewertung: gut/teilweise/fehlend
+2. "begruendung": Ist die Verbindung zwischen Kennzahl → Interpretation → Empfehlung logisch und nachvollziehbar? Bewertung: gut/teilweise/schwach
+3. "hinweis": Ein konkreter, ermunternder Verbesserungshinweis (1-2 Sätze, schülernah)
+
+Antworte NUR als JSON-Objekt ohne Markdown, ohne Präambel:
+{"kennzahlen": {"bewertung": "gut|teilweise|fehlend", "text": "..."},
+ "begruendung": {"bewertung": "gut|teilweise|schwach", "text": "..."},
+ "hinweis": "..."}`;
+
+  var userPrompt = `Empfehlung: "${verdictLabel[verdict] || verdict}"
+
+Begründung der Schüler:
+${args}`;
+
+  try {
+    var response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: [{role: "user", content: userPrompt}]
+      })
+    });
+    var data = await response.json();
+    var text = data.content && data.content[0] ? data.content[0].text : '';
+    var clean = text.replace(/```json|```/g,'').trim();
+    var fb = JSON.parse(clean);
+
+    var icons = {gut:'✓', teilweise:'~', fehlend:'✗', schwach:'✗'};
+    var colors = {gut:'ai-fb-ok', teilweise:'ai-fb-warn', fehlend:'ai-fb-tip', schwach:'ai-fb-tip'};
+
+    result.innerHTML =
+      '<div style="font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-family:var(--mono);margin-bottom:10px">🤖 KI-Analyse eurer Begründung</div>'+
+      '<div class="ai-fb-box"><h4 class="'+colors[fb.kennzahlen.bewertung]+'">'+
+      icons[fb.kennzahlen.bewertung]+' Kennzahlen-Auswahl</h4>'+
+      '<div class="ai-fb-text">'+fb.kennzahlen.text+'</div></div>'+
+      '<div class="ai-fb-box"><h4 class="'+colors[fb.begruendung.bewertung]+'">'+
+      icons[fb.begruendung.bewertung]+' Logik der Begründung</h4>'+
+      '<div class="ai-fb-text">'+fb.begruendung.text+'</div></div>'+
+      '<div class="ai-fb-box" style="border-left:3px solid var(--gold)"><h4>💡 Verbesserungshinweis</h4>'+
+      '<div class="ai-fb-text">'+fb.hinweis+'</div></div>';
+
+  } catch(e) {
+    result.innerHTML = '<div class="ai-fb-box"><div class="ai-fb-text"><strong>Tipp:</strong> Vergleicht eure Begruendung mit der Musterloesung unter "Professionelles Urteil": Habt ihr dieselben Kennzahlen verwendet? Ist eure Argumentation ebenso schluessig?</div></div>';
+  }
+  loading.style.display = 'none';
+  result.style.display = 'block';
+}
+
+var defDone={1:false,2:false,3:false,4:false,5:false};
+var defCorr={1:1,2:1,3:1,4:1,5:1}; // alle B (index 1) sind korrekt
+
+var defExpl={
+  1:{ok:'✓ Genau. Die EK-Rentabilität ist die Rendite auf das eingesetzte Eigenkapital – die Kernfrage jedes Aktionärs.',
+     no:'Nicht ganz. Schau dir die anderen Optionen nochmal an: Welche beschreibt das Verhältnis von Gewinn zu eingesetztem Kapital?'},
+  2:{ok:'✓ Richtig. Von 100 € Umsatz bleibt die Nettomarge als Gewinn übrig.',
+     no:'Nicht ganz. Die Nettomarge setzt Gewinn und Umsatz ins Verhältnis – nicht Gewinn und Kapital.'},
+  3:{ok:'✓ Richtig. Je höher die EK-Quote, desto mehr eigenes Kapital – desto unabhängiger von Gläubigern.',
+     no:'Nicht ganz. Die EK-Quote zeigt das Verhältnis von Eigen- zu Gesamtkapital in der Bilanz.'},
+  4:{ok:'✓ Richtig. Der Free Cashflow zeigt tatsächliche Geldflüsse – unabhängig von buchhalterischen Korrekturen.',
+     no:'Nicht ganz. Der Free Cashflow hat nichts mit Umsatz oder Schulden zu tun – er misst Geldzu- und -abflüsse.'},
+  5:{ok:'✓ Richtig. Die EBIT-Marge ist Hugo Boss eigene Steuerungsgröße und zeigt operative Effizienz.',
+     no:'Nicht ganz. EBIT = Gewinn vor Zinsen und Steuern – dividiert durch den Umsatz ergibt die EBIT-Marge.'}
+};
+
+function checkDef(ki, oi){
+  if(defDone[ki]) return;
+  var wrap = document.getElementById('defquiz'+ki);
+  var opts = wrap.querySelectorAll('.def-opt');
+  var correct = (oi === defCorr[ki]);
+  opts.forEach(function(o){ o.classList.add('doff'); });
+  opts[oi].classList.remove('doff');
+  opts[oi].classList.add(correct ? 'dck' : 'dno');
+  if(!correct) opts[defCorr[ki]].classList.remove('doff');
+  var fb = document.getElementById('deffb'+ki);
+  fb.className = 'def-fb show ' + (correct ? 'dfok' : 'dfer');
+  fb.innerHTML = defExpl[ki][correct ? 'ok' : 'no'];
+  if(correct){
+    defDone[ki] = true;
+    setTimeout(function(){
+      var steps = document.getElementById('calcsteps'+ki);
+      if(steps){ steps.classList.remove('locked'); }
+    }, 600);
+  }
+}
+
+// ── 1. BEOBACHTUNGSAUFTRAG ──
+function checkObs(){
+  var v1=document.getElementById('obs1').value.trim();
+  var v2=document.getElementById('obs2').value.trim();
+  var btn=document.getElementById('obsBtn');
+  var ok=v1.length>=15&&v2.length>=15;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitObs(){
+  nextScene(3);
+}
+
+// ── 2. ZWISCHENURTEIL ──
+function checkZwischen(){
+  var v=document.getElementById('zwischenurteilText').value.trim();
+  var btn=document.getElementById('zwischenBtn');
+  var ok=v.length>=20;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitZwischen(){
+  var v=document.getElementById('zwischenurteilText').value.trim();
+  nextScene(4);
+  // Show it in scene 4
+  setTimeout(function(){
+    var d=document.getElementById('zwischenurteilDisplay');
+    if(d){d.textContent=v;d.style.display='block';}
+  },200);
+}
+
+// Override checkAllKZ to show Zwischenurteil wrap instead of directly going to sc4
+var _origCheckAllKZ = checkAllKZ;
+checkAllKZ = function(){
+  var all=Object.values(kzDone).every(Boolean);
+  if(all){
+    var w=document.getElementById('zwischenurteilWrap');
+    if(w){
+      w.classList.remove('hidden');
+      setTimeout(function(){w.scrollIntoView({behavior:'smooth',block:'center'});},500);
+    }
+  }
+};
+
+// ── 3. SORTIERAUFGABE ──
+var sortSelected=null;
+var sortCorrect={sc_1:'sta',sc_2:'sta',sc_3:'sta',sc_4:'sch',sc_5:'sch',sc_6:'sch',sc_7:'sta',sc_8:'sch'};
+var sortPlaced={};
+
+function selectSortCard(id){
+  if(sortPlaced[id]) return;
+  sortSelected=id;
+  document.querySelectorAll('.sort-card').forEach(function(c){c.style.outline='none';});
+  document.getElementById(id).style.outline='2px solid var(--gold)';
+  document.getElementById('sortHint').style.display='block';
+  document.getElementById('sortSelName').textContent=document.getElementById(id).textContent;
+  document.getElementById('col_sta_btn').style.display='block';
+  document.getElementById('col_sch_btn').style.display='block';
+}
+function placeSortCard(col){
+  if(!sortSelected) return;
+  var card=document.getElementById(sortSelected);
+  var correct=sortCorrect[sortSelected]===col;
+  card.style.outline='none';
+  card.classList.add('in-'+col);
+  // Move to column display
+  var target=document.getElementById('col_'+col+'_items');
+  var mini=document.createElement('div');
+  mini.style.cssText='font-size:.78rem;padding:4px 8px;margin-bottom:4px;border-radius:3px;';
+  mini.style.background=correct?'var(--greenl)':'var(--redl)';
+  mini.style.color=correct?'var(--okd)':'var(--red)';
+  mini.textContent=(correct?'✓ ':'✗ ')+card.textContent;
+  target.appendChild(mini);
+  sortPlaced[sortSelected]=col;
+  sortSelected=null;
+  document.getElementById('sortHint').style.display='none';
+  document.getElementById('col_sta_btn').style.display='none';
+  document.getElementById('col_sch_btn').style.display='none';
+  // Check if all placed
+  if(Object.keys(sortPlaced).length===8) finishSort();
+}
+function finishSort(){
+  var correct=0;
+  Object.keys(sortCorrect).forEach(function(id){if(sortPlaced[id]===sortCorrect[id])correct++;});
+  var fb=document.getElementById('sortfb');
+  fb.className='ifb show '+(correct>=6?'ifok':'ifer');
+  fb.innerHTML=(correct===8?'✓ Perfekt! Alle 8 Aussagen richtig eingeordnet.':
+    correct>=6?'✓ Gut! '+correct+'/8 richtig – schaut euch die Auflösung unten an.':
+    '→ '+correct+'/8 richtig. Die Auflösung zeigt, was ein Analyst sehen würde.');
+  document.getElementById('swotMuster').style.display='block';
+  document.getElementById('sc4nxt').style.display='inline-flex';
+  setTimeout(function(){document.getElementById('swotMuster').scrollIntoView({behavior:'smooth',block:'start'});},400);
+}
+
+// ── 4. BANK EINSTIEGSFRAGE ──
+var bankChipsSelected=[];
+function toggleBankChip(el){
+  var kz=el.getAttribute('data-kz');
+  if(el.classList.contains('sel')){
+    el.classList.remove('sel');
+    bankChipsSelected=bankChipsSelected.filter(function(x){return x!==kz;});
+  } else {
+    if(bankChipsSelected.length>=2){
+      document.querySelector('.bank-kz-chip[data-kz="'+bankChipsSelected[0]+'"]').classList.remove('sel');
+      bankChipsSelected.shift();
+    }
+    el.classList.add('sel');
+    bankChipsSelected.push(kz);
+  }
+  checkBankEntry();
+}
+function checkBankEntry(){
+  var text=document.getElementById('bankEntryText').value.trim();
+  var btn=document.getElementById('bankEntryBtn');
+  var ok=bankChipsSelected.length===2&&text.length>=20;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitBankEntry(){
+  var bankGoodKZ=['eq','fcf']; // EK-Quote und Free Cashflow sind für Bank eher irrelevant; Verschuldungsgrad+Liquidität II wären ideal aber nicht in this list
+  // The ideal bank KZ are actually Verschuldungsgrad and Liquidität II (Szene 6)
+  // Here we just give feedback on their choice
+  var hasGood=bankChipsSelected.some(function(k){return ['eq','nm','em'].indexOf(k)>=0;});
+  var hasBetter=bankChipsSelected.some(function(k){return ['fcf','ek'].indexOf(k)>=0;});
+  var feedbackTexts={
+    ek:'EK-Rentabilität ist eher für Anteilseigner relevant – sie zeigt Rendite, nicht Rückzahlungsfähigkeit.',
+    nm:'Nettomarge gibt Hinweise auf Profitabilität, aber Banken schauen vor allem auf Zahlungsfähigkeit.',
+    eq:'EK-Quote ist tatsächlich wichtig für die Bank – sie zeigt den Eigenkapitalpuffer im Insolvenzfall.',
+    fcf:'Free Cashflow ist sehr relevant – er zeigt, ob Hugo Boss Zinsen und Tilgung aus dem laufenden Geschäft bedienen kann.',
+    em:'EBIT-Marge zeigt operative Stärke – Banken schauen darauf, aber primär auf Verschuldung und Liquidität.'
+  };
+  var fb='Eure Wahl: '+bankChipsSelected.map(function(k){return {'ek':'EK-Rentabilität','nm':'Nettomarge','eq':'EK-Quote','fcf':'Free Cashflow','em':'EBIT-Marge'}[k];}).join(' + ')+'.<br><br>';
+  bankChipsSelected.forEach(function(k){ fb+=feedbackTexts[k]+' '; });
+  fb+='<br><br><strong>Schaut, welche Kennzahlen die Bank in der Analyse tatsächlich berechnet – und ob sie eurer Erwartung entsprechen.</strong>';
+  document.getElementById('bankEntryFeedback').innerHTML=fb;
+  document.getElementById('bankEntryFeedback').style.display='block';
+  document.getElementById('bankKZwrap').style.display='block';
+  document.getElementById('bankEntryBtn').disabled=true;
+  document.getElementById('bankEntryBtn').textContent='Antwort abgegeben ✓';
+  setTimeout(function(){document.getElementById('bankKZwrap').scrollIntoView({behavior:'smooth',block:'start'});},400);
+}
+
+// ── 5. SZENE 7 – KI-FEEDBACK AUF REFLEXIONSANTWORT ──
+var rfQuestions={
+  1:'Grenzen der Kennzahlenanalyse: Was haben wir nicht gesehen? (Hugo Boss GJ 2024)',
+  2:'Wessen Interessen wurden in der Analyse nicht berücksichtigt?',
+  3:'Gewinn sank, Cashflow stieg – wie ist das möglich?'
+};
+async function submitRfAnswer(num){
+  var text=document.getElementById('rf'+num+'text').value.trim();
+  if(text.length<20){alert('Bitte schreibt mindestens ein paar Sätze.');return;}
+  var fbDiv=document.getElementById('rf'+num+'aifb');
+  fbDiv.innerHTML='⏳ Feedback wird geladen...';
+  fbDiv.style.display='block';
+  try{
+    var resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:600,
+        system:'Du bist eine hilfreiche Wirtschaftslehrkraft. Schüler (Klasse 11/12, Leistungskurs Wirtschaft) haben die Hugo Boss AG GJ 2024 analysiert und geben jetzt eine Reflexionsantwort. Gib konstruktives, ermunterndes Feedback in 3-4 Sätzen: Was ist gut? Was fehlt noch? Verwende einfache, schülernahe Sprache. Kein Markdown.',
+        messages:[{role:'user',content:'Frage: '+rfQuestions[num]+'\n\nAntwort des Schülers: '+text}]
+      })
+    });
+    var data=await resp.json();
+    fbDiv.innerHTML='<strong>Feedback:</strong> '+(data.content&&data.content[0]?data.content[0].text:'Feedback konnte nicht geladen werden.');
+  }catch(e){
+    fbDiv.innerHTML='<strong>Tipp:</strong> Vergleicht eure Antwort mit dem Impuls unten und tauscht euch mit eurem Sitznachbar aus: Was habt ihr anders geschrieben?';
+  }
+}
+
+// ── VORHERSAGE ──
+function checkPrognose(){
+  var v=document.getElementById('prognoseText').value.trim();
+  var btn=document.getElementById('prognoseBtn');
+  var ok=v.length>=20;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitPrognose(){
+  document.getElementById('prognoseBox').style.display='none';
+  nextScene(2);
+}
+
+// ── HYPOTHESE KZ1 ──
+function checkHypo1(){
+  var v=document.getElementById('hypo1text').value.trim();
+  var btn=document.getElementById('hypo1btn');
+  var ok=v.length>=15;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitHypo1(){
+  document.getElementById('hypo1wrap').style.display='none';
+  document.getElementById('k1iz').classList.add('show');
+  buildInterp(1);
+}
+
+// Override checkKZresult to intercept KZ1 and show hypothesis first
+var _origCheckKZresult=checkKZresult;
+checkKZresult=function(ki,target,inputId,fbId,interpId,fazId){
+  var key='result_'+ki;
+  var el=document.getElementById(inputId);
+  var v=parseFloat(String(el.value).replace(',','.'));
+  var tol=0.4;
+  var ok=Math.abs(v-target)<=tol;
+  el.classList.remove('ok','no'); el.classList.add(ok?'ok':'no');
+  var fb=document.getElementById(fbId);
+  if(ok){
+    fb.className='ifb show ifok';
+    fb.innerHTML=kzExpl[ki]['ok'];
+    if(ki===1){
+      // Show hypothesis first, interp locked until hypothesis submitted
+      document.getElementById('hypo1wrap').style.display='block';
+      setTimeout(function(){document.getElementById('hypo1wrap').scrollIntoView({behavior:'smooth',block:'center'});},200);
+    } else {
+      document.getElementById(interpId).classList.add('show');
+      buildInterp(ki);
+    }
+  } else {
+    var n=addAttempt(key);
+    var rHint2={1:'Rechnung: 213 ÷ 1.427 × 100 = ?',2:'Rechnung: 213 ÷ 4.307 × 100 = ?',3:'Rechnung: 1.427 ÷ 3.782 × 100 = ?',5:'Rechnung: 361 ÷ 4.307 × 100 = ?'};
+    if(n>=2){
+      el.value=target.toString().replace('.',',');
+      el.classList.remove('no'); el.classList.add('ok');
+      fb.className='ifb show ifok';
+      fb.innerHTML='-> Loesung: '+kzExpl[ki]['ok'].replace('Korrekt! ','');
+      if(ki===1){
+        document.getElementById('hypo1wrap').style.display='block';
+      } else {
+        document.getElementById(interpId).classList.add('show');
+        buildInterp(ki);
+      }
+    } else {
+      fb.className='ifb show ifer';
+      fb.innerHTML='Noch nicht ganz. Tipp: Runde auf eine Nachkommastelle.';
+    }
+  }
+};
+
+// ── RANGORDNUNG ──
+var rankOrder=[];
+function rankKZ(el){
+  var kz=el.getAttribute('data-kz');
+  if(el.classList.contains('ranked')){
+    // Deselect
+    var pos=rankOrder.indexOf(kz);
+    if(pos>=0) rankOrder.splice(pos,1);
+    el.classList.remove('ranked');
+    el.querySelector('.rank-badge') && el.querySelector('.rank-badge').remove();
+    // Reindex badges
+    document.querySelectorAll('.rank-chip.ranked').forEach(function(c,i){
+      var b=c.querySelector('.rank-badge');
+      if(b) b.textContent=rankOrder.indexOf(c.getAttribute('data-kz'))+1;
+    });
+  } else {
+    rankOrder.push(kz);
+    el.classList.add('ranked');
+    var badge=document.createElement('span');
+    badge.className='rank-badge';
+    badge.textContent=rankOrder.length;
+    el.appendChild(badge);
+  }
+  document.getElementById('rankStatus').textContent=rankOrder.length+' / 5 eingeordnet';
+  checkRang();
+}
+function checkRang(){
+  var bg=document.getElementById('rangBegruendung').value.trim();
+  var btn=document.getElementById('rangBtn');
+  var ok=rankOrder.length===5&&bg.length>=15;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitRang(){
+  var names={'ek':'EK-Rentabilität','nm':'Nettomarge','eq':'EK-Quote','fcf':'Free Cashflow','em':'EBIT-Marge'};
+  var ranking=rankOrder.map(function(k,i){return (i+1)+'. '+names[k];}).join(' → ');
+  var fb=document.getElementById('rangfb');
+  fb.className='ifb show ifok';
+  fb.innerHTML='Eure Rangordnung: '+ranking+'. Ihr seht am Ende der Analyse, welche Kennzahlen das professionelle Urteil tatsächlich am stärksten beeinflusst haben.';
+  document.getElementById('zwischSatz').style.display='block';
+  document.getElementById('rangBtn').disabled=true;
+  document.getElementById('rangBtn').textContent='Eingeordnet ✓';
+  setTimeout(function(){document.getElementById('zwischSatz').scrollIntoView({behavior:'smooth',block:'center'});},400);
+}
+
+// ── GEGENARGUMENT ──
+function checkCounter(){
+  var v=document.getElementById('counterText').value.trim();
+  var btn=document.getElementById('counterBtn');
+  var ok=v.length>=20;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitCounter(){
+  var fb=document.getElementById('counterfb');
+  fb.className='ifb show ifok';
+  fb.innerHTML='Gut! Wer das stärkste Gegenargument kennt, kann die eigene Empfehlung besser verteidigen.';
+  document.getElementById('counterBtn').disabled=true;
+  document.getElementById('counterBtn').textContent='Eingereicht ✓';
+  document.getElementById('waswennWrap').style.display='block';
+  setTimeout(function(){document.getElementById('waswennWrap').scrollIntoView({behavior:'smooth',block:'center'});},400);
+  // Allow goSc6
+  setTimeout(function(){
+    var btn=document.getElementById('goSc6');
+    if(btn) btn.style.display='inline-flex';
+  },800);
+}
+
+// ── ANALOGIE FCF ──
+function checkAnalogy4(){
+  var v=document.getElementById('analogyText4').value.trim();
+  var btn=document.getElementById('analogyBtn4');
+  var ok=v.length>=15;
+  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+}
+function submitAnalogy4(){
+  var text=document.getElementById('analogyText4').value.trim();
+  var fb=document.getElementById('analogyfb4');
+  // Check if they got it right - the money flowed at purchase (year 0)
+  var correct=text.toLowerCase().indexOf('kauf')>=0||text.toLowerCase().indexOf('anfang')>=0||
+              text.toLowerCase().indexOf('beginn')>=0||text.toLowerCase().indexOf('ersten')>=0||
+              text.toLowerCase().indexOf('sofort')>=0||text.toLowerCase().indexOf('jahr 0')>=0||
+              text.toLowerCase().indexOf('bezahl')>=0;
+  fb.className='ifb show '+(correct?'ifok':'ifer');
+  fb.innerHTML=correct?
+    '✓ Genau! Das Geld floss bei der Anschaffung – im ersten Jahr, komplett. Die Abschreibungen danach sind nur buchhalterische Aufteilung, kein weiterer Geldabfluss. Genau das ist der Unterschied zwischen Gewinn und Cashflow.' :
+    '→ Tipp: Der Ofen kostet 8.000 € beim Kauf. Das Geld fließt einmalig ab – nicht jedes Jahr. Die 1.000 € Abschreibung pro Jahr ist nur eine buchhalterische Aufteilung dieser Anschaffungskosten auf die Nutzungsdauer.';
+  document.getElementById('fcfExplanation').style.display='block';
+  document.getElementById('analogyBtn4').disabled=true;
+  document.getElementById('analogyBtn4').textContent='Weiter ✓';
+  if(correct){
+    document.getElementById('calcsteps4').classList.add('def-unlocked');
+    // Also show def quiz
+    setTimeout(function(){document.getElementById('fcfExplanation').scrollIntoView({behavior:'smooth',block:'start'});},400);
+  } else {
+    setTimeout(function(){document.getElementById('fcfExplanation').scrollIntoView({behavior:'smooth',block:'start'});},600);
+  }
+}
+
+// ── EXIT TICKET ──
+function submitExit(){
+  var text=document.getElementById('exitText').value.trim();
+  if(text.length<10){alert('Schreibt noch einen Satz.');return;}
+  var d=document.getElementById('exitDisplay');
+  d.textContent='"'+text+'"';
+  d.style.display='block';
+  document.getElementById('exitText').style.display='none';
+  document.querySelector('.exit-ticket button').textContent='Abgeschlossen ✓';
+  document.querySelector('.exit-ticket button').disabled=true;
+}
+
+// ── GATE: goSc6 only after counter submitted ──
+// Override submitVerdict to NOT show goSc6 immediately
+
+function unlockBankResult(ki){
+  var hint=document.getElementById('bk'+ki+'s2hint');
+  var row=document.getElementById('bk'+ki+'s2row');
+  var inp=document.getElementById('bk'+ki+'i');
+  var btn=document.getElementById('bk'+ki+'btn2');
+  if(hint) hint.style.display='block';
+  if(row){ row.style.opacity='1'; row.style.pointerEvents='auto'; }
+  if(inp){ inp.disabled=false; inp.classList.add('unlocked'); }
+  if(btn) btn.style.display='inline-block';
+  if(inp) setTimeout(function(){ inp.focus(); },150);
 }
 function updateProgress(n){
   for(var i=1;i<=7;i++){
@@ -1202,6 +2179,7 @@ function jumpTo(n){
 function nv(id){return parseFloat(String(document.getElementById(id).value).replace(',','.'));}
 function near2(v,t){return Math.abs(v-t)<=1;}
 function checkKZstep1(ki,zTarget,nTarget){
+  var key='step1_'+ki;
   var zOk=near2(nv('k'+ki+'z'),zTarget);
   var nOk=near2(nv('k'+ki+'n'),nTarget);
   var zEl=document.getElementById('k'+ki+'z'),nEl=document.getElementById('k'+ki+'n');
@@ -1213,26 +2191,39 @@ function checkKZstep1(ki,zTarget,nTarget){
     fb.innerHTML='✓ Beide Werte korrekt – jetzt rechnen!';
     unlockResult(ki);
   } else {
+    var n=addAttempt(key);
+    // Kleine Hinweise (Versuch 1): Wo stehen die Werte?
+    var hint1={
+      1:'Zähler = Jahresüberschuss (letzte Zeile der GuV). Nenner = Eigenkapital (Passivseite der Bilanz).',
+      2:'Beide Werte in der GuV: Jahresüberschuss ganz unten, Umsatzerlöse ganz oben.',
+      3:'Beide auf der Passivseite der Bilanz: EK oben, Bilanzsumme ganz unten.',
+      5:'EBIT in der GuV (= operativer Gewinn, ca. in der Mitte). Umsatzerlöse = erste Zeile der GuV.'
+    };
+    // Größere Hinweise (Versuch 2): Konkrete Werte
+    var hint2={
+      1:'Die Werte: JÜ auf Anteilseigner = 213 Mio. € · EK = 1.427 Mio. €',
+      2:'Die Werte: JÜ = 213 Mio. € · Umsatz = 4.307 Mio. €',
+      3:'Die Werte: EK = 1.427 Mio. € · Bilanzsumme = 3.782 Mio. €',
+      5:'Die Werte: EBIT = 361 Mio. € · Umsatz = 4.307 Mio. €'
+    };
+    var fb_html;
+    if(n===1){
+      fb_html='✗ Noch nicht ganz. <em>Kleiner Hinweis: '+(hint1[ki]||'Schau nochmal in Bilanz und GuV.')+'</em>';
+    } else if(n>=2){
+      zEl.value=zTarget; nEl.value=nTarget;
+      zEl.classList.remove('no');zEl.classList.add('ok');
+      nEl.classList.remove('no');nEl.classList.add('ok');
+      fb.className='ifb show ifok';
+      fb.innerHTML='→ Lösung eingeblendet. <em>'+(hint2[ki]||'Werte eingefügt.')+'</em>';
+      unlockResult(ki);
+      return;
+    }
     fb.className='ifb show ifer';
-    var hints={1:'Tipp: JÜ auf Anteilseigner = 213 Mio. (GuV, letzte Zeile). EK = 1.427 Mio. (Passivseite Bilanz).',2:'Tipp: JÜ auf Anteilseigner = 213 Mio. und Umsatzerlöse = 4.307 Mio. (beide aus der GuV).',3:'Tipp: EK = 1.427 Mio., Bilanzsumme = 3.782 Mio. (beide Passivseite der Bilanz).'};
-    fb.innerHTML='✗ '+(!zOk?'Zähler ':'')+(!nOk?'Nenner ':'')+'nicht korrekt. '+(hints[ki]||'Prüfe nochmals die Bilanzdaten.');
+    fb.innerHTML=fb_html;
   }
 }
-function checkKZstep1sum(ki,ekT,fkT,sumT,avT){
-  var ekOk=near2(nv('k4ek'),ekT),fkOk=near2(nv('k4fk'),fkT),sumOk=near2(nv('k4sum'),sumT),avOk=near2(nv('k4n'),avT);
-  ['k4ek','k4fk','k4sum','k4n'].forEach(function(id,i){
-    var el=document.getElementById(id);el.classList.remove('ok','no');
-    el.classList.add([ekOk,fkOk,sumOk,avOk][i]?'ok':'no');
-  });
-  var fb=document.getElementById('k4sfb');
-  if(ekOk&&fkOk&&sumOk&&avOk){
-    fb.className='ifb show ifok';fb.innerHTML='✓ Alle Werte korrekt – jetzt Deckungsgrad II berechnen!';
-    unlockResult(4);
-  } else {
-    fb.className='ifb show ifer';
-    fb.innerHTML='✗ Noch nicht alle Werte korrekt. Tipp: EK = 1.427, langfr. FK = 1.282, Summe = 2.709, AV = 2.400. Prüfe die Bilanz.';
-  }
-}
+// checkKZstep1sum: DG II entfernt
+
 function unlockResult(ki){
   var hint=document.getElementById('k'+ki+'s2hint');
   hint.style.display='block';
@@ -1252,16 +2243,40 @@ function unlockResult(ki){
   },150);
 }
 function checkKZresult(ki,target,inputId,fbId,interpId,fazId){
+  var key='result_'+ki;
   var el=document.getElementById(inputId);
   var v=parseFloat(String(el.value).replace(',','.'));
-  var ok=Math.abs(v-target)<=0.4;
+  var tol=(ki===4)?3:0.4; // FCF % change has wider tolerance
+  var ok=Math.abs(v-target)<=tol;
   el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');
   var fb=document.getElementById(fbId);
-  fb.className='ifb show '+(ok?'ifok':'ifer');
-  fb.innerHTML=kzExpl[ki][ok?'ok':'no'];
   if(ok){
+    fb.className='ifb show ifok';
+    fb.innerHTML=kzExpl[ki]['ok'];
     document.getElementById(interpId).classList.add('show');
     buildInterp(ki);
+  } else {
+    var n=addAttempt(key);
+    if(n>=2){
+      el.value=target.toString().replace('.',',');
+      el.classList.remove('no');el.classList.add('ok');
+      fb.className='ifb show ifok';
+      fb.innerHTML='→ Lösung: '+kzExpl[ki]['ok'].replace('✓ Korrekt! ','');
+      document.getElementById(interpId).classList.add('show');
+      buildInterp(ki);
+    } else {
+      // Versuch 1: kleiner Hinweis; Versuch 2: konkrete Rechnung
+      var rHint2={
+        1:'Rechnung: 213 ÷ 1.427 × 100 = ?',
+        2:'Rechnung: 213 ÷ 4.307 × 100 = ?',
+        3:'Rechnung: 1.427 ÷ 3.782 × 100 = ?',
+        5:'Rechnung: 361 ÷ 4.307 × 100 = ?'
+      };
+      if(n===1){
+        fb.className='ifb show ifer';
+        fb.innerHTML='✗ Noch nicht ganz. Tipp: Runde auf eine Nachkommastelle.';
+      }
+    }
   }
 }
 function buildInterp(ki){
@@ -1284,7 +2299,8 @@ function buildInterp(ki){
         fazEl.classList.add('show');
         kzDone[ki]=true;
         // Mark current card as complete visually
-        document.getElementById('bkz'+ki).classList.add('kz-complete');
+        var card=document.getElementById('kz'+ki);
+        if(card) card.classList.add('kz-complete');
         // Update progress pip
         var pip=document.getElementById('kzp'+ki);
         if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
@@ -1306,6 +2322,7 @@ function checkAllKZ(){
   var all=Object.values(kzDone).every(Boolean);
   if(all){
     var btn=document.getElementById('sc3nxt');
+    if(!btn) return;
     btn.classList.remove('hidden');
     setTimeout(function(){
       btn.scrollIntoView({behavior:'smooth',block:'center'});
@@ -1357,7 +2374,7 @@ function submitVerdict(){
 
   var texts={
     buy:{h:'Empfehlung: Kaufen',cls:'pos',
-      b:'Ihr empfehlt, die Position zu verdoppeln. Stärkstes Argument: KGV ~10x liegt unter dem Branchendurchschnitt (~15x) – die Aktie erscheint günstig bewertet. Dazu: Umsatzrekord und starker Free Cashflow (497 Mio. €). Aber: Die Nettomarge ist auf 4,9 % gesunken, die EK-Rentabilität auf 14,9 %. Mutige, aber nicht unvertretbare Entscheidung – wenn man auf Profitabilitätserholung 2025 wettet.'},
+      b:'Ihr empfehlt, die Position zu verdoppeln. Stärkstes Argument: Umsatzrekord, starker Free Cashflow (497 Mio. €) und Hugo Boss hat sich selbst 9–10 % EBIT-Marge für 2025 zum Ziel gesetzt. Aber: EK-Rentabilität (14,9 %) und EBIT-Marge (8,4 %) zeigen deutlich nach unten. Mutige, aber nicht unvertretbare Entscheidung – wenn man dem Management vertraut.'},
     hold:{h:'Empfehlung: Halten',cls:'neu',
       b:'Vernünftige Entscheidung. Hugo Boss wächst (Umsatz 4,3 Mrd. €), ist solide finanziert (EK-Quote 37,7 %, DG II 112,9 %) und günstig bewertet (KGV ~10x). Aber: Nettomarge 4,9 % und EK-Rentabilität 14,9 % – beide gesunken trotz Umsatzrekord. Abwarten, ob 2025 die Profitabilitätserholung eintritt, ist die klügste Entscheidung.'},
     sell:{h:'Empfehlung: Verkaufen',cls:'neg',
@@ -1379,6 +2396,16 @@ function submitVerdict(){
     fb.scrollIntoView({behavior:'smooth',block:'start'});
   },100);
   updateProgress(5);
+  // KI-Feedback laden
+  var a1=document.getElementById('arg1').value.trim();
+  var a2=document.getElementById('arg2').value.trim();
+  var a3=document.getElementById('arg3').value.trim();
+  getAIFeedback(selectedVote,a1,a2,a3);
+  // Weiter-Button einblenden
+  setTimeout(function(){
+    var s6btn=document.getElementById('goSc6');
+    if(s6btn)s6btn.style.display='inline-flex';
+  },1200);
 }
 
 // ── BANK PERSPECTIVE JS ──
@@ -1395,34 +2422,61 @@ var bankInterpExpl={
 var selectedBankVote=null;
 
 function checkBankStep1sum(ki,aT,bT,sumT,nT){
+  var key='bstep1_'+ki;
   var aOk=near2(nv('k'+ki+'a'),aT),bOk=near2(nv('k'+ki+'b'),bT),
       sumOk=near2(nv('k'+ki+'sum'),sumT),nOk=near2(nv('k'+ki+'n'),nT);
-  ['k'+ki+'a','k'+ki+'b','k'+ki+'sum','k'+ki+'n'].forEach(function(id,i){
+  ['bk'+ki+'a','bk'+ki+'b','bk'+ki+'sum','bk'+ki+'n'].forEach(function(id,i){
     var el=document.getElementById(id);if(!el)return;
     el.classList.remove('ok','no');el.classList.add([aOk,bOk,sumOk,nOk][i]?'ok':'no');
   });
   var fb=document.getElementById('k'+ki+'sfb');
   if(aOk&&bOk&&sumOk&&nOk){
     fb.className='ifb show ifok';fb.innerHTML='✓ Alle Werte korrekt – jetzt berechnen!';
-    unlockResult(ki);
+    unlockBankResult(ki);
   } else {
-    fb.className='ifb show ifer';
-    var tips={5:'Tipp: Langfr. Verbindlichkeiten (1.282) + Kurzfr. Verbindlichkeiten (1.073) = FK. Nenner = EK (Passivseite Bilanz).',
-              6:'Tipp: Liquide Mittel (162) + Forderungen & Sonstiges (590). Nenner = Kurzfristige Verbindlichkeiten.'};
-    fb.innerHTML='✗ Noch nicht alle Werte korrekt. '+tips[ki];
+    var n=addAttempt(key);
+    var tips={5:'Langfr. Verbindlichkeiten (1.282) + Kurzfr. Verbindlichkeiten (1.073) = FK gesamt. Nenner = Eigenkapital (1.427).',
+              6:'Liquide Mittel (162) + Forderungen & Sonstiges (590) = Zähler. Nenner = Kurzfristige Verbindlichkeiten (1.073).'};
+    if(n>=2){
+      // Fill correct values
+      var vals={5:[1282,1073,2355,1427],6:[162,590,752,1073]};
+      ['bk'+ki+'a','bk'+ki+'b','bk'+ki+'sum','bk'+ki+'n'].forEach(function(id,i){
+        var el=document.getElementById(id);if(!el)return;
+        el.value=vals[ki][i];el.classList.remove('no');el.classList.add('ok');
+      });
+      fb.className='ifb show ifok';fb.innerHTML='→ Lösung eingeblendet. Jetzt weiter zur Berechnung!';
+      unlockResult(ki);
+    } else {
+      fb.className='ifb show ifer';
+      fb.innerHTML='✗ Noch nicht ganz – versuch es nochmal! <br><em>Tipp: '+tips[ki]+'</em>';
+    }
   }
 }
 function checkBankResult(ki,target,inputId,fbId,interpId,fazId){
+  var key='bresult_'+ki;
   var el=document.getElementById(inputId);
   var v=parseFloat(String(el.value).replace(',','.'));
   var ok=Math.abs(v-target)<=0.5;
   el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');
   var fb=document.getElementById(fbId);
-  fb.className='ifb show '+(ok?'ifok':'ifer');
-  fb.innerHTML=bankExpl[ki][ok?'ok':'no'];
   if(ok){
+    fb.className='ifb show ifok';
+    fb.innerHTML=bankExpl[ki]['ok'];
     document.getElementById(interpId).classList.add('show');
     buildBankInterp(ki);
+  } else {
+    var n=addAttempt(key);
+    if(n>=2){
+      el.value=target.toString().replace('.',',');
+      el.classList.remove('no');el.classList.add('ok');
+      fb.className='ifb show ifok';
+      fb.innerHTML='→ Lösung: '+bankExpl[ki]['ok'].replace('✓ Korrekt! ','');
+      document.getElementById(interpId).classList.add('show');
+      buildBankInterp(ki);
+    } else {
+      fb.className='ifb show ifer';
+      fb.innerHTML='✗ Noch nicht ganz – versuch es nochmal! Achte auf eine Nachkommastelle.';
+    }
   }
 }
 function buildBankInterp(ki){
@@ -1512,14 +2566,17 @@ var glossar = {
   uv: {term:'UV – Umlaufvermögen', def:'Kurzfristig verfügbare Vermögenswerte (weniger als 1 Jahr): Vorräte (Waren auf Lager), Forderungen (noch nicht bezahlte Rechnungen an Kunden) und Bargeld/Bankguthaben.'},
   bs: {term:'Bilanzsumme', def:'Die Summe aller Vermögenswerte (= Summe aller Finanzierungsquellen). Es gilt immer: Aktiva (Vermögen) = Passiva (Kapital). Eine steigende Bilanzsumme zeigt Unternehmenswachstum.'},
   ifrs16: {term:'IFRS 16 – Leasingstandard', def:'Internationaler Bilanzierungsstandard, der seit 2019 vorschreibt: Langfristige Miet- und Leasingverträge (z.B. für Ladengeschäfte) müssen als Vermögenswert ("Nutzungsrecht") und als Verbindlichkeit in der Bilanz erfasst werden. Das erhöht Bilanzsumme und Fremdkapital – aber kein zusätzliches Insolvenzrisiko.'},
-  fcf: {term:'Free Cashflow', def:'Der tatsächliche Geldfluss aus dem laufenden Geschäft nach Abzug der Investitionsausgaben. Zeigt, wie viel Geld das Unternehmen wirklich "übrig hat" – für Dividenden, Schuldenabbau oder neue Investitionen. Wichtig: Der Free Cashflow kann vom Jahresüberschuss stark abweichen, weil Abschreibungen den Gewinn senken, aber kein Geld kosten.'},
+  fcf: {term:'Cashflow / Free Cashflow', def:'Differenz aller Geldzuflüsse und Geldabflüsse eines Unternehmens in einer Periode. Formel (indirekte Methode): Jahresüberschuss + Abschreibungen ± Veränderungen im Umlaufvermögen = operativer Cashflow. Der Free Cashflow zieht davon noch Investitionsausgaben ab. Wichtig: Abschreibungen senken den Gewinn in der GuV, sind aber kein echter Geldabfluss – daher kann der Cashflow deutlich höher sein als der Jahresüberschuss.'},
+  ebitm: {term:'EBIT-Marge (operative Gewinnmarge)', def:'EBIT ÷ Umsatz × 100. Zeigt, wie viel Prozent des Umsatzes als operativer Gewinn übrig bleiben – vor Zinsen und Steuern. Je höher, desto effizienter wirtschaftet das Unternehmen. Hugo Boss selbst verwendet die EBIT-Marge als zentrale Steuerungsgröße und peilt für 2025 einen Wert von 9,0–10,0 % an (2024: 8,4 %).'},
   kgv: {term:'KGV – Kurs-Gewinn-Verhältnis', def:'Aktienkurs ÷ Gewinn je Aktie. Gibt an, das Wievielfache des Jahresgewinns man für eine Aktie bezahlt. Beispiel: KGV 10x = man zahlt 10 Euro für 1 Euro Jahresgewinn. Niedriges KGV kann auf günstige Bewertung hindeuten.'},
   dg2: {term:'Deckungsgrad II (Goldene Bilanzregel)', def:'(Eigenkapital + langfristiges Fremdkapital) ÷ Anlagevermögen × 100. Zeigt, ob das langfristig gebundene Anlagevermögen auch langfristig finanziert ist. Sollwert: ≥ 100 % – dann ist die "Goldene Bilanzregel" erfüllt.'},
   vg: {term:'Verschuldungsgrad', def:'Fremdkapital ÷ Eigenkapital × 100. Zeigt das Verhältnis von Schulden zu Eigenkapital. Idealwert: 100 % (= gleich viel EK wie FK). Ab 200 % gilt es für Kreditgeber als kritisch.'}
 };
 
+var _glossarInited=false;
 function initGlossar(){
-  // Event delegation – ein Listener auf document, funktioniert für alle Szenen
+  if(_glossarInited) return; // Nur einmal registrieren
+  _glossarInited=true;
   document.addEventListener('click',function(e){
     var gl=e.target.closest('.gl');
     if(gl){
@@ -1538,7 +2595,7 @@ function initGlossar(){
 }
 
 function initDataFab(){
-  // Show FAB after scene 1 is passed
+  // FAB immer sichtbar (ab Szene 1)
   var fab=document.getElementById('dataFab');
   if(fab) fab.classList.add('vis');
 }
@@ -1581,11 +2638,11 @@ function toggleTeacherMode(){
       if(iz) iz.classList.add('show');
       if(faz) faz.classList.add('show');
     });
-    // KZ5 KGV
-    var kgviz=document.getElementById('k5kgviz');
-    var kgvfaz=document.getElementById('k5kgvfaz');
-    if(kgviz) kgviz.classList.add('show');
-    if(kgvfaz) kgvfaz.classList.add('show');
+    // KZ5 EBIT-Marge
+    var iz5=document.getElementById('k5iz');
+    var faz5=document.getElementById('k5faz');
+    if(iz5) iz5.classList.add('show');
+    if(faz5) faz5.classList.add('show');
     // Bank KZs
     [5,6].forEach(function(ki){
       var iz=document.getElementById('k'+ki+'iz');
@@ -1607,6 +2664,7 @@ function toggleTeacherMode(){
 updateProgress(1);
 initGlossar();
 initDataFab();
+enableFallback();
 </script>
 
 <!-- GLOSSARY MODAL -->

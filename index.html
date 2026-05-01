@@ -407,6 +407,10 @@ body.teacher-mode .teacher-banner{display:block}
 .ti ul{margin:4px 0 4px 14px;padding:0}
 .ti ul li{margin-bottom:2px}
 body.teacher-mode .ti{display:block}
+
+.kz-card.hidden-kz{display:none!important}
+.kz-card.kz-reveal{animation:kzSlideIn .4s ease forwards}
+@keyframes kzSlideIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -465,8 +469,9 @@ body.teacher-mode .ti{display:block}
       <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">🔮 Eure Vorhersage – bevor ihr die Daten seht</div>
       <div style="font-size:.85rem;color:var(--ink3);margin-bottom:12px">Hugo Boss hat 2024 ein neues Umsatzrekordhoch erzielt. War das Jahr für Anteilseigner trotzdem gut – oder nicht? Begründet kurz eure Vermutung, bevor ihr die Zahlen seht.</div>
       <textarea class="obs-input" id="prognoseText" placeholder="z.B. »Ich vermute, es war ein gutes Jahr, weil mehr Umsatz auch mehr Gewinn bedeutet...«" oninput="checkPrognose()" style="min-height:64px"></textarea>
+      <div id="prognoseFb" style="font-size:.78rem;color:var(--ink3);margin-top:4px">Mindestens einen vollständigen Satz eingeben, dann wird der Button aktiv.</div>
       <div class="btn-row" style="margin-top:10px">
-        <button class="check-btn gold-btn" id="prognoseBtn" onclick="submitPrognose()" disabled style="opacity:.4">Zum Geschäftsbericht →</button>
+        <button class="check-btn gold-btn" id="prognoseBtn" onclick="submitPrognose()" disabled style="opacity:.4">📋 Zum Geschäftsbericht – Analyse starten →</button>
       </div>
     </div>
   </div>
@@ -476,6 +481,13 @@ body.teacher-mode .ti{display:block}
     <div class="sc-num">Szene 02 / 07</div>
     <div class="sc-title">Der Geschäftsbericht</div>
     <p class="sc-lead">Lest das Datenmaterial sorgfältig durch. Die Zahlen sind die Grundlage eurer gesamten Analyse.</p>
+    <div style="background:var(--ink);color:var(--paper);border-radius:var(--r);padding:16px 20px;margin-bottom:20px;border-left:4px solid var(--gold)">
+      <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);font-family:var(--mono);margin-bottom:6px">📋 Wichtig – lest das zuerst!</div>
+      <div style="font-size:.92rem;line-height:1.7">
+        Studiert <strong>Bilanz</strong> und <strong>GuV</strong> aufmerksam – ihr braucht diese Zahlen für alle folgenden Aufgaben. Ihr könnt jederzeit über den Button <strong>📊 Geschäftsbericht</strong> (unten rechts) auf die Daten zurückgreifen.<br>
+        <span style="color:rgba(255,255,255,.6);font-size:.82rem">Tipp: Unterstrichene Begriffe anklicken → Erklärung erscheint.</span>
+      </div>
+    </div>
 
     <div class="rep-grid">
       <div class="rep-box">
@@ -653,7 +665,7 @@ body.teacher-mode .ti{display:block}
     </div>
 
     <!-- KZ 2: Rentabilität -->
-    <div class="kz-card" id="kz2">
+    <div class="kz-card hidden-kz" id="kz2" style="display:none">
       <div class="kz-head">
         <div>
           <span class="tag tag-g">Rentabilität</span>
@@ -722,7 +734,7 @@ body.teacher-mode .ti{display:block}
     </div>
 
     <!-- KZ 3: Liquidität -->
-    <div class="kz-card" id="kz3">
+    <div class="kz-card hidden-kz" id="kz3" style="display:none">
       <div class="kz-head">
         <div>
           <span class="tag tag-b">Sicherheit</span>
@@ -789,7 +801,7 @@ body.teacher-mode .ti{display:block}
     </div>
 
     <!-- KZ 4: Free Cashflow -->
-    <div class="kz-card" id="kz4">
+    <div class="kz-card hidden-kz" id="kz4" style="display:none">
       <div class="kz-head">
         <div>
           <span class="tag tag-b">Liquidität</span>
@@ -905,7 +917,7 @@ body.teacher-mode .ti{display:block}
 
 
     <!-- KZ 5: EBIT-Marge – eigene Steuerungsgröße Hugo Boss -->
-    <div class="kz-card" id="kz5">
+    <div class="kz-card hidden-kz" id="kz5" style="display:none">
       <div class="kz-head">
         <div>
           <span class="tag tag-y">Profitabilität</span>
@@ -1806,7 +1818,7 @@ function checkObs(){
   var v1=document.getElementById('obs1').value.trim();
   var v2=document.getElementById('obs2').value.trim();
   var btn=document.getElementById('obsBtn');
-  var ok=v1.length>=15&&v2.length>=15;
+  var ok=v1.length>=8&&v2.length>=8;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitObs(){
@@ -1817,7 +1829,7 @@ function submitObs(){
 function checkZwischen(){
   var v=document.getElementById('zwischenurteilText').value.trim();
   var btn=document.getElementById('zwischenBtn');
-  var ok=v.length>=20;
+  var ok=v.length>=8;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitZwischen(){
@@ -1913,7 +1925,7 @@ function toggleBankChip(el){
 function checkBankEntry(){
   var text=document.getElementById('bankEntryText').value.trim();
   var btn=document.getElementById('bankEntryBtn');
-  var ok=bankChipsSelected.length===2&&text.length>=20;
+  var ok=bankChipsSelected.length===2&&text.length>=5;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitBankEntry(){
@@ -1974,8 +1986,20 @@ async function submitRfAnswer(num){
 function checkPrognose(){
   var v=document.getElementById('prognoseText').value.trim();
   var btn=document.getElementById('prognoseBtn');
-  var ok=v.length>=20;
-  btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+  var fb=document.getElementById('prognoseFb');
+  var ok=v.length>=10;
+  btn.disabled=!ok;
+  btn.style.opacity=ok?'1':'0.4';
+  if(v.length>0 && !ok){
+    fb.textContent='Noch '+(10-v.length)+' Zeichen...';
+    fb.style.color='var(--amber,#B8860B)';
+  } else if(ok){
+    fb.textContent='✓ Gut – jetzt kann es weitergehen.';
+    fb.style.color='var(--ok)';
+  } else {
+    fb.textContent='Mindestens einen vollständigen Satz eingeben, dann wird der Button aktiv.';
+    fb.style.color='var(--ink3)';
+  }
 }
 function submitPrognose(){
   document.getElementById('prognoseBox').style.display='none';
@@ -1986,7 +2010,7 @@ function submitPrognose(){
 function checkHypo1(){
   var v=document.getElementById('hypo1text').value.trim();
   var btn=document.getElementById('hypo1btn');
-  var ok=v.length>=15;
+  var ok=v.length>=8;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitHypo1(){
@@ -2066,7 +2090,7 @@ function rankKZ(el){
 function checkRang(){
   var bg=document.getElementById('rangBegruendung').value.trim();
   var btn=document.getElementById('rangBtn');
-  var ok=rankOrder.length===5&&bg.length>=15;
+  var ok=rankOrder.length===5&&bg.length>=5;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitRang(){
@@ -2085,7 +2109,7 @@ function submitRang(){
 function checkCounter(){
   var v=document.getElementById('counterText').value.trim();
   var btn=document.getElementById('counterBtn');
-  var ok=v.length>=20;
+  var ok=v.length>=8;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitCounter(){
@@ -2107,7 +2131,7 @@ function submitCounter(){
 function checkAnalogy4(){
   var v=document.getElementById('analogyText4').value.trim();
   var btn=document.getElementById('analogyBtn4');
-  var ok=v.length>=15;
+  var ok=v.length>=8;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitAnalogy4(){
@@ -2324,14 +2348,17 @@ function buildInterp(ki){
         // Update progress pip
         var pip=document.getElementById('kzp'+ki);
         if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
-        // Scroll to next card or final button
+        // Reveal and scroll to next KZ card
         var nextCard=document.getElementById('kz'+(ki+1));
         if(nextCard){
           setTimeout(function(){
+            nextCard.style.display='block';
+            nextCard.classList.remove('hidden-kz');
+            nextCard.classList.add('kz-reveal');
             nextCard.scrollIntoView({behavior:'smooth',block:'start'});
             nextCard.classList.add('pulse-unlock');
             setTimeout(function(){nextCard.classList.remove('pulse-unlock');},1000);
-          },400);
+          },500);
         }
         checkAllKZ();
       },600);
@@ -2653,6 +2680,11 @@ function toggleTeacherMode(){
       if(sc) sc.classList.remove('hidden');
       var btn=document.getElementById('pss'+i);
       if(btn){ btn.disabled=false; btn.style.opacity='1'; btn.style.pointerEvents='auto'; }
+    }
+    // Show all KZ cards immediately
+    for(var i=1;i<=5;i++){
+      var kzc=document.getElementById('kz'+i);
+      if(kzc){kzc.style.display='block';kzc.classList.remove('hidden-kz');}
     }
     // Mark all KZ as done so navigation buttons appear
     for(var k in kzDone) kzDone[k]=true;

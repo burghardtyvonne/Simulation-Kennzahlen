@@ -1558,10 +1558,22 @@ body.teacher-mode .ti{display:block}
             Ihr habt heute das getan, was echte Analysten täglich tun: <b>Aus Zahlen Urteile bilden.</b> Und ihr habt erfahren, dass dasselbe Zahlenmaterial je nach Perspektive zu unterschiedlichen – aber gleichermaßen <em>begründbaren</em> – Schlüssen führt.<br><br>
             Das ist keine Schwäche der Analyse. Es ist ihr Kern. Wer behauptet, Zahlen sprächen „für sich selbst", täuscht sich – oder täuscht andere.<br><br>
 <b>Update Hugo Boss 2025 – die Prognose ist eingetroffen:</b> EBIT +8 % auf 391 Mio. €, Jahresüberschuss +17 % auf 249 Mio. €. Die Fundamentalanalyse hat die richtigen Fragen gestellt – und die Antwort hat sich bestätigt. Wer 2024 auf Basis eurer Analyse "Halten" empfohlen und die Position später aufgestockt hat, lag richtig. Eure Analyse hat die Fragen gestellt, die zählen. Das ist der erste Schritt jeder guten Urteilsbildung.
+          </div>
+        </div>
 
-  </div>
+        <!-- EXIT TICKET -->
+        <div class="exit-ticket">
+          <h4>🎫 Exit Ticket</h4>
+          <div style="font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:12px">Eine letzte Aufgabe: Nennt eine Sache, die ihr über Unternehmensanalyse heute gelernt habt – die ihr vorher nicht wusstet.</div>
+          <textarea class="exit-textarea" id="exitText" placeholder="z.B. »Ich wusste nicht, dass Gewinn und tatsächliches Geld so stark voneinander abweichen können...«"></textarea>
+          <div id="exitDisplay" style="display:none;margin-top:12px;padding:10px 14px;background:rgba(255,255,255,.1);border-radius:var(--r);font-size:.84rem;color:var(--paper);font-style:italic"></div>
+          <button class="check-btn" onclick="submitExit()" style="margin-top:10px;background:var(--gold);color:var(--ink);border:none">Abschließen ✓</button>
+        </div>
 
-</div>
+      </div><!-- /reflectionWrap inner -->
+    </div><!-- /sc7 -->
+
+</div><!-- /main -->
 
 <!-- PROGRESS STRIP -->
 <div class="progress-strip">
@@ -2019,48 +2031,6 @@ function submitHypo1(){
   buildInterp(1);
 }
 
-// Override checkKZresult to intercept KZ1 and show hypothesis first
-var _origCheckKZresult=checkKZresult;
-checkKZresult=function(ki,target,inputId,fbId,interpId,fazId){
-  var key='result_'+ki;
-  var el=document.getElementById(inputId);
-  var v=parseFloat(String(el.value).replace(',','.'));
-  var tol=0.4;
-  var ok=Math.abs(v-target)<=tol;
-  el.classList.remove('ok','no'); el.classList.add(ok?'ok':'no');
-  var fb=document.getElementById(fbId);
-  if(ok){
-    fb.className='ifb show ifok';
-    fb.innerHTML=kzExpl[ki]['ok'];
-    if(ki===1){
-      // Show hypothesis first, interp locked until hypothesis submitted
-      document.getElementById('hypo1wrap').style.display='block';
-      setTimeout(function(){document.getElementById('hypo1wrap').scrollIntoView({behavior:'smooth',block:'center'});},200);
-    } else {
-      document.getElementById(interpId).classList.add('show');
-      buildInterp(ki);
-    }
-  } else {
-    var n=addAttempt(key);
-    var rHint2={1:'Rechnung: 213 ÷ 1.427 × 100 = ?',2:'Rechnung: 213 ÷ 4.307 × 100 = ?',3:'Rechnung: 1.427 ÷ 3.782 × 100 = ?',5:'Rechnung: 361 ÷ 4.307 × 100 = ?'};
-    if(n>=2){
-      el.value=target.toString().replace('.',',');
-      el.classList.remove('no'); el.classList.add('ok');
-      fb.className='ifb show ifok';
-      fb.innerHTML='-> Loesung: '+kzExpl[ki]['ok'].replace('Korrekt! ','');
-      if(ki===1){
-        document.getElementById('hypo1wrap').style.display='block';
-      } else {
-        document.getElementById(interpId).classList.add('show');
-        buildInterp(ki);
-      }
-    } else {
-      fb.className='ifb show ifer';
-      fb.innerHTML='Noch nicht ganz. Tipp: Runde auf eine Nachkommastelle.';
-    }
-  }
-};
-
 // ── RANGORDNUNG ──
 var rankOrder=[];
 function rankKZ(el){
@@ -2290,36 +2260,38 @@ function checkKZresult(ki,target,inputId,fbId,interpId,fazId){
   var key='result_'+ki;
   var el=document.getElementById(inputId);
   var v=parseFloat(String(el.value).replace(',','.'));
-  var tol=(ki===4)?3:0.4; // FCF % change has wider tolerance
+  var tol=(ki===4)?3:0.4;
   var ok=Math.abs(v-target)<=tol;
   el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');
   var fb=document.getElementById(fbId);
   if(ok){
     fb.className='ifb show ifok';
     fb.innerHTML=kzExpl[ki]['ok'];
-    document.getElementById(interpId).classList.add('show');
-    buildInterp(ki);
+    if(ki===1){
+      // KZ1: Hypothese zuerst – Interpretation erscheint erst nach Hypothese
+      var hw=document.getElementById('hypo1wrap');
+      if(hw){hw.style.display='block';setTimeout(function(){hw.scrollIntoView({behavior:'smooth',block:'center'});},200);}
+    } else {
+      document.getElementById(interpId).classList.add('show');
+      buildInterp(ki);
+    }
   } else {
     var n=addAttempt(key);
     if(n>=2){
       el.value=target.toString().replace('.',',');
       el.classList.remove('no');el.classList.add('ok');
       fb.className='ifb show ifok';
-      fb.innerHTML='→ Lösung: '+kzExpl[ki]['ok'].replace('✓ Korrekt! ','');
-      document.getElementById(interpId).classList.add('show');
-      buildInterp(ki);
-    } else {
-      // Versuch 1: kleiner Hinweis; Versuch 2: konkrete Rechnung
-      var rHint2={
-        1:'Rechnung: 213 ÷ 1.427 × 100 = ?',
-        2:'Rechnung: 213 ÷ 4.307 × 100 = ?',
-        3:'Rechnung: 1.427 ÷ 3.782 × 100 = ?',
-        5:'Rechnung: 361 ÷ 4.307 × 100 = ?'
-      };
-      if(n===1){
-        fb.className='ifb show ifer';
-        fb.innerHTML='✗ Noch nicht ganz. Tipp: Runde auf eine Nachkommastelle.';
+      fb.innerHTML='Lösung: '+kzExpl[ki]['ok'];
+      if(ki===1){
+        var hw=document.getElementById('hypo1wrap');
+        if(hw){hw.style.display='block';}
+      } else {
+        document.getElementById(interpId).classList.add('show');
+        buildInterp(ki);
       }
+    } else {
+      fb.className='ifb show ifer';
+      fb.innerHTML='Noch nicht ganz – versuch es nochmal. Tipp: Runde auf eine Nachkommastelle.';
     }
   }
 }
@@ -2527,7 +2499,7 @@ function checkBankResult(ki,target,inputId,fbId,interpId,fazId){
   }
 }
 function buildBankInterp(ki){
-  var wrap=document.getElementById('k'+ki+'iz');
+  var wrap=document.getElementById('bk'+ki+'iz');
   var opts=wrap.querySelectorAll('[data-bki]');
   var corOpt=bankCorOpt[ki];
   opts.forEach(function(opt,oi){
@@ -2537,11 +2509,11 @@ function buildBankInterp(ki){
       opts.forEach(function(o){o.classList.add('ioff');});
       this.classList.remove('ioff');this.classList.add(correct?'ick':'ino');
       if(!correct)opts[corOpt].classList.add('ick');
-      var fb=document.getElementById('k'+ki+'ifb');
+      var fb=document.getElementById('bk'+ki+'ifb');
       fb.className='ifb show '+(correct?'ifok':'ifer');
       fb.innerHTML=bankInterpExpl[ki][correct?'ok':'no'];
       setTimeout(function(){
-        document.getElementById('k'+ki+'faz').classList.add('show');
+        document.getElementById('bk'+ki+'faz').classList.add('show');
         document.getElementById('bkz'+ki).classList.add('kz-complete');
         var pip=document.getElementById('bkzp'+ki);
         if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}

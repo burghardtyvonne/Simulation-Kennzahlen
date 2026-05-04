@@ -411,6 +411,9 @@ body.teacher-mode .ti{display:block}
 .kz-card.hidden-kz{display:none!important}
 .kz-card.kz-reveal{animation:kzSlideIn .4s ease forwards}
 @keyframes kzSlideIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.skip-link{display:none;font-size:.74rem;color:var(--ink3);text-align:right;margin-top:6px;cursor:pointer;text-decoration:underline;font-style:italic}
+.skip-link:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -642,6 +645,7 @@ body.teacher-mode .ti{display:block}
         <div style="font-size:.84rem;color:var(--ink3);margin-bottom:8px">Die EK-Rentabilität ist von 20,0 % (2023) auf 14,9 % (2024) gesunken – obwohl der Umsatz gestiegen ist. Formuliert eine Hypothese: Was könnte die Ursache sein?</div>
         <textarea class="obs-input" id="hypo1text" placeholder="z.B. »Die Kosten müssen stärker gestiegen sein als der Umsatz...«" oninput="checkHypo1()" style="min-height:60px"></textarea>
         <button class="check-btn" id="hypo1btn" onclick="submitHypo1()" disabled style="margin-top:8px;opacity:.4">Hypothese einreichen &amp; Interpretation ansehen</button>
+        <div class="skip-link" id="skipHypo1" onclick="skipGate(submitHypo1)">↷ Überspringen</div>
       </div>
       <div class="interp" id="k1iz">
         <div class="interp-q">EK-Rentabilität = 14,9 %. Wie bewertet ihr das für den Anteilseigner – und was sagt der Trend?</div>
@@ -832,6 +836,7 @@ body.teacher-mode .ti{display:block}
         </div>
         <textarea class="obs-input" id="analogyText4" placeholder="Eure Antwort: Das Geld ist geflossen, als..." oninput="checkAnalogy4()" style="min-height:56px;background:var(--paper)"></textarea>
         <button class="check-btn" id="analogyBtn4" onclick="submitAnalogy4()" disabled style="margin-top:8px;opacity:.4">Weiter zur Erklärung →</button>
+        <div class="skip-link" id="skipAnalogy" onclick="skipGate(submitAnalogy4)">↷ Überspringen</div>
         <div class="ifb" id="analogyfb4"></div>
       </div>
       <div id="fcfExplanation" style="display:none">
@@ -1039,6 +1044,7 @@ body.teacher-mode .ti{display:block}
         <div style="font-size:.88rem;font-weight:700;margin-bottom:6px">Schritt 2: Vorläufiges Urteil</div>
         <div style="font-size:.84rem;color:var(--ink3);margin-bottom:8px">Formuliert in einem Satz eure vorläufige Einschätzung zu Hugo Boss.</div>
         <textarea class="obs-input" id="zwischenurteilText" placeholder="z.B. »Hugo Boss wächst beim Umsatz, aber die Rentabilität sinkt – wir sind unsicher, ob die Verdoppelung sich lohnt.«" oninput="checkZwischen()" style="min-height:60px"></textarea>
+        <div id="skipZwischen" class="skip-link" onclick="skipGate(function(){document.getElementById('zwischenurteilText').value='–';submitZwischen();})">↷ Überspringen</div>
         <div class="btn-row" style="margin-top:10px">
           <button class="check-btn gold-btn" id="zwischenBtn" onclick="submitZwischen()" disabled style="opacity:.4">Zur Gesamtbewertung →</button>
         </div>
@@ -1200,6 +1206,7 @@ body.teacher-mode .ti{display:block}
         <div style="font-size:.84rem;color:var(--ink3);margin-bottom:10px">Formuliert das stärkste Argument, das <em>gegen</em> eure Empfehlung spricht – in einem Satz.</div>
         <textarea class="obs-input" id="counterText" placeholder="z.B. »Das stärkste Argument gegen unsere Kauf-Empfehlung: Die EK-Rentabilität ist auf 14,9 % gesunken – der Trend könnte strukturell sein.«" oninput="checkCounter()" style="min-height:64px"></textarea>
         <button class="check-btn" id="counterBtn" onclick="submitCounter()" disabled style="margin-top:8px;opacity:.4">Gegenargument einreichen</button>
+        <div class="skip-link" id="skipCounter" onclick="skipGate(function(){document.getElementById('counterText').value='–';submitCounter();})">↷ Überspringen</div>
         <div class="ifb" id="counterfb"></div>
       </div>
     </div>
@@ -1311,6 +1318,7 @@ body.teacher-mode .ti{display:block}
       <div class="ifb" id="bankEntryfb"></div>
       <div class="btn-row" style="margin-top:10px">
         <button class="check-btn gold-btn" id="bankEntryBtn" onclick="submitBankEntry()" disabled style="opacity:.4">Zur Bank-Analyse →</button>
+      <div class="skip-link" id="skipBank" onclick="skipGate(function(){if(bankChipsSelected.length===0){toggleBankChip(document.querySelector('.bank-kz-chip'));}document.getElementById('bankEntryText').value='–';submitBankEntry();})">↷ Überspringen</div>
       </div>
       <div id="bankEntryFeedback" style="display:none;margin-top:14px;padding:14px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--gold);font-size:.85rem;line-height:1.7"></div>
     </div>
@@ -1807,7 +1815,7 @@ var defExpl={
      no:'Nicht ganz. Die EK-Quote zeigt das Verhältnis von Eigen- zu Gesamtkapital in der Bilanz.'},
   4:{ok:'✓ Richtig. Der Free Cashflow zeigt tatsächliche Geldflüsse – unabhängig von buchhalterischen Korrekturen.',
      no:'Nicht ganz. Der Free Cashflow hat nichts mit Umsatz oder Schulden zu tun – er misst Geldzu- und -abflüsse.'},
-  5:{ok:'✓ Richtig! A ist korrekt: EBIT-Marge = EBIT ÷ Umsatz × 100 – Hugo Boss' eigene Messgröße für operative Effizienz.',
+  5:{ok:'✓ Richtig! A ist korrekt: EBIT-Marge = EBIT ÷ Umsatz × 100 – Hugo Boss\' eigene Messgröße für operative Effizienz.',
      no:'Nicht ganz. Die richtige Antwort ist A: EBIT-Marge ≠ EK-Quote und ≠ KGV.'}
 };
 
@@ -2029,11 +2037,13 @@ function submitPrognose(){
 function checkHypo1(){
   var v=document.getElementById('hypo1text').value.trim();
   var btn=document.getElementById('hypo1btn');
-  var ok=v.length>=8;
+  var ok=v.length>=5;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
+  if(ok){ var sk=document.getElementById('skipHypo1'); if(sk) sk.style.display='none'; }
 }
 function submitHypo1(){
-  document.getElementById('hypo1wrap').style.display='none';
+  var hw=document.getElementById('hypo1wrap');
+  if(hw) hw.style.display='none';
   document.getElementById('k1iz').classList.add('show');
   buildInterp(1);
 }
@@ -2108,7 +2118,7 @@ function submitCounter(){
 function checkAnalogy4(){
   var v=document.getElementById('analogyText4').value.trim();
   var btn=document.getElementById('analogyBtn4');
-  var ok=v.length>=8;
+  var ok=v.length>=5;
   btn.disabled=!ok; btn.style.opacity=ok?'1':'0.4';
 }
 function submitAnalogy4(){
@@ -2160,6 +2170,27 @@ function unlockBankResult(ki){
   if(inp){ inp.disabled=false; inp.classList.add('unlocked'); }
   if(btn) btn.style.display='inline-block';
   if(inp) setTimeout(function(){ inp.focus(); },150);
+}
+
+var _skipTimers={};
+function setupSkip(inputId, skipId, delay){
+  delay = delay||15000; // 15 Sek Standard
+  var inp=document.getElementById(inputId);
+  if(!inp) return;
+  inp.addEventListener('focus',function(){
+    clearTimeout(_skipTimers[inputId]);
+    _skipTimers[inputId]=setTimeout(function(){
+      var sk=document.getElementById(skipId);
+      if(sk) sk.style.display='block';
+    }, delay);
+  });
+  inp.addEventListener('blur',function(){
+    clearTimeout(_skipTimers[inputId]);
+  });
+}
+function skipGate(action){
+  if(typeof action === 'function') action();
+  else if(typeof action === 'string') eval(action);
 }
 function updateProgress(n){
   if(n>maxScene) maxScene=n;
@@ -2704,6 +2735,13 @@ updateProgress(1);
 initGlossar();
 initDataFab();
 enableFallback();
+
+  setupSkip('hypo1text','skipHypo1');
+  setupSkip('analogyText4','skipAnalogy');
+  setupSkip('zwischenurteilText','skipZwischen');
+  setupSkip('counterText','skipCounter');
+  setupSkip('bankEntryText','skipBank');
+
 </script>
 
 <!-- GLOSSARY MODAL -->

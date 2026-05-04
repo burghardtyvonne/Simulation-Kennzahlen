@@ -322,6 +322,8 @@ body.teacher-mode #hypo1wrap{display:none!important}
 body.teacher-mode #zwischenurteilWrap.hidden{display:block!important}
 body.teacher-mode #rangWrap .rank-chip{pointer-events:auto}
 body.teacher-mode #counterWrap{display:block!important}
+body.teacher-mode #musterloesungWrap{display:block!important}
+body.teacher-mode #showMusterBtn{display:none!important}
 body.teacher-mode #waswennWrap{display:block!important}
 body.teacher-mode #goSc6{display:inline-flex!important}
 body.teacher-mode #analogyCard4{display:none!important}
@@ -1189,13 +1191,28 @@ body.teacher-mode .ti{display:block}
       <div class="vfb-head" id="vfb-h">Eure Empfehlung</div>
       <div class="vfb-body" id="vfb-b"></div>
       <div class="vfb-args">
-        <div class="vfbt">Musterlösung: Professionelle Analysten-Argumente</div>
-        <div class="vfb-arg"><span class="icon">📉</span><span><b>EK-Rentabilität 14,9 %:</b> Gesunken von 20,0 % (2023) trotz Umsatzrekord. Liegt noch knapp über dem Marktdurchschnitt (~12 %), zeigt aber klaren Abwärtstrend. Die Frage: strukturell oder temporär?</span></div>
-        <div class="vfb-arg"><span class="icon">⚠️</span><span><b>Nettomarge-Lücke:</b> 4,9 % (2024) vs. 6,1 % (2023) vs. 11,4 % (2015) – trotz Umsatzrekord sinkt die Profitabilität. Aber: Free Cashflow 497 Mio. € zeigt, dass buchhalterische Abschreibungen die Ursache sind, nicht das Kerngeschäft.</span></div>
-        <div class="vfb-arg"><span class="icon">💰</span><span><b>Free Cashflow 497 Mio. € (+418 %):</b> Hugo Boss generiert deutlich mehr echtes Geld als der Gewinn zeigt. Der JÜ sank durch buchhalterische Wertminderungen – das Kerngeschäft ist operativ stark. Steigende EK-Quote (37,7 %) zeigt zusätzlich wachsende finanzielle Stabilität.</span></div>
-        <div class="vfb-arg"><span class="icon">📊</span><span><b>EBIT-Marge 8,4 % – das eigene Managementziel:</b> Hugo Boss hat sich selbst 9–10 % für 2025 zum Ziel gesetzt. Das ist das Kernversprechen. Wer verdoppelt, wettet auf die Einlösung dieses Versprechens. EBIT +8 % in 2025 zeigt: Es war realistisch.</span></div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:.85rem;color:rgba(255,255,255,.6);font-style:italic">
-          Typisches Urteil professioneller Analysten: <b style="color:var(--gold2)">"Halten – Profitabilität 2025 beobachten"</b> – Umsatz und Cashflow stark (497 Mio.!), aber EK-Rentabilität und Nettomarge fallen trotz Umsatzrekord. Hugo Boss prognostiziert EBIT-Anstieg 2025 (+5–22 %). Erst wenn sich das bestätigt, ist eine Positionsaufstockung vertretbar.
+        <!-- DYNAMISCHES FEEDBACK zur gewählten Empfehlung -->
+        <div class="vfbt">Einschätzung zu eurer Empfehlung</div>
+        <div id="verdictCompare" style="margin-bottom:16px;padding:12px 16px;border-radius:var(--r);font-size:.88rem;line-height:1.7"></div>
+
+        <!-- MUSTERLÖSUNG – erst nach Klick sichtbar -->
+        <div style="margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.15)">
+          <button id="showMusterBtn" onclick="showMusterloesung()"
+            style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:9px 20px;border-radius:4px;font-size:.82rem;font-family:var(--serif);cursor:pointer;transition:all .2s">
+            📋 Professionelles Analysten-Urteil einblenden
+          </button>
+        </div>
+        <div id="musterloesungWrap" style="display:none;margin-top:14px">
+          <div class="vfbt">Professionelles Analysten-Urteil – zum Vergleich</div>
+          <div style="padding:12px 16px;background:rgba(184,134,11,.12);border-radius:var(--r);border-left:3px solid var(--gold);font-size:.88rem;line-height:1.7;margin-bottom:14px">
+            <strong style="color:var(--gold2)">"Halten – Profitabilität 2025 beobachten"</strong><br>
+            Umsatz und Free Cashflow (497 Mio. €) sind stark. Aber EK-Rentabilität (14,9 %) und Nettomarge (4,9 %) sinken trotz Umsatzrekord. Die EBIT-Marge (8,4 %) liegt unter dem eigenen Ziel (9–10 %). Erst wenn sich die Profitabilität 2025 erholt, wäre eine Positionsaufstockung vertretbar.<br>
+            <span style="color:rgba(255,255,255,.5);font-size:.8rem;margin-top:6px;display:block">Update 2025: EBIT +8 %, JÜ +17 % – die Prognose ist eingetroffen. „Halten" war richtig.</span>
+          </div>
+          <div class="vfb-arg"><span class="icon">📉</span><span><b>EK-Rentabilität 14,9 %:</b> Gesunken von 20,0 % (2023) trotz Umsatzrekord. Liegt noch knapp über dem Marktdurchschnitt (~12 %), zeigt aber klaren Abwärtstrend. Strukturell oder temporär?</span></div>
+          <div class="vfb-arg"><span class="icon">⚠️</span><span><b>Nettomarge 4,9 %:</b> Unter Vorjahr (6,1 %) und weit unter 2015 (11,4 %). Aber: Free Cashflow 497 Mio. € zeigt, buchhalterische Abschreibungen sind die Ursache – nicht das Kerngeschäft.</span></div>
+          <div class="vfb-arg"><span class="icon">💰</span><span><b>Free Cashflow +418 %:</b> Operativ deutlich stärker als der Gewinn zeigt. Steigende EK-Quote (37,7 %) signalisiert wachsende Stabilität.</span></div>
+          <div class="vfb-arg"><span class="icon">📊</span><span><b>EBIT-Marge 8,4 %:</b> Unter dem eigenen Ziel (9–10 %). Die Verdoppelung ist eine Wette auf das Managementversprechen. 2025: EBIT-Marge 9,2 % – eingelöst.</span></div>
         </div>
       </div>
     </div>
@@ -2192,6 +2209,14 @@ function skipGate(action){
   if(typeof action === 'function') action();
   else if(typeof action === 'string') eval(action);
 }
+
+function showMusterloesung(){
+  var wrap = document.getElementById('musterloesungWrap');
+  var btn  = document.getElementById('showMusterBtn');
+  if(wrap){ wrap.style.display='block'; }
+  if(btn){  btn.style.display='none';   }
+  if(wrap){ setTimeout(function(){ wrap.scrollIntoView({behavior:'smooth',block:'start'}); }, 100); }
+}
 function updateProgress(n){
   if(n>maxScene) maxScene=n;
   for(var i=1;i<=7;i++){
@@ -2441,6 +2466,28 @@ function submitVerdict(){
   document.getElementById('vfb-h').className='vfb-head '+t.cls;
   document.getElementById('vfb-h').textContent=t.h;
   document.getElementById('vfb-b').textContent=t.b;
+
+  // Verdict-specific comparison with model answer
+  var compare = {
+    buy: {
+      bg: 'rgba(34,197,94,.12)', border: 'var(--ok)', icon: '🟡',
+      text: 'Kaufen ist <strong>vertretbar, aber mutig</strong>. Das professionelle Urteil lautet "Halten" – weil die Profitabilität 2024 trotz Umsatzrekord sinkt (EK-Rentabilität 14,9 %, Nettomarge 4,9 %). Euer stärkstes Argument ist der Free Cashflow (497 Mio. €) und die mögliche Unterbewertung. <strong>Vergleich mit der Musterlösung:</strong> Ihr setzt auf Erholung 2025 – das war rückblickend richtig (EBIT +8 %). Aber zum Zeitpunkt der Analyse war "Halten" die sicherere Wahl.'
+    },
+    hold: {
+      bg: 'rgba(34,197,94,.15)', border: 'var(--ok)', icon: '✅',
+      text: 'Eure Empfehlung stimmt mit dem professionellen Analysten-Urteil überein: <strong>"Halten – Profitabilität 2025 beobachten."</strong> Umsatz und Free Cashflow sind stark, aber EK-Rentabilität und Nettomarge sinken trotz Umsatzrekord. <strong>Vergleich mit der Musterlösung:</strong> Ihr habt die richtige Balance gefunden – Stärken anerkannt, Schwächen klar benannt, Urteil nicht überhastet. Genau das zeichnet gute Analyse aus.'
+    },
+    sell: {
+      bg: 'rgba(239,68,68,.10)', border: 'var(--red)', icon: '🔴',
+      text: 'Verkaufen ist <strong>kritisch zu hinterfragen</strong>. Das professionelle Urteil lautet "Halten" – weil trotz sinkender Profitabilität der Free Cashflow (497 Mio. €), die stabile EK-Quote (37,7 %) und die solide Finanzierungsstruktur gegen einen Ausstieg sprechen. <strong>Vergleich mit der Musterlösung:</strong> Ihr habt die negativen Signale richtig erkannt – aber die operativen Stärken möglicherweise zu wenig gewichtet. Rückblick 2025: EBIT +8 % – eine Verkaufs-Entscheidung wäre falsch gewesen.'
+    }
+  };
+  var cmp = compare[selectedVote];
+  var cmpDiv = document.getElementById('verdictCompare');
+  cmpDiv.style.background = cmp.bg;
+  cmpDiv.style.borderLeft = '4px solid ' + cmp.border;
+  cmpDiv.style.padding = '14px 16px';
+  cmpDiv.innerHTML = cmp.icon + ' ' + cmp.text;
   // Show the feedback box
   var fb=document.getElementById('vfb');
   fb.style.display='block';

@@ -635,7 +635,6 @@ body.teacher-mode .ti{display:block}
         <button class="check-btn" id="k1btn2" onclick="checkKZresult(1,14.9,'k1i','k1fb','k1iz','k1faz')" style="display:none">Ergebnis prüfen</button>
       </div>
       <div class="ifb" id="k1fb"></div>
-      <div id="hypo1wrap"
     <div class="ti"><div class="ti-head">Hypothesenbildung KZ1 – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Eigene Erklärung formulieren, warum EK-Rentabilität sank (20% → 14,9%) obwohl Umsatz stieg. Aktiviert analytisches Denken vor der Auflösung.
     <ul>
       <li><b>Richtige Hypothesen:</b> "Kosten stiegen stärker als Umsatz" · "Abschreibungen/Wertminderungen drückten Gewinn" · "Investitionen fraßen Marge"</li>
@@ -1836,24 +1835,37 @@ var defExpl={
      no:'Nicht ganz. Die richtige Antwort ist A: EBIT-Marge ≠ EK-Quote und ≠ KGV.'}
 };
 
+var defAttempts={1:0,2:0,3:0,4:0,5:0};
 function checkDef(ki, oi){
   if(defDone[ki]) return;
+  defAttempts[ki]=(defAttempts[ki]||0)+1;
   var wrap = document.getElementById('defquiz'+ki);
   var opts = wrap.querySelectorAll('.def-opt');
   var correct = (oi === defCorr[ki]);
-  opts.forEach(function(o){ o.classList.add('doff'); });
-  opts[oi].classList.remove('doff');
-  opts[oi].classList.add(correct ? 'dck' : 'dno');
-  if(!correct) opts[defCorr[ki]].classList.remove('doff');
   var fb = document.getElementById('deffb'+ki);
-  fb.className = 'def-fb show ' + (correct ? 'dfok' : 'dfer');
-  fb.innerHTML = defExpl[ki][correct ? 'ok' : 'no'];
-  if(correct){
+
+  if(correct || defAttempts[ki]>=2){
+    // Always unlock after 2nd attempt
+    opts.forEach(function(o){ o.classList.add('doff'); o.style.pointerEvents='none'; });
+    opts[oi].classList.remove('doff');
+    opts[oi].classList.add(correct ? 'dck' : 'dno');
+    opts[defCorr[ki]].classList.remove('doff');
+    opts[defCorr[ki]].classList.add('dck');
+    fb.className = 'def-fb show ' + (correct ? 'dfok' : 'dfer');
+    fb.innerHTML = correct
+      ? defExpl[ki]['ok']
+      : '→ Lösung eingeblendet. ' + defExpl[ki]['ok'];
     defDone[ki] = true;
     setTimeout(function(){
       var steps = document.getElementById('calcsteps'+ki);
       if(steps){ steps.classList.remove('locked'); }
     }, 600);
+  } else {
+    // First wrong attempt – show hint, keep options active
+    opts.forEach(function(o){ o.classList.remove('doff'); });
+    opts[oi].classList.add('dno');
+    fb.className = 'def-fb show dfer';
+    fb.innerHTML = '✗ Nicht ganz – schau dir die Optionen nochmal an. ' + defExpl[ki]['no'];
   }
 }
 
@@ -2360,44 +2372,65 @@ function checkKZresult(ki,target,inputId,fbId,interpId,fazId){
 }
 function buildInterp(ki){
   var wrap=document.getElementById('k'+ki+'iz');
+  if(!wrap) return;
   var opts=wrap.querySelectorAll('.iopt');
   var corOpt=kzCorOpt[ki];
-  opts.forEach(function(opt,oi){
-    opt.addEventListener('click',function(){
-      if(this.classList.contains('ick')||this.classList.contains('ino'))return;
+  var attempts=0;
+
+  function onOptClick(oi){
+    return function(){
+      if(this.classList.contains('ick')) return; // already correct, ignore
+      attempts++;
       var correct=(oi===corOpt);
-      opts.forEach(function(o){o.classList.add('ioff');});
-      this.classList.remove('ioff');
-      this.classList.add(correct?'ick':'ino');
-      if(!correct)opts[corOpt].classList.add('ick');
       var fb=document.getElementById('k'+ki+'ifb');
-      fb.className='ifb show '+(correct?'ifok':'ifer');
-      fb.innerHTML=kzInterpExpl[ki][correct?'ok':'no'];
-      setTimeout(function(){
-        var fazEl=document.getElementById('k'+ki+'faz');
-        fazEl.classList.add('show');
-        kzDone[ki]=true;
-        // Mark current card as complete visually
-        var card=document.getElementById('kz'+ki);
-        if(card) card.classList.add('kz-complete');
-        // Update progress pip
-        var pip=document.getElementById('kzp'+ki);
-        if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
-        // Reveal and scroll to next KZ card
-        var nextCard=document.getElementById('kz'+(ki+1));
-        if(nextCard){
-          setTimeout(function(){
-            nextCard.style.display='block';
-            nextCard.classList.remove('hidden-kz');
-            nextCard.classList.add('kz-reveal');
-            nextCard.scrollIntoView({behavior:'smooth',block:'start'});
-            nextCard.classList.add('pulse-unlock');
-            setTimeout(function(){nextCard.classList.remove('pulse-unlock');},1000);
-          },500);
-        }
-        checkAllKZ();
-      },600);
-    },{once:true});
+
+      if(correct || attempts>=2){
+        // Mark all options
+        opts.forEach(function(o){o.classList.add('ioff');});
+        this.classList.remove('ioff');
+        this.classList.add(correct?'ick':'ino');
+        opts[corOpt].classList.remove('ioff');
+        opts[corOpt].classList.add('ick');
+        fb.className='ifb show '+(correct?'ifok':'ifer');
+        fb.innerHTML = correct
+          ? kzInterpExpl[ki]['ok']
+          : '→ Lösung eingeblendet. '+kzInterpExpl[ki]['ok'];
+        // Unlock fazit + next KZ
+        setTimeout(function(){
+          var fazEl=document.getElementById('k'+ki+'faz');
+          if(fazEl) fazEl.classList.add('show');
+          kzDone[ki]=true;
+          var card=document.getElementById('kz'+ki);
+          if(card) card.classList.add('kz-complete');
+          var pip=document.getElementById('kzp'+ki);
+          if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
+          // Reveal next KZ card
+          var nextCard=document.getElementById('kz'+(ki+1));
+          if(nextCard){
+            setTimeout(function(){
+              nextCard.style.display='block';
+              nextCard.classList.remove('hidden-kz');
+              nextCard.classList.add('kz-reveal');
+              nextCard.scrollIntoView({behavior:'smooth',block:'start'});
+              nextCard.classList.add('pulse-unlock');
+              setTimeout(function(){nextCard.classList.remove('pulse-unlock');},1000);
+            },400);
+          }
+          checkAllKZ();
+        },600);
+        // Remove all listeners to prevent further clicks
+        opts.forEach(function(o){ o.replaceWith(o.cloneNode(true)); });
+      } else {
+        // First wrong attempt – small hint
+        fb.className='ifb show ifer';
+        fb.innerHTML='✗ Nicht ganz – versuch es nochmal. <em>Tipp: Welche Aussage enthält alle relevanten Informationen zur Kennzahl?</em>';
+        this.classList.add('ino');
+      }
+    };
+  }
+
+  opts.forEach(function(opt, oi){
+    opt.addEventListener('click', onOptClick(oi));
   });
 }
 function checkAllKZ(){
@@ -2585,31 +2618,47 @@ function checkBankResult(ki,target,inputId,fbId,interpId,fazId){
 }
 function buildBankInterp(ki){
   var wrap=document.getElementById('bk'+ki+'iz');
+  if(!wrap) return;
   var opts=wrap.querySelectorAll('[data-bki]');
   var corOpt=bankCorOpt[ki];
-  opts.forEach(function(opt,oi){
-    opt.addEventListener('click',function(){
-      if(this.classList.contains('ick')||this.classList.contains('ino'))return;
+  var attempts=0;
+
+  function onOptClick(oi){
+    return function(){
+      if(this.classList.contains('ick')) return;
+      attempts++;
       var correct=(oi===corOpt);
-      opts.forEach(function(o){o.classList.add('ioff');});
-      this.classList.remove('ioff');this.classList.add(correct?'ick':'ino');
-      if(!correct)opts[corOpt].classList.add('ick');
       var fb=document.getElementById('bk'+ki+'ifb');
-      fb.className='ifb show '+(correct?'ifok':'ifer');
-      fb.innerHTML=bankInterpExpl[ki][correct?'ok':'no'];
-      setTimeout(function(){
-        document.getElementById('bk'+ki+'faz').classList.add('show');
-        document.getElementById('bkz'+ki).classList.add('kz-complete');
-        var pip=document.getElementById('bkzp'+ki);
-        if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
-        bankDone[ki]=true;
-        if(ki+1<=6){
-          var next=document.getElementById('kz'+(ki+1));
-          if(next){setTimeout(function(){next.scrollIntoView({behavior:'smooth',block:'start'});next.classList.add('pulse-unlock');setTimeout(function(){next.classList.remove('pulse-unlock');},1000);},400);}
-        }
-        checkAllBank();
-      },600);
-    },{once:true});
+
+      if(correct || attempts>=2){
+        opts.forEach(function(o){o.classList.add('ioff');});
+        this.classList.remove('ioff'); this.classList.add(correct?'ick':'ino');
+        opts[corOpt].classList.remove('ioff'); opts[corOpt].classList.add('ick');
+        fb.className='ifb show '+(correct?'ifok':'ifer');
+        fb.innerHTML = correct
+          ? bankInterpExpl[ki]['ok']
+          : '→ Lösung eingeblendet. '+bankInterpExpl[ki]['ok'];
+        setTimeout(function(){
+          var fazEl=document.getElementById('bk'+ki+'faz');
+          if(fazEl) fazEl.classList.add('show');
+          var card=document.getElementById('bkz'+ki);
+          if(card) card.classList.add('kz-complete');
+          var pip=document.getElementById('bkzp'+ki);
+          if(pip){pip.style.background='var(--green)';pip.style.color='var(--paper)';}
+          bankDone[ki]=true;
+          checkAllBank();
+        },600);
+        opts.forEach(function(o){ o.replaceWith(o.cloneNode(true)); });
+      } else {
+        fb.className='ifb show ifer';
+        fb.innerHTML='✗ Nicht ganz – versuch es nochmal.';
+        this.classList.add('ino');
+      }
+    };
+  }
+
+  opts.forEach(function(opt, oi){
+    opt.addEventListener('click', onOptClick(oi));
   });
 }
 function checkAllBank(){

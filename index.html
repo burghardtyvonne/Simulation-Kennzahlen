@@ -416,6 +416,10 @@ body.teacher-mode .ti{display:block}
 
 .skip-link{display:none;font-size:.74rem;color:var(--ink3);text-align:right;margin-top:6px;cursor:pointer;text-decoration:underline;font-style:italic}
 .skip-link:hover{color:var(--ink)}
+
+.kz-weiter{margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);text-align:right}
+.kz-weiter-btn{background:var(--gold);color:var(--ink);border:none;padding:9px 22px;border-radius:4px;font-size:.85rem;font-family:var(--serif);font-weight:700;cursor:pointer;transition:background .15s}
+.kz-weiter-btn:hover{background:var(--gold2)}
 </style>
 </head>
 <body>
@@ -635,12 +639,6 @@ body.teacher-mode .ti{display:block}
         <button class="check-btn" id="k1btn2" onclick="checkKZresult(1,14.9,'k1i','k1fb','k1iz','k1faz')" style="display:none">Ergebnis prüfen</button>
       </div>
       <div class="ifb" id="k1fb"></div>
-    <div class="ti"><div class="ti-head">Hypothesenbildung KZ1 – Aufgabe & Lösungshinweis</div><b>Was sollen SuS leisten?</b> Eigene Erklärung formulieren, warum EK-Rentabilität sank (20% → 14,9%) obwohl Umsatz stieg. Aktiviert analytisches Denken vor der Auflösung.
-    <ul>
-      <li><b>Richtige Hypothesen:</b> "Kosten stiegen stärker als Umsatz" · "Abschreibungen/Wertminderungen drückten Gewinn" · "Investitionen fraßen Marge"</li>
-      <li><b>Akzeptable Hypothesen:</b> Jede plausible Verbindung zwischen Kostensteigerung und sinkendem Gewinn</li>
-      <li><b>Auflösung:</b> Hauptursache sind 47 Mio. € nicht-zahlungswirksame Wertminderungen auf Store-Vermögen – wird in KZ4 vertieft</li>
-    </ul></div>
       <div id="hypo1wrap" style="display:none;margin:14px 0;padding:14px;background:var(--paper2);border-radius:var(--r);border-left:3px solid var(--plum)">
         <div style="font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--plum)">💡 Hypothese – bevor ihr die Auswertung lest</div>
         <div style="font-size:.84rem;color:var(--ink3);margin-bottom:8px">Die EK-Rentabilität ist von 20,0 % (2023) auf 14,9 % (2024) gesunken – obwohl der Umsatz gestiegen ist. Formuliert eine Hypothese: Was könnte die Ursache sein?</div>
@@ -671,6 +669,9 @@ body.teacher-mode .ti{display:block}
               <strong>Aufgabe – Trend analysieren</strong>
               Betrachtet die Entwicklung seit 2015. In welchem Jahr war die EK-Rentabilität am höchsten? Was war 2020 der Grund für den negativen Wert? Und was sagt der Rückgang von 20,0 % (2023) auf 14,9 % (2024) über die aktuelle Lage von Hugo Boss aus?
             </div>
+          </div>
+          <div class="kz-weiter">
+            <button class="kz-weiter-btn" onclick="kzWeiter(1)">Weiter zur nächsten Kennzahl →</button>
           </div>
         </div>
       </div>
@@ -741,6 +742,9 @@ body.teacher-mode .ti{display:block}
               Vergleicht die Nettomarge 2024 (4,9 %) mit 2015 (11,4 %). Der Umsatz ist seit 2015 von 2,8 auf 4,3 Mrd. € gewachsen – und trotzdem sinkt die Marge. Was bedeutet das: Wächst Hugo Boss profitabel oder auf Kosten der Rentabilität?
             </div>
           </div>
+          <div class="kz-weiter">
+            <button class="kz-weiter-btn" onclick="kzWeiter(2)">Weiter zur nächsten Kennzahl →</button>
+          </div>
         </div>
       </div>
     </div>
@@ -807,6 +811,9 @@ body.teacher-mode .ti{display:block}
               <strong>Aufgabe – Trend analysieren</strong>
               Die EK-Quote steigt seit 2020 kontinuierlich. Was bedeutet das für das Risiko der Anteilseigner? Und warum ist 37,7 % noch nicht ideal – wo liegt der Sollwert?
             </div>
+          </div>
+          <div class="kz-weiter">
+            <button class="kz-weiter-btn" onclick="kzWeiter(3)">Weiter zur nächsten Kennzahl →</button>
           </div>
         </div>
       </div>
@@ -924,6 +931,9 @@ body.teacher-mode .ti{display:block}
               Schaut auf 2021: Auch dort war der Free Cashflow sehr hoch (557 Mio. €). Und 2022 brach er auf 166 Mio. € ein, 2023 sogar auf 96 Mio. €. Was könnte die Ursache für diese starken Schwankungen sein? Was sagt das über die Verlässlichkeit des Free Cashflow als Kennzahl?
             </div>
           </div>
+          <div class="kz-weiter">
+            <button class="kz-weiter-btn" onclick="kzWeiter(4)">Weiter zur nächsten Kennzahl →</button>
+          </div>
         </div>
       </div>
     </div>
@@ -997,6 +1007,9 @@ body.teacher-mode .ti{display:block}
               <strong>Aufgabe – Trend analysieren</strong>
               Hugo Boss peilt 2025 eine EBIT-Marge von 9,0–10,0 % an. Schaut auf die Zeitreihe: In welchem Jahr war die Marge am höchsten? Was war der Einbruch 2020? Und was müsste passieren, damit Hugo Boss wieder auf das Niveau von 2015 kommt? Ist das realistisch?
             </div>
+          </div>
+          <div class="kz-weiter">
+            <button class="kz-weiter-btn" onclick="kzWeiter(5)">Weiter zur Gesamtbewertung →</button>
           </div>
         </div>
       </div>
@@ -2228,6 +2241,21 @@ function showMusterloesung(){
   if(wrap){ wrap.style.display='block'; }
   if(btn){  btn.style.display='none';   }
   if(wrap){ setTimeout(function(){ wrap.scrollIntoView({behavior:'smooth',block:'start'}); }, 100); }
+}
+
+function kzWeiter(ki){
+  var next = document.getElementById('kz'+(ki+1));
+  if(next && next.style.display !== 'none'){
+    next.scrollIntoView({behavior:'smooth', block:'start'});
+  } else if(ki >= 5){
+    // All KZ done, trigger checkAllKZ
+    kzDone[ki] = true;
+    checkAllKZ();
+    var zw = document.getElementById('zwischenurteilWrap');
+    if(zw && !zw.classList.contains('hidden')){
+      zw.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }
 }
 function updateProgress(n){
   if(n>maxScene) maxScene=n;
